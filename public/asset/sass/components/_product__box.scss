@@ -1,0 +1,128 @@
+.product__box {
+  border: 1px solid $color-grey-light-2;
+  padding: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.1);
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 0.2rem 0.5rem rgba($color-black, 0.1);
+    transform: translateY(-3px);
+  }
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .ribbon {
+    width: 130px;
+    height: 125px;
+    &::after {
+      bottom: 21px;
+      right: 0;
+      border: 5px solid $color-primary-light;
+    }
+    &::before {
+      top: 0;
+      left: 26px;
+      border: 5px solid $color-primary-dark;
+    }
+    span {
+      font-size: 1.3rem;
+      width: 222px;
+      padding: 6px 0;
+      background: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+    }
+  }
+  &--main-title {
+    color: $color-tertiary-light;
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    &:hover {
+      color: $color-secondary-dark;
+    }
+  }
+  &--sub-title {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    &:hover {
+      color: $color-secondary-dark;
+    }
+  }
+  &--info {
+  }
+  &--paragraph {
+    font-size: 1.3rem;
+    color: $color-grey-dark;
+  }
+  &--location {
+    font-size: 1.3rem;
+    color: $color-grey-dark;
+    display: flex;
+    img {
+      margin-left: 1rem;
+    }
+  }
+  &--sign {
+  }
+  &--list {
+    display: table;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    width: 100%;
+    line-height: 18px;
+    overflow: hidden;
+    dt {
+      display: table-cell;
+      padding: 3px 0;
+      margin: 0;
+      color: #888888;
+      width: 110px;
+    }
+    dd {
+      display: table-cell;
+      padding: 3px 0;
+      margin: 0;
+      color: #333333;
+    }
+  }
+  &--imageContainer {
+    margin-top: 3rem;
+  }
+  &__image-box {
+  }
+  &--link {
+    font-size: 1.2rem;
+    color: $color-secondary-dark;
+  }
+  &--button-review {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    .verify {
+      display: flex;
+      img {
+        margin-right: 0.3rem;
+      }
+    }
+    a {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+}
