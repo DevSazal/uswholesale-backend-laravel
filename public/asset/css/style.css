@@ -2155,6 +2155,20 @@
   -o-border-radius: 20px;
   -ms-border-radius: 20px;
 }
+.section-auth .auth-controller .phone-input-group {
+  display: flex;
+  align-items: center;
+}
+.section-auth .auth-controller .phone-input-group input {
+  height: 100%;
+  flex: 1.5;
+}
+.section-auth .auth-controller .phone-input-group input:last-child {
+  flex: 3;
+}
+.section-auth .auth-controller .phone-input-group input:not(:last-child) {
+  border-right: 1px solid #55c57a;
+}
 .section-auth .auth-controller #signup {
   padding: 2rem;
 }
@@ -2177,6 +2191,11 @@
 .section-auth .auth-controller #login .signin-form {
   width: 50%;
   overflow: hidden;
+}
+.section-auth .auth-controller #login .signin-form .input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @font-face {

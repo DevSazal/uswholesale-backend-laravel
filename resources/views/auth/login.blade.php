@@ -6,7 +6,7 @@
 
 @section('content')
   <main>
-    <section class="section-auth">
+    <section class="section-auth" id='app'>
         <div class="container">
             <div class="u-center-text u-margin-bottom-small">
                 <h2 class="heading-secondary">
@@ -64,10 +64,14 @@
                                       <input name="password_confirm" type="confirm_password" id="confirm_password" class="form__input" placeholder="Confirm Password" required>
                                   </div>
                                   <div class="form__group">
-                                      <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
+                                      <div class="phone-input-group">
+                                        <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="Country Code" required>
+                                        <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="Phone Code" required>
+                                        <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
+                                      </div>
                                   </div>
                                   <div class="form-group submit-button u-margin-top-medium">
-                                      <button class="btn btn--green">Register &rarr;</button>
+                                      <button class="btn btn--green">Register @{{countryList}} &rarr;</button>
                                   </div>
                               </div>
                               <div class="col-md-6">
@@ -88,9 +92,10 @@
                                   <div class="form__group select-box">
                                       <select name="country" class="form__select" id="" required>
                                         <option disabled>Select Country</option>
-                                        <option value="Bangladesh">Bangladesh</option>
-                                        <option value="Bangladesh">Bangladesh</option>
-                                        <option value="Bangladesh">Bangladesh</option>
+                                       
+                                        <option  v-for="item in countryList" v-if='countryList' :value="item.name">
+                                            @{{item.name}}
+                                        </option>
                                       </select>
                                       <label for="country" class="form__label">&nbsp;</label>                                     
                                   </div>
@@ -111,20 +116,36 @@
 
  @section('script')
     <script>
-    (function($) {
-        $(document).ready(function() {
-            authPage("login");
-        });
-    })(jQuery);
-    function authPage(auth_value) {
-        if (auth_value === "login") {
-            $("#login").show();
-            $("#signup").hide();
-        } else if (auth_value === "signup") {
-            $("#login").hide();
-            $("#signup").show();
+        (function($) {
+            $(document).ready(function() {
+                authPage("login");
+            });
+        })();
+        function authPage(auth_value) {
+            if (auth_value === "login") {
+                $("#login").show();
+                $("#signup").hide();
+            } else if (auth_value === "signup") {
+                $("#login").hide();
+                $("#signup").show();
+            }
         }
-    }
-
+    </script>
+    <script>
+        window.onload = function () {
+            new Vue({
+            el: '#signup',
+            data: {
+                countryList: null
+            },
+            created: function () {
+                const THIS = this;
+               axios.get('https://restcountries.eu/rest/v2/all').then(res =>{
+                THIS.countryList= res.data;
+               }).catch(err => console.log(err));
+            }
+        })
+}
+       
     </script>
  @endsection

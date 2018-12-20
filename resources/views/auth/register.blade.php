@@ -6,7 +6,7 @@
 
 @section('content')
   <main>
-    <section class="section-auth">
+    <section class="section-auth" id='section-auth'>
         <div class="container">
             <div class="u-center-text u-margin-bottom-small">
                 <h2 class="heading-secondary">
@@ -41,23 +41,22 @@
                               <div class="col-md-6">
                                   <div class="form__group">
                                       <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>
-                                      <label for="name" class="form__label">Username</label>
                                   </div>
                                   <div class="form__group">
                                       <input  name="email" type="email" id="email" class="form__input" placeholder="Email" required>
-                                      <label for="email" class="form__label">Email</label>
                                   </div>
                                   <div class="form__group">
                                       <input name="password" type="password" id="password" class="form__input" placeholder="Password" required>
-                                      <label for="password" class="form__label">Password</label>
                                   </div>
                                   <div class="form__group">
                                       <input name="password_confirm" type="confirm_password" id="confirm_password" class="form__input" placeholder="Confirm Password" required>
-                                      <label for="confirm_password" class="form__label">Confirm Password</label>
                                   </div>
                                   <div class="form__group">
-                                      <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
-                                      <label for="phone_number" class="form__label">Phone Number</label>
+                                      <div class="input-group">
+                                        <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="Country Code" required>
+                                        <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="Phone Code" required>
+                                        <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
+                                      </div>
                                   </div>
                                   <div class="form-group submit-button">
                                       <button class="btn btn--green">Register &rarr;</button>
@@ -66,16 +65,13 @@
                               <div class="col-md-6">
                                   <div class="form__group">
                                       <input name="name" type="text" id="contact_name" class="form__input" placeholder="Contact Name" required>
-                                      <label for="contact_name" class="form__label">Contact Name</label>
                                   </div>
                                  
                                   <div class="form__group">
                                       <input name="company" type="text" id="company_name" class="form__input" placeholder="Company Name" >
-                                      <label for="company_name" class="form__label">Company Name</label>
                                   </div>
                                   <div class="form__group">
                                       <input name="address" type="text" id="company_name" class="form__input" placeholder="Address">
-                                      <label for="company_name" class="form__label">Address</label>
                                   </div>
                                  
                                   <div class="form__group">
@@ -112,20 +108,33 @@
  
  @section('script')
     <script>
-    (function($) {
-        $(document).ready(function() {
-            authPage("signup");
-        });
-    })(jQuery);
-    function authPage(auth_value) {
-        if (auth_value === "login") {
-            $("#login").show();
-            $("#signup").hide();
-        } else if (auth_value === "signup") {
-            $("#login").hide();
-            $("#signup").show();
-        }
-    }
+    
+            $(document).ready(function() {
+                authPage("signup");
+            });
 
+        function authPage(auth_value) {
+            if (auth_value === "login") {
+                $("#login").show();
+                $("#signup").hide();
+            } else if (auth_value === "signup") {
+                $("#login").hide();
+                $("#signup").show();
+            }
+        }
+
+    </script>
+    <script>
+        console.log('vue');
+        // new Vue({
+        //     el: '#section-auth',
+        //     data: {
+        //         message: 'You loaded this page on ' + new Date().toLocaleString()
+        //     },
+        //     created: function () {
+        //         // `this` points to the vm instance
+        //         console.log('a is: ' + this.message)
+        //     }
+        // });
     </script>
  @endsection

@@ -91,4 +91,4 @@
     if (!isChrome && !isSafari) {
         scrollbarDiv.innerHTML = "You need Webkit browser to run this code";
     }
-})();
+})(jQuery);

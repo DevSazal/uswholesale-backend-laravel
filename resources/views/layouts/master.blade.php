@@ -17,7 +17,10 @@
   <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
   @yield('title')
-
+  <!-- development version, includes helpful console warnings -->
+  <script src="{{asset('asset/js/vue.js')}}"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  @yield('script')
 </head>
 
 
@@ -183,7 +186,6 @@
   <script type="text/javascript" src="{{asset('asset/js/custom.js')}}"></script>
   <!-- Owl Carosel -->
   <script src="{{asset('asset/vendor/owl/js/owl.carousel.min.js')}}"></script>
-  @yield('script')
   <script type="text/javascript">
     var owl = $('.slide #slide-inner');
     owl.owlCarousel({
