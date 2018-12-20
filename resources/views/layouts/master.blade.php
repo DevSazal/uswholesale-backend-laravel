@@ -183,6 +183,7 @@
   <script type="text/javascript" src="{{asset('asset/js/custom.js')}}"></script>
   <!-- Owl Carosel -->
   <script src="{{asset('asset/vendor/owl/js/owl.carousel.min.js')}}"></script>
+  @yield('script')
   <script type="text/javascript">
     var owl = $('.slide #slide-inner');
     owl.owlCarousel({

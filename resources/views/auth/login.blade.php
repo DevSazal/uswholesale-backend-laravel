@@ -16,7 +16,8 @@
             </div>
             <div class="row">
                 <div class="auth-controller text-center" >
-                    <form id="login" >
+                    <form id="login" method="post" action="{{route('login')}}">
+                      @csrf
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
                             <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
@@ -25,13 +26,23 @@
                         </div>
                         <div class="signin-form u-margin-top-medium">
                             <div class="form__group">
-                                <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>
+                                <input name="email" type="text" id="email" class="form__input" placeholder="Your Username" required>
                             </div>
                             <div class="form__group">
-                                <input type="password" id="email" class="form__input" placeholder="Password" required>
+                                <input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
                             </div>
-                            <div class="form-group submit-button text-left u-margin-top-medium">
-                                <button class="btn btn--green">Login &rarr;</button>
+                            @if ($errors->has('email'))
+                              <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                              </span>
+                            @endif
+                            @if ($errors->has('password'))
+                              <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                              </span>
+                            @endif
+                            <div class="form-group submit-button text-left">
+                                <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
                             </div>
                         </div>
                     </form>

@@ -16,7 +16,7 @@
             </div>
             <div class="row">
                 <div class="auth-controller text-center" >
-                    <form id="login" >
+                    <form id="login" method="post" action="{{route('login')}}">
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
                             <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
@@ -25,15 +25,25 @@
                         </div>
                         <div class="signin-form u-margin-top-medium">
                             <div class="form__group">
-                                <input type="text" id="name" class="form__input" placeholder="Your Username" required>
-                                <label for="name" class="form__label">Username</label>
+                                <input type="text" id="email" name="email" class="form__input" placeholder="Your Username" required>
+                                <label for="email" class="form__label">Email</label>
                             </div>
                             <div class="form__group">
-                                <input type="password" id="email" class="form__input" placeholder="Password" required>
-                                <label for="email" class="form__label">Password</label>
+                                <input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
+                                <label for="password" class="form__label">Password</label>
                             </div>
+                            @if ($errors->has('email'))
+                              <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                              </span>
+                            @endif
+                            @if ($errors->has('password'))
+                              <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                              </span>
+                            @endif
                             <div class="form-group submit-button text-left">
-                                <button class="btn btn--green">Login &rarr;</button>
+                                <button type="submit" class="btn btn--green">Login &rarr;</button>
                             </div>
                         </div>
                     </form>
@@ -76,7 +86,7 @@
                                       <label for="company_name" class="form__label">Company Name</label>
                                   </div>
                                   <div class="form__group">
-                                      <input type="text" id="company_name" class="form__input" placeholder="Address" required>
+                                      <input type="text" id="address" class="form__input" placeholder="Address" required>
                                       <label for="company_name" class="form__label">Address</label>
                                   </div>
                                  

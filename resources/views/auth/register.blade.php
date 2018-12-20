@@ -20,7 +20,7 @@
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
                             <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
-                                <a  onclick="authPage('signup')" class="btn-orange">Create an account</a>
+                                <a  onclick="authPage('1')" class="btn-orange">Create an account</a>
                             </div>
                         </div>
                         <div class="signin-form u-margin-top-medium">
@@ -79,8 +79,12 @@
                                   </div>
                                  
                                   <div class="form__group">
-                                      <input name="city" type="text" id="phone_number" class="form__input" placeholder="City" required>
-                                      <label for="phone_number" class="form__label">City</label>
+                                      <select name="country" class="form__select" id="" required>
+                                        <option disabled>Select Country</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                      </select>
                                   </div>
                                   <div class="form__group select-box">
                                       <select name="country" class="form__select" id="" required>
@@ -92,18 +96,22 @@
                                       <label for="country" class="form__label">&nbsp;</label>                                     
                                   </div>
                                   <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
-                                    <a  onclick="authPage('login')" class="btn-orange">Im already a member</a>
+                                    <a  onclick="authPage('2')" class="btn-orange">Im already a member</a>
                                   </div>
                               </div>
                           </div>
                       </div>
                     </form>
                 </div>
-             
-               
             </div>
         </div>
     </section>
   </main>
  
+ @endsection
+ 
+ @section('script')
+    <script>
+    
+    </script>
  @endsection
