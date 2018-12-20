@@ -66,9 +66,10 @@
                                   <div class="form__group select-box">
                                       <select name="country" class="form__select" id="" required>
                                         <option disabled>Select Country</option>
-                                        <option value="Bangladesh">UK</option>
-                                        <option value="Bangladesh">Bangladesh</option>
-                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option  v-for="item in countryList" v-if='countryList' :value="item.name">
+                                            @{{item.name}}
+                                        </option>
+                                       
                                       </select>
                                       <label for="country" class="form__label">&nbsp;</label>                                     
                                   </div>
