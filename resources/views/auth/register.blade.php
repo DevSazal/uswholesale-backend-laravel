@@ -26,11 +26,9 @@
                         <div class="signin-form u-margin-top-medium">
                             <div class="form__group">
                                 <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>
-                                <label for="name" class="form__label">Username</label>
                             </div>
                             <div class="form__group">
                                 <input type="password" id="email" class="form__input" placeholder="Password" required>
-                                <label for="email" class="form__label">Password</label>
                             </div>
                             <div class="form-group submit-button text-left">
                                 <button class="btn btn--green">Login &rarr;</button>
