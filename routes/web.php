@@ -20,13 +20,16 @@ Route::get('/', function () {
 });
 
 Route::get('/auth', function () {
-    return view('auth');
+    return view('auth.login');
 });
+
+
+Route::post('supplier/add', 'Supplier\SupplierController@store')->name('supplier.add');
 
 Route::get('/category', function () {
     return view('category');
 });
-Route::get('/supplier', function () {
+Route::get('/premium-signup', function () {
     return view('supplier');
 });
 

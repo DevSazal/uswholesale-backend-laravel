@@ -29,8 +29,8 @@
                                 <label for="name" class="form__label">Username</label>
                             </div>
                             <div class="form__group">
-                                <input type="email" id="email" class="form__input" placeholder="Email" required>
-                                <label for="email" class="form__label">Email</label>
+                                <input type="password" id="email" class="form__input" placeholder="Password" required>
+                                <label for="email" class="form__label">Password</label>
                             </div>
                             <div class="form-group submit-button text-left">
                                 <button class="btn btn--green">Login &rarr;</button>
@@ -57,6 +57,10 @@
                                       <input type="confirm_password" id="confirm_password" class="form__input" placeholder="Confirm Password" required>
                                       <label for="confirm_password" class="form__label">Confirm Password</label>
                                   </div>
+                                  <div class="form__group">
+                                      <input type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
+                                      <label for="phone_number" class="form__label">Phone Number</label>
+                                  </div>
                                   <div class="form-group submit-button">
                                       <button class="btn btn--green">Register &rarr;</button>
                                   </div>
@@ -71,10 +75,14 @@
                                       <input type="text" id="company_name" class="form__input" placeholder="Company Name" required>
                                       <label for="company_name" class="form__label">Company Name</label>
                                   </div>
+                                  <div class="form__group">
+                                      <input type="text" id="company_name" class="form__input" placeholder="Address" required>
+                                      <label for="company_name" class="form__label">Address</label>
+                                  </div>
                                  
                                   <div class="form__group">
-                                      <input type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
-                                      <label for="phone_number" class="form__label">Phone Number</label>
+                                      <input type="text" id="phone_number" class="form__input" placeholder="City" required>
+                                      <label for="phone_number" class="form__label">City</label>
                                   </div>
                                   <div class="form__group select-box">
                                       <select name="country" class="form__select" id="">

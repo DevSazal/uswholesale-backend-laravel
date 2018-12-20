@@ -56,7 +56,7 @@
           <li><a href='#'>VIDEO</a></li>
         </ul>
         <div class="menu-right">
-          <a href="{{url('/supplier')}}" class="menu-join">Supplier Registration</a>
+          <a href="{{url('/premium-signup')}}" class="menu-join">Supplier Registration</a>
           <a href="#" class="menu-join">Buyer Registration</a>
           <a href="{{url('/auth')}}" class="menu-signin">Sign In</a>
         </div>
