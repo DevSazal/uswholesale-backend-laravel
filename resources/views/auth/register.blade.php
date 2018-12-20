@@ -20,7 +20,7 @@
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
                             <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
-                                <a  onclick="authPage('1')" class="btn-orange">Create an account</a>
+                                <a  onclick="authPage('signup')" class="btn-orange">Create an account</a>
                             </div>
                         </div>
                         <div class="signin-form u-margin-top-medium">
@@ -96,7 +96,7 @@
                                       <label for="country" class="form__label">&nbsp;</label>                                     
                                   </div>
                                   <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
-                                    <a  onclick="authPage('2')" class="btn-orange">Im already a member</a>
+                                    <a  onclick="authPage('login')" class="btn-orange">Im already a member</a>
                                   </div>
                               </div>
                           </div>
