@@ -16,12 +16,12 @@
             </div>
             <div class="row">
                 <div class="auth-controller text-center" >
-                    <form id="login" method="post" action="{{route('login')}}">
+                    <form id="login" v-if='login' method="post" action="{{route('login')}}" v-if=''>
                       @csrf
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
                             <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
-                                <a  onclick="authPage('signup')" class="btn-orange">Create an account</a>
+                                <a  @click="authPage('signup')" class="btn-orange">Create an account</a>
                             </div>
                         </div>
                         <div class="signin-form u-margin-top-medium">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </form>
-                    <form method="POST" class="form" action="{{route('supplier.add')}}"  id="signup">
+                    <form method="POST" v-if='!login' class="form" action="{{route('supplier.add')}}"  id="signup">
                       @csrf
                       <div class="signup-content">
                           <div class="row">
@@ -71,7 +71,7 @@
                                       </div>
                                   </div>
                                   <div class="form-group submit-button u-margin-top-medium">
-                                      <button class="btn btn--green">Register @{{countryList}} &rarr;</button>
+                                      <button class="btn btn--green">Register &rarr;</button>
                                   </div>
                               </div>
                               <div class="col-md-6">
@@ -100,7 +100,7 @@
                                       <label for="country" class="form__label">&nbsp;</label>                                     
                                   </div>
                                   <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
-                                    <a  onclick="authPage('login')" class="btn-orange">Im already a member</a>
+                                    <a  @click="authPage('login')" class="btn-orange">Im already a member</a>
                                   </div>
                               </div>
                           </div>
@@ -115,28 +115,23 @@
  @endsection
 
  @section('script')
-    <script>
-        (function($) {
-            $(document).ready(function() {
-                authPage("login");
-            });
-        })();
-        function authPage(auth_value) {
-            if (auth_value === "login") {
-                $("#login").show();
-                $("#signup").hide();
-            } else if (auth_value === "signup") {
-                $("#login").hide();
-                $("#signup").show();
-            }
-        }
-    </script>
+    
     <script>
         window.onload = function () {
             new Vue({
-            el: '#signup',
+            el: '#app',
             data: {
-                countryList: null
+                countryList: null,
+                login:true
+            },
+            methods: {
+                authPage(stat){
+                    if (stat == 'signup') {
+                        this.login =false;
+                    }else if(stat == 'login'){
+                        this.login =true;
+                    }
+                }
             },
             created: function () {
                 const THIS = this;
