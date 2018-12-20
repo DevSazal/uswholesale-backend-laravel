@@ -17,7 +17,7 @@
                     </select>
                     <input class="text" type="text" autocomplete="off" id="" name="" value="" placeholder="Explore millions of Wholesale Products">
                     <input type="submit" value="Search" class="sbutton">
-                    <div class="suggest">
+                    <!-- <div class="suggest">
                         <span class="suggest__tag">
                 Related Searches:
             </span>
@@ -38,7 +38,7 @@
                                 <a href="#" class="suggest__link">children's skiing apparel</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </section>
@@ -239,7 +239,8 @@
                                         </div>
                                     </div>
                                     <div class="product__box">
-                                        <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
+                                      <!-- product updated daily remove -->
+                                        <!-- <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div> -->
 
                                         <div class="product__box--info">
                                             <a class="product__box--sub-title">LAShowroom</a>
@@ -414,7 +415,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="product__box">
-                                                <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
+                                              <!-- verified product removed for product tab  -->
+                                                <!-- <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div> -->
                                                 <div class="product__box--image-tab-2">
                                                     <img src="https://www.toptenwholesale.com/ttw/images/products/2395674.jpg" alt="">
                                                 </div>
@@ -513,7 +515,7 @@
                                               <div class="buyer-box__left-box">
                                                   <h3 class="buyer-box__main-title">Slipper Socks</h3>
                                                   <div class="box-flex">
-                                                      
+
                                                         <div class="info-box">
                                                             <div class="buyer-box__location">
                                                                 <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
@@ -551,7 +553,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="main-add-container">
-                            <div class="add__card">
+                            <div class="add__card custom-card">
                                 <div class="add__card--image-container">
                                     <img class="img-responsive add__card--image" src="{{asset('asset/vendor/images/add-1.jpg')}}" alt="">
                                 </div>
@@ -560,7 +562,8 @@
                                     Buy Wholesale Inventory Direct from Walmart 70-90% OFF Retail | All Product Categories
                                 </p>
                             </div>
-                            <div class="add__card">
+                            <br>
+                            <div class="add__card custom-card">
                                 <div class="add__card--image-container">
                                     <img class="img-responsive add__card--image" src="{{asset('asset/vendor/images/add-1.jpg')}}" alt="">
                                 </div>

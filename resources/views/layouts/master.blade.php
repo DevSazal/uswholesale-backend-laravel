@@ -57,11 +57,14 @@
           </li>
           <li><a href='#'>BIO</a></li>
           <li><a href='#'>VIDEO</a></li>
+          <li><a class="menu-btn" href="{{url('/premium-signup')}}" class="menu-join">Supplier Registration</a></li>
+          <li><a class="menu-btn" href="#" class="menu-join">Buyer Registration</a></li>
+          <li><a href="{{url('/auth')}}" class="menu-signin">Sign In</a></li>
         </ul>
         <div class="menu-right">
-          <a href="{{url('/premium-signup')}}" class="menu-join">Supplier Registration</a>
+          <!-- <a href="{{url('/premium-signup')}}" class="menu-join">Supplier Registration</a>
           <a href="#" class="menu-join">Buyer Registration</a>
-          <a href="{{url('/auth')}}" class="menu-signin">Sign In</a>
+          <a href="{{url('/auth')}}" class="menu-signin">Sign In</a> -->
         </div>
       </nav>
     </div>

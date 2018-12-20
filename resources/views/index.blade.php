@@ -8,14 +8,14 @@
     <div class="container">
         <div class="row">
             <div class="banner-image-container">
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
             </div>
         </div>
     </div>
@@ -502,7 +502,7 @@
                             <div class="card news-card" style="">
                                 <img class="card-img-top" src="https://vitalsignsmktg.com/wp-content/uploads/2015/09/Content-Marketing-News-and-Trends-That-Can-Help-You-Go-Viral-Fast-Marketing-Digest.png" alt="Card image cap">
                                 <div class="card-body">
-                                    <div class="card-about"> 
+                                    <div class="card-about">
                                         <span class="card-time"><i class="fa fa-calendar" aria-hidden="true"></i>  December 12, 18 .</span>
                                         <span class="card-author"><i class="fa fa-user-o" aria-hidden="true"></i> John Doe</span>
                                     </div>
@@ -512,7 +512,7 @@
                                 </div>
                                 </div>
                             </div>
-                          
+
                         </div>
                     </div>
                 </div>

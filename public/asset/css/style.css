@@ -3984,3 +3984,30 @@ header #cssmenu .menu-right .menu-signin {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* tuhin's code */
+.menu-btn{
+  padding: 12px !important;
+  background: rgb(16, 74, 124);
+  margin: 2px;
+  transition: .3s;
+  margin-top: 5px;
+}
+.menu-btn:hover{
+  background: rgb(13, 122, 191);
+}
+.custom-card{
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  #suppliers .col-md-2{
+    width: 100%;
+    margin-top: 12px;
+  }
+  #apparel .apparel__item {
+    width: 100%;
+  }
+}
