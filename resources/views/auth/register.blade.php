@@ -16,26 +16,7 @@
             </div>
             <div class="row">
                 <div class="auth-controller text-center" >
-                    <form id="login" >
-                        <div class="signin-image">
-                            <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
-                            <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
-                                <a  onclick="authPage('signup')" class="btn-orange">Create an account</a>
-                            </div>
-                        </div>
-                        <div class="signin-form u-margin-top-medium">
-                            <div class="form__group">
-                                <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>
-                            </div>
-                            <div class="form__group">
-                                <input type="password" id="email" class="form__input" placeholder="Password" required>
-                            </div>
-                            <div class="form-group submit-button text-left">
-                                <button class="btn btn--green">Login &rarr;</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form method="POST" class="form" action="{{route('supplier.add')}}"  id="signup">
+                <form v-if='!login' method="POST" class="form" action="{{route('supplier.add')}}"  id="signup">
                       <div class="signup-content">
                           <div class="row">
                               <div class="col-md-6">
@@ -52,13 +33,13 @@
                                       <input name="password_confirm" type="confirm_password" id="confirm_password" class="form__input" placeholder="Confirm Password" required>
                                   </div>
                                   <div class="form__group">
-                                      <div class="input-group">
+                                      <div class="phone-input-group">
                                         <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="Country Code" required>
                                         <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="Phone Code" required>
                                         <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
                                       </div>
                                   </div>
-                                  <div class="form-group submit-button">
+                                  <div class="form-group submit-button u-margin-top-medium">
                                       <button class="btn btn--green">Register &rarr;</button>
                                   </div>
                               </div>
@@ -92,12 +73,32 @@
                                       <label for="country" class="form__label">&nbsp;</label>                                     
                                   </div>
                                   <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
-                                    <a  onclick="authPage('login')" class="btn-orange">Im already a member</a>
+                                    <a  @click="authPage('login')" class="btn-orange">Im already a member</a>
                                   </div>
                               </div>
                           </div>
                       </div>
                     </form>
+                    <form v-if='login' id="login" >
+                        <div class="signin-image">
+                            <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
+                            <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
+                                <a  @click="authPage('signup')" class="btn-orange">Create an account</a>
+                            </div>
+                        </div>
+                        <div class="signin-form u-margin-top-medium">
+                            <div class="form__group">
+                                <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>
+                            </div>
+                            <div class="form__group">
+                                <input type="password" id="email" class="form__input" placeholder="Password" required>
+                            </div>
+                            <div class="form-group submit-button text-left">
+                                <button class="btn btn--green">Login &rarr;</button>
+                            </div>
+                        </div>
+                    </form>
+                   
                 </div>
             </div>
         </div>
@@ -107,34 +108,33 @@
  @endsection
  
  @section('script')
-    <script>
-    
-            $(document).ready(function() {
-                authPage("signup");
-            });
 
-        function authPage(auth_value) {
-            if (auth_value === "login") {
-                $("#login").show();
-                $("#signup").hide();
-            } else if (auth_value === "signup") {
-                $("#login").hide();
-                $("#signup").show();
+ <script>
+        window.onload = function () {
+            new Vue({
+            el: '#section-auth',
+            data: {
+                countryList: null,
+                login:false
+            },
+            methods: {
+                authPage(stat){
+                    console.log(stat);
+                    if (stat == 'signup') {
+                        this.login =false;
+                    }else if(stat == 'login'){
+                        this.login =true;
+                    }
+                }
+            },
+            created: function () {
+                const THIS = this;
+               axios.get('https://restcountries.eu/rest/v2/all').then(res =>{
+                THIS.countryList= res.data;
+               }).catch(err => console.log(err));
             }
-        }
-
-    </script>
-    <script>
-        console.log('vue');
-        // new Vue({
-        //     el: '#section-auth',
-        //     data: {
-        //         message: 'You loaded this page on ' + new Date().toLocaleString()
-        //     },
-        //     created: function () {
-        //         // `this` points to the vm instance
-        //         console.log('a is: ' + this.message)
-        //     }
-        // });
+        })
+}
+       
     </script>
  @endsection
