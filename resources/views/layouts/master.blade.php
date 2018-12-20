@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="{{asset('asset/vendor/owl/css/owl.carousel.min.css')}}">
   <link rel="stylesheet" href="{{asset('asset/vendor/owl/css/owl.theme.default.min.css')}}">
   <link rel="stylesheet" href="{{asset('asset/vendor/css/font-awesome-4.7.0/css/font-awesome.css')}}">
-  
+
   <link rel="stylesheet" href="{{asset('asset/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
   @yield('title')
 
 </head>
- 
+
 
 <body>
 
@@ -29,7 +29,7 @@
       <nav id='cssmenu'>
         <div class="logo">
           <a href="index.html">
-            <img src="asset/img/logo.png" alt="logo">
+            <img src="{{ asset('asset/img/logo.png') }}" alt="logo">
           </a>
         </div>
         <div id="head-mobile"></div>
@@ -63,9 +63,9 @@
       </nav>
     </div>
   </header>
-  
+
   @yield('content')
- 
+
   <footer class="footer">
     <div class="footer-middle">
       <div class="container">
