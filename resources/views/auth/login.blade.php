@@ -41,7 +41,7 @@
                                 <strong>{{ $errors->first('password') }}</strong>
                               </span>
                             @endif
-                            <div class="form-group submit-button text-left">
+                            <div class="form-group submit-button text-left u-margin-top-medium">
                                 <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                   <div class="form__group">
                                       <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
                                   </div>
-                                  <div class="form-group submit-button">
+                                  <div class="form-group submit-button u-margin-top-medium">
                                       <button class="btn btn--green">Register &rarr;</button>
                                   </div>
                               </div>
@@ -107,4 +107,24 @@
     </section>
   </main>
  
+ @endsection
+
+ @section('script')
+    <script>
+    (function($) {
+        $(document).ready(function() {
+            authPage("login");
+        });
+    })(jQuery);
+    function authPage(auth_value) {
+        if (auth_value === "login") {
+            $("#login").show();
+            $("#signup").hide();
+        } else if (auth_value === "signup") {
+            $("#login").hide();
+            $("#signup").show();
+        }
+    }
+
+    </script>
  @endsection

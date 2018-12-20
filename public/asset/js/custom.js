@@ -92,17 +92,3 @@
         scrollbarDiv.innerHTML = "You need Webkit browser to run this code";
     }
 })();
-(function($) {
-    $(document).ready(function() {
-        authPage("signup");
-    });
-})(jQuery);
-function authPage(auth_value) {
-    if (auth_value === "login") {
-        $("#login").show();
-        $("#signup").hide();
-    } else if (auth_value === "signup") {
-        $("#login").hide();
-        $("#signup").show();
-    }
-}

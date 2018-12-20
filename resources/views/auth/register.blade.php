@@ -79,9 +79,9 @@
                                   </div>
                                  
                                   <div class="form__group">
-                                      <select name="country" class="form__select" id="" required>
-                                        <option disabled>Select Country</option>
-                                        <option value="Bangladesh">Bangladesh</option>
+                                      <select name="city" class="form__select" id="" required>
+                                        <option disabled>Select City</option>
+                                        <option value="Bangladesh">Dhaka</option>
                                         <option value="Bangladesh">Bangladesh</option>
                                         <option value="Bangladesh">Bangladesh</option>
                                       </select>
@@ -89,7 +89,7 @@
                                   <div class="form__group select-box">
                                       <select name="country" class="form__select" id="" required>
                                         <option disabled>Select Country</option>
-                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Bangladesh">UK</option>
                                         <option value="Bangladesh">Bangladesh</option>
                                         <option value="Bangladesh">Bangladesh</option>
                                       </select>
@@ -112,6 +112,20 @@
  
  @section('script')
     <script>
-    
+    (function($) {
+        $(document).ready(function() {
+            authPage("signup");
+        });
+    })(jQuery);
+    function authPage(auth_value) {
+        if (auth_value === "login") {
+            $("#login").show();
+            $("#signup").hide();
+        } else if (auth_value === "signup") {
+            $("#login").hide();
+            $("#signup").show();
+        }
+    }
+
     </script>
  @endsection
