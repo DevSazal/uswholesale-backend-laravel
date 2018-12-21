@@ -59,8 +59,9 @@
                       <div class="signup-content">
                           <div class="row">
                               <div class="col-md-6">
-                                  <div class="form-group">
+                                  <div class="form__group">
                                       <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>   
+                                        <span class='signup-error-message'>error</span>
                                     </div>
                                   <div class="form__group">
                                       <input  name="email" type="email" id="email" class="form__input" placeholder="Email" required>

@@ -15,7 +15,6 @@
         .phone-input-group {
             display: flex;
             align-items: center;
-            margin-top: 2.4rem;
             input {
                 height: 100%;
                 flex: 0.5;
@@ -29,6 +28,9 @@
         }
         #signup {
             padding: 2rem;
+            .form__group {
+                height: 8rem;
+            }
         }
         #login {
             padding: 2rem;

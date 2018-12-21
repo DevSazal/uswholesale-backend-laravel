@@ -834,20 +834,22 @@ button:focus {
 
 .form .select-box {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 .form .submit-button {
+  text-align: left;
+}
+.form__group {
   text-align: left;
 }
 .form__group:not(:last-child) {
   margin-bottom: 0.5rem;
 }
 .form__select {
-  border-radius: 0;
   border: none;
   background-color: rgba(255, 255, 255, 0.5);
   color: inherit;
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   width: 98%;
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -930,6 +932,10 @@ button:focus {
 }
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1;
+}
+.form .signup-error-message {
+  padding-left: 2rem;
+  color: #a94442;
 }
 
 .error-container {
@@ -2186,7 +2192,6 @@ button:focus {
 .section-auth .auth-controller .phone-input-group {
   display: flex;
   align-items: center;
-  margin-top: 2.4rem;
 }
 .section-auth .auth-controller .phone-input-group input {
   height: 100%;
@@ -2197,6 +2202,9 @@ button:focus {
 }
 .section-auth .auth-controller #signup {
   padding: 2rem;
+}
+.section-auth .auth-controller #signup .form__group {
+  height: 8rem;
 }
 .section-auth .auth-controller #login {
   padding: 2rem;
