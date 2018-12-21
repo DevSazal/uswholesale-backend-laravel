@@ -35,7 +35,20 @@
             <input type="submit" value="Search" class="sbutton">
             <div id="suggest"></div>
         </form>
-    </div>
+        <!-- <form class="form-inline" action="index.html" method="post">
+          <div class="form-group">
+            <select name="">
+              <option value="">Select</option>
+              <option value="">Supplier</option>
+              <option value="">Supplier</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="text" name="" value="" class="form-control" placeholder="Search...">
+          </div>
+          <button type="submit" name="button" class="search-btn"><i class="fas fa-search"></i></button>
+        </form>
+    </div> -->
 </section>
 <!-- _______Ending of search_________  -->
 
@@ -417,69 +430,42 @@
         </div>
         <div class="apparel">
             <div class="row">
-                <ul class="apparel__list">
-                    <li class="apparel__item">
-                        <a href="#">
-                            <div class="apparel__containers">
-                                <h3 class="heading-tertiary">Dresser</h3>
-                                <div class="image-container">
-                                    <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="apparel__item">
-                        <a href="#">
-                            <div class="apparel__containers">
-                                <h3 class="heading-tertiary">Dresser</h3>
-                                <div class="image-container">
-                                    <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="apparel__item">
-                        <a href="#">
-                            <div class="apparel__containers">
-                                <h3 class="heading-tertiary">Dresser</h3>
-                                <div class="image-container">
-                                    <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="apparel__item">
-                        <a href="#">
-                            <div class="apparel__containers">
-                                <h3 class="heading-tertiary">Dresser</h3>
-                                <div class="image-container">
-                                    <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="apparel__item">
-                        <a href="#">
-                            <div class="apparel__containers">
-                                <h3 class="heading-tertiary">Dresser</h3>
-                                <div class="image-container">
-                                    <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="apparel__item">
-                        <a href="#">
-                            <div class="apparel__containers">
-                                <h3 class="heading-tertiary">Dresser</h3>
-                                <div class="image-container">
-                                    <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                </ul>
+              <div class="text-center col-md-3">
+                <div class="dresser-container">
+                  <h3>Dresser</h3>
+                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                </div>
+              </div>
+              <div class="text-center col-md-3">
+                <div class="dresser-container">
+                  <h3>Dresser</h3>
+                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                </div>
+              </div>
+              <div class="text-center col-md-3">
+                <div class="dresser-container">
+                  <h3>Dresser</h3>
+                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                </div>
+              </div>
+              <div class="text-center col-md-3">
+                <div class="dresser-container">
+                  <h3>Dresser</h3>
+                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                </div>
+              </div>
+              <div class="text-center col-md-3">
+                <div class="dresser-container">
+                  <h3>Dresser</h3>
+                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                </div>
+              </div>
+              <div class="text-center col-md-3">
+                <div class="dresser-container">
+                  <h3>Dresser</h3>
+                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                </div>
+              </div>
             </div>
         </div>
     </div>

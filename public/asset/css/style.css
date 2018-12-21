@@ -542,6 +542,9 @@ button:focus {
 }
 .feature-box__image {
   transition: all 0.2s;
+  margin: 0 auto;
+  width: 200px;
+
 }
 .feature-box__link {
   color: #2998ff;
@@ -3146,8 +3149,6 @@ header #cssmenu .menu-right .menu-signin {
   position: relative;
   border: 1px solid #55c57a;
   font-family: "Open Sans", sans-serif;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
   color: #999;
   border-radius: 0.6rem;
   border-top-right-radius: 0 !important;
@@ -3257,35 +3258,20 @@ header #cssmenu .menu-right .menu-signin {
        -         apparel       -
 =============================================================*/
 #apparel {
-  padding: 10rem 0;
+  padding: 3rem 0;
 }
-#apparel .apparel__list {
-  list-style: none;
-  clear: both;
-  overflow: hidden;
-  text-align: center;
-  padding-left: 1rem;
+.dresser-container{
+  padding: 12px;
+  -webkit-box-shadow: -1px 3px 49px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 3px 49px -10px rgba(0,0,0,0.75);
+  box-shadow: -1px 3px 49px -10px rgba(0,0,0,0.75);
+  margin-bottom: 35px;
 }
-#apparel .apparel__item {
-  width: 22.5%;
-  float: left;
-  margin-bottom: 3rem;
-  transition: all 0.2s;
-  border-radius: 4px;
-  box-shadow: 0 1rem 1.8rem rgba(0, 0, 0, 0.2);
-}
-#apparel .apparel__item:not(:last-child) {
-  margin-right: 25px;
-}
-#apparel .apparel__item:hover {
-  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-  transform: translateY(-4px);
-}
-#apparel .apparel__containers .image-container img {
+.dresser-container img{
   height: 8rem;
   width: auto;
+  margin: 0 auto;
 }
-
 #news {
   padding: 10rem 0;
 }
@@ -4001,13 +3987,43 @@ header #cssmenu .menu-right .menu-signin {
   border: 1px solid #ddd;
   padding: 15px;
 }
+#home-search .form-control{
+  height: 42px;
+  outline: none;
+  border-radius: 0;
+  padding: 6px 55px;
+}
+#home-search select{
+
+}
+.search-btn{
+  color: #fff;
+  padding: 8px 30px;
+  background: #55c57a;
+  outline: none;
+  border: 1px solid #55c57a;
+}
 
 @media screen and (max-width: 600px) {
   #suppliers .col-md-2{
     width: 100%;
     margin-top: 12px;
   }
+  .apparel{
+      padding: 0px;
+  }
   #apparel .apparel__item {
     width: 100%;
+    margin: 0 auto;
+  }
+  .banner-image-container{
+    display: none !important;
+  }
+}
+
+/* i pad  */
+@media screen and (max-width: 768px) {
+  .banner-image-container{
+    display: none;
   }
 }
