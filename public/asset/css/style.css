@@ -3238,6 +3238,7 @@ header #cssmenu .menu-right .menu-signin {
        -         suppliers       -
 =============================================================*/
 #suppliers {
+  background-color: #f7f7f7;
   padding: 10rem 0;
 }
 #suppliers .col-md-2 {
@@ -3249,7 +3250,6 @@ header #cssmenu .menu-right .menu-signin {
 =============================================================*/
 #apparel {
   padding: 10rem 0;
-  background-color: #fff;
 }
 #apparel .apparel__list {
   list-style: none;
@@ -3258,10 +3258,15 @@ header #cssmenu .menu-right .menu-signin {
   text-align: center;
 }
 #apparel .apparel__item {
-  width: 24.5%;
+  width: 22.5%;
   float: left;
   margin-bottom: 3rem;
   transition: all 0.2s;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#apparel .apparel__item:not(:last-child) {
+  margin-right: 10px;
 }
 #apparel .apparel__item:hover {
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
@@ -3298,6 +3303,10 @@ header #cssmenu .menu-right .menu-signin {
 }
 #news .main-item .news-card .card-body {
   padding: 1rem;
+}
+#news .main-item .news-card .card-body .card-about i {
+  margin-right: 2px;
+  color: #55c57a;
 }
 
 #trade-show {

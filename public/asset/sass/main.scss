@@ -1086,6 +1086,8 @@ header {
        -         suppliers       -
 =============================================================*/
 #suppliers {
+    background-color: $color-grey-light-1;
+
     padding: 10rem 0;
     // background-color: $color-white;
     .col-md-2 {
@@ -1098,7 +1100,6 @@ header {
 =============================================================*/
 #apparel {
     padding: 10rem 0;
-    background-color: $color-white;
     .apparel {
         &__list {
             list-style: none;
@@ -1107,10 +1108,15 @@ header {
             text-align: center;
         }
         &__item {
-            width: 24.5%;
+            width: 22.5%;
             float: left;
             margin-bottom: 3rem;
             transition: all 0.2s;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
             &:hover {
                 box-shadow: 0 0.5rem 0.8rem rgba($color-black, 0.2);
                 transform: translateY(-4px);
@@ -1151,6 +1157,12 @@ header {
             }
             .card-body {
                 padding: 1rem;
+                .card-about {
+                    i {
+                        margin-right: 2px;
+                        color: $color-primary;
+                    }
+                }
             }
         }
     }

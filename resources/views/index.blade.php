@@ -503,8 +503,8 @@
                                 <img class="card-img-top" src="https://vitalsignsmktg.com/wp-content/uploads/2015/09/Content-Marketing-News-and-Trends-That-Can-Help-You-Go-Viral-Fast-Marketing-Digest.png" alt="Card image cap">
                                 <div class="card-body">
                                     <div class="card-about"> 
-                                        <span class="card-time">December 12, 18</span>
-                                        <span class="card-author">John Doe</span>
+                                        <span class="card-time"><i class="fa fa-calendar" aria-hidden="true"></i>  December 12, 18 .</span>
+                                        <span class="card-author"><i class="fa fa-user-o" aria-hidden="true"></i> John Doe</span>
                                     </div>
                                     <h2 class="card-title heading-secondary">Card title</h2>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
