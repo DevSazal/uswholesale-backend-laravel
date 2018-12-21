@@ -498,79 +498,21 @@
                 <div class="wholesale-news">
                     <div class="slide">
                         <div class="owl-carousel owl-theme" id="slide-inner">
-                            <div class="item">
-                                <div class="card-promo">
-                                    <div class="card-promo__side card-promo__side--front">
-                                        <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
-                                        <div class="card-promo__picture card-promo__picture--1">
-
-                                        </div>
-                                        <h4 class="card-promo__heading">
-                                            <span class="card-promo__heading--span card-promo__heading--span--1">Wholesale Deals</span>
-                                        </h4>
-                                        <div class="card-promo__detail">
-                                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and dropship items, we have you covered.</p>
-                                            <a href="#" class="btn-text">Find Your deal</a>
-                                        </div>
+                            <div class="item main-item">
+                            <div class="card news-card" style="">
+                                <img class="card-img-top" src="https://vitalsignsmktg.com/wp-content/uploads/2015/09/Content-Marketing-News-and-Trends-That-Can-Help-You-Go-Viral-Fast-Marketing-Digest.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="card-about"> 
+                                        <span class="card-time">December 12, 18</span>
+                                        <span class="card-author">John Doe</span>
                                     </div>
+                                    <h2 class="card-title heading-secondary">Card title</h2>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn-orange">Read more</a>
+                                </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="news-card">
-                                    
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card-promo">
-                                    <div class="card-promo__side card-promo__side--front">
-                                        <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
-                                        <div class="card-promo__picture card-promo__picture--1">
-
-                                        </div>
-                                        <h4 class="card-promo__heading">
-                                            <span class="card-promo__heading--span card-promo__heading--span--1">Wholesale Deals</span>
-                                        </h4>
-                                        <div class="card-promo__detail">
-                                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and dropship items, we have you covered.</p>
-                                            <a href="#" class="btn-text">Find Your deal</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card-promo">
-                                    <div class="card-promo__side card-promo__side--front">
-                                        <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
-                                        <div class="card-promo__picture card-promo__picture--1">
-
-                                        </div>
-                                        <h4 class="card-promo__heading">
-                                            <span class="card-promo__heading--span card-promo__heading--span--1">Wholesale Deals</span>
-                                        </h4>
-                                        <div class="card-promo__detail">
-                                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and dropship items, we have you covered.</p>
-                                            <a href="#" class="btn-text">Find Your deal</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card-promo">
-                                    <div class="card-promo__side card-promo__side--front">
-                                        <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
-                                        <div class="card-promo__picture card-promo__picture--1">
-
-                                        </div>
-                                        <h4 class="card-promo__heading">
-                                            <span class="card-promo__heading--span card-promo__heading--span--1">Wholesale Deals</span>
-                                        </h4>
-                                        <div class="card-promo__detail">
-                                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and dropship items, we have you covered.</p>
-                                            <a href="#" class="btn-text">Find Your deal</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>

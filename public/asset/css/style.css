@@ -3281,6 +3281,25 @@ header #cssmenu .menu-right .menu-signin {
 #news .more-news:hover, #news .more-news:focus {
   color: #ff7730;
 }
+#news .main-item {
+  padding: 0 1rem;
+}
+#news .main-item .news-card {
+  width: 33rem;
+  border: 1px solid #ddd;
+  height: 43rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  margin-bottom: 3rem;
+}
+#news .main-item .news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+#news .main-item .news-card .card-body {
+  padding: 1rem;
+}
+
 #trade-show {
   padding: 10rem 0;
   background-color: #fff;

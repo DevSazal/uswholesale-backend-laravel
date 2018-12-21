@@ -1136,11 +1136,23 @@ header {
             color: $color-secondary-dark;
         }
     }
-    .card-promo {
-
-    }
-    .card-promo__side--front {
-        
+    .main-item {
+        padding: 0 1rem;
+        .news-card {
+            width: 33rem;
+            border: 1px solid #ddd;
+            height: 43rem;
+            box-shadow: 0 1rem 1.5rem rgba($color-black, 0.4);
+            transition: all 0.2s;
+            margin-bottom: 3rem;
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 0.5rem 0.5rem rgba($color-black, 0.3);
+            }
+            .card-body {
+                padding: 1rem;
+            }
+        }
     }
 }
 
