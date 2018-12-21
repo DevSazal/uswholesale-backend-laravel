@@ -1297,7 +1297,7 @@
 
 .menu li a {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #696969;
   text-transform: uppercase;
   display: block;
@@ -1946,6 +1946,13 @@
   width: 100%;
 }
 
+.megamenu__items {
+  overflow: hidden;
+}
+.megamenu__item {
+  width: 32.5%;
+  float: left;
+}
 .pages {
   border-bottom: 1px solid #dbe0e4;
 }
@@ -2158,16 +2165,14 @@
 .section-auth .auth-controller .phone-input-group {
   display: flex;
   align-items: center;
+  margin-top: 2.4rem;
 }
 .section-auth .auth-controller .phone-input-group input {
   height: 100%;
-  flex: 1.5;
+  flex: 0.5;
 }
 .section-auth .auth-controller .phone-input-group input:last-child {
   flex: 3;
-}
-.section-auth .auth-controller .phone-input-group input:not(:last-child) {
-  border-right: 1px solid #55c57a;
 }
 .section-auth .auth-controller #signup {
   padding: 2rem;
@@ -3159,6 +3164,7 @@ header #cssmenu .menu-right .menu-signin {
   cursor: pointer;
   transition: all 0.2s;
   border-radius: 2px;
+  border: 1px solid #ddd;
 }
 #categories-slider .main-add-container .add__card:hover {
   transform: translateY(-2px);

@@ -15,15 +15,16 @@
         .phone-input-group {
             display: flex;
             align-items: center;
+            margin-top: 2.4rem;
             input {
                 height: 100%;
-                flex: 1.5;
+                flex: 0.5;
                 &:last-child {
                     flex: 3;
                 }
-                &:not(:last-child) {
-                    border-right: 1px solid $color-primary;
-                }
+                // &:not(:last-child) {
+                //     border-right: 1px solid $color-primary;
+                // }
             }
         }
         #signup {

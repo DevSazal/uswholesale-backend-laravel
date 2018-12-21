@@ -1030,6 +1030,7 @@ header {
             cursor: pointer;
             transition: all 0.2s;
             border-radius: 2px;
+            border: 1px solid #ddd;
             &:hover {
                 transform: translateY(-2px);
             }

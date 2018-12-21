@@ -65,9 +65,9 @@
                                   </div>
                                   <div class="form__group">
                                       <div class="phone-input-group">
-                                        <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="Country Code" required>
-                                        <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="Phone Code" required>
-                                        <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
+                                        <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="+88" required> -
+                                        <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="01" required> -
+                                        <input name="phone" type="text" id="phone_number" class="form__input" placeholder="622287" required>
                                       </div>
                                   </div>
                                   <div class="form-group submit-button u-margin-top-medium">
