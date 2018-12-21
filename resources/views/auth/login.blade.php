@@ -30,6 +30,7 @@
                             </div>
                             <div class="form__group">
                                 <input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
+                                <span>error</span>
                             </div>
                             @if ($errors->has('email'))
                               <span class="invalid-feedback" role="alert">
@@ -58,12 +59,12 @@
                       <div class="signup-content">
                           <div class="row">
                               <div class="col-md-6">
-                                  <div class="form__group">
-                                      <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>
-                                  </div>
+                                  <div class="form-group">
+                                      <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>   
+                                    </div>
                                   <div class="form__group">
                                       <input  name="email" type="email" id="email" class="form__input" placeholder="Email" required>
-                                  </div>
+                                    </div>
                                   <div class="form__group">
                                       <input name="password" type="password" id="password" class="form__input" placeholder="Password" required>
                                   </div>

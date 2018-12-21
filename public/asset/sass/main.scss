@@ -1106,16 +1106,18 @@ header {
             clear: both;
             overflow: hidden;
             text-align: center;
+            padding-left: 1rem;
         }
         &__item {
             width: 22.5%;
             float: left;
             margin-bottom: 3rem;
             transition: all 0.2s;
-            border: 1px solid #ddd;
+            // border: 1px solid #ddd;
             border-radius: 4px;
+            box-shadow: 0 1rem 1.8rem rgba($color-black, 0.2);
             &:not(:last-child) {
-                margin-right: 10px;
+                margin-right: 25px;
             }
             &:hover {
                 box-shadow: 0 0.5rem 0.8rem rgba($color-black, 0.2);

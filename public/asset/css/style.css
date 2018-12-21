@@ -3256,17 +3256,18 @@ header #cssmenu .menu-right .menu-signin {
   clear: both;
   overflow: hidden;
   text-align: center;
+  padding-left: 1rem;
 }
 #apparel .apparel__item {
   width: 22.5%;
   float: left;
   margin-bottom: 3rem;
   transition: all 0.2s;
-  border: 1px solid #ddd;
   border-radius: 4px;
+  box-shadow: 0 1rem 1.8rem rgba(0, 0, 0, 0.2);
 }
 #apparel .apparel__item:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 25px;
 }
 #apparel .apparel__item:hover {
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
