@@ -176,7 +176,7 @@
 
     <div class="container">
       <div class="footer-bottom">
-        <p class="footer-copyright">BAZZAR &copy; 2018. All Rights Reserved</p>
+        <p class="footer-copyright">US Wholesale &copy; 2018. All Rights Reserved. Developed by <a href="https://appsoliclab.com" style="color:green">Appsolic Lab Canada</a></p>
 
         <img src="{{asset('asset/img/payments.png')}}" alt="payment methods" class="footer-payments">
       </div><!-- End .footer-bottom -->
