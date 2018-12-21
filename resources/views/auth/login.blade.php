@@ -41,8 +41,15 @@
                                 <strong>{{ $errors->first('password') }}</strong>
                               </span>
                             @endif
+                            <div class="error-container">
+                                <ul class="list">
+                                    <li class="item">* Invalid email</li>
+                                    <li class="item">* Invalid password</li>
+                                    <li class='item'>* Something went wrong</li>
+                                </ul>
+                            </div>
                             <div class="form-group submit-button text-left u-margin-top-medium">
-                                <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
+                                <a type="submit" name="submit" class="btn btn--green">Login &rarr;</a>
                             </div>
                         </div>
                     </form>

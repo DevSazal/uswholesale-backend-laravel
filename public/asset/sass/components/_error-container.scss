@@ -1,0 +1,16 @@
+.error-container {
+    margin-top: 2rem;
+    .list {
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+        padding: 1rem;
+
+        .item {
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-size: 1.3rem;
+        }
+    }
+}

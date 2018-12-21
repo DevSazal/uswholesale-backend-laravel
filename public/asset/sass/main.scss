@@ -14,6 +14,7 @@
 @import "./components/product__box";
 @import "./components/buyer-box";
 @import "./components/form";
+@import "./components/error-container";
 
 @import "./layout/_mega-menu";
 @import "./layout/page-list";
@@ -1098,6 +1099,32 @@ header {
 #apparel {
     padding: 10rem 0;
     background-color: $color-white;
+    .apparel {
+        &__list {
+            list-style: none;
+            clear: both;
+            overflow: hidden;
+            text-align: center;
+        }
+        &__item {
+            width: 24.5%;
+            float: left;
+            margin-bottom: 3rem;
+            transition: all 0.2s;
+            &:hover {
+                box-shadow: 0 0.5rem 0.8rem rgba($color-black, 0.2);
+                transform: translateY(-4px);
+            }
+        }
+        &__containers {
+            .image-container {
+                img {
+                    height: 8rem;
+                    width: auto;
+                }
+            }
+        }
+    }
 }
 
 #news {
@@ -1108,6 +1135,12 @@ header {
         &:focus {
             color: $color-secondary-dark;
         }
+    }
+    .card-promo {
+
+    }
+    .card-promo__side--front {
+        
     }
 }
 
@@ -1587,13 +1620,19 @@ header {
 }
 
 .inner {
-    border: 1px solid #d4d4d4;
-    border-bottom: unset;
-    border-left: unset;
-}
-
-.inner1 {
-    border-top: unset !important;
+    border: none;
+    transition: all 0.2s;
+    text-align: center;
+    &:hover {
+        border: 1px solid #d4d4d4;
+        box-shadow: 0 0.5rem 0.5rem rgba($color-black, 0.2);
+    }
+    .apparel-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .product-inner {
