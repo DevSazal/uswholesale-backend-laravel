@@ -4064,3 +4064,15 @@ header #cssmenu .css-ul {
     top: 21px;
     margin-top: unset;
 }
+.section-auth .auth-controller {
+    width: unset;
+}
+
+@media screen and (max-width: 600px) {
+  .auth-controller .signin-image {
+    display: none;
+  }
+  .section-auth .auth-controller #login .signin-form {
+    width: 100%;
+  }
+}
