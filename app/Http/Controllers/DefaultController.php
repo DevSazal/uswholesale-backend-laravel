@@ -20,7 +20,7 @@ class DefaultController extends Controller
         $id = Auth::user()->id;
         $member = DB::table('memberships')->where('uid', $id)->first();
         if($member){
-          return redirect('/home');
+          return redirect('/dashboard');
         }else{
         return view('paymentCheck');
         }
