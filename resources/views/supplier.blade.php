@@ -31,7 +31,7 @@
                                     Buyers looking for your products and services
                                  </h3>
                               </div>
-                             
+
                           </div>
                           <div class="col-md-12">
                               <div class="col-md-2">
@@ -45,7 +45,7 @@
                                     Product Inquiries every month from qualified buyers
                                  </h3>
                               </div>
-                             
+
                           </div>
                           <div class="col-md-12">
                               <div class="col-md-2">
@@ -76,7 +76,7 @@
               </h2>
               <p>Premium Members are able to connect instantly with buyers to increase sales opportunities!</p>
           </div>
-          
+
         <div class="connect">
           <div class="row">
             <div class="col-md-6">
@@ -92,7 +92,7 @@
                         </p>
                     </div>
                   </div>
-                
+
             </div>
             <div class="col-md-6">
               <div class="row">
@@ -108,7 +108,7 @@
                     </p>
                 </div>
               </div>
-                
+
             </div>
             <div class="col-md-6">
                 <div class="row">
@@ -116,12 +116,12 @@
                     <img src="{{ asset('asset/img/pm_icon_rfq.png')}}" class="img-responsive" alt="">
                   </div>
                   <div class="col-md-9">
-                      <h3 class="heading-tertiary">Quote RFQs Instantly</h3>             
+                      <h3 class="heading-tertiary">Quote RFQs Instantly</h3>
                       <p>
                           As a Premium Member you are able to <b>quote RFQs</b> and <b>connect with buyers</b> as soon as the RFQ is posted. Free members must wait 30 days in order to quote an RFQ posted by a buyer. This is a
                           huge
                           advantage to Premium Members, as most RFQs are fulfilled and orders placed within the first 30 days of being posted.
-                        
+
                       </p>
                   </div>
                 </div>
@@ -132,7 +132,7 @@
                         <img src="{{ asset('asset/img/pm_icon_contactinfo.png')}}" class="img-responsive" alt="">
                     </div>
                     <div class="col-md-9">
-                        <h3 class="heading-tertiary">Exclusive Trade Show Access</h3>Premium Members have exclusive access to Trade Shows where they can <b>meet thousands of buyers</b> who are looking for their products. TopTenWholesale produces trade shows in the U.S. and             
+                        <h3 class="heading-tertiary">Exclusive Trade Show Access</h3>Premium Members have exclusive access to Trade Shows where they can <b>meet thousands of buyers</b> who are looking for their products. TopTenWholesale produces trade shows in the U.S. and
                         <p>
                             Premium Members have exclusive access to Trade Shows where they can <b>meet thousands of buyers</b> who are looking for their products. TopTenWholesale produces trade shows in the U.S. and
                             Canada
@@ -140,7 +140,7 @@
                         </p>
                     </div>
                   </div>
-              
+
             </div>
           </div>
           </div>
@@ -190,7 +190,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- testimonials end -->
   <section class="section-plan">
       <div class="container">
@@ -204,7 +204,7 @@
                 <div class="card">
                     <div class="card__side card__side--front">
                         <div class="card__picture card__picture--1">
-                            
+
                         </div>
                         <h4 class="card__heading">
                             <span class="card__heading--span card__heading--span--1"> Basic</span>
@@ -225,7 +225,7 @@
                                 <p class="card__price--only">only</p>
                                 <p class="card__price--value">$99</p>
                             </div>
-                            <a href="auth.html" class="btn btn--white">Book Now!</a>
+                            <a href="/register/1" class="btn btn--white">Book Now!</a>
                         </div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@
                 <div class="card">
                     <div class="card__side card__side--front">
                         <div class="card__picture card__picture--2">
-                            
+
                         </div>
                         <h4 class="card__heading">
                             <span class="card__heading--span card__heading--span--2">Premium</span>
@@ -255,7 +255,7 @@
                                 <p class="card__price--only">only</p>
                                 <p class="card__price--value">$425</p>
                             </div>
-                            <a href="auth.html" class="btn btn--white">Book Now!</a>
+                            <a href="/register/2" class="btn btn--white">Book Now!</a>
                         </div>
                     </div>
                 </div>
@@ -264,7 +264,7 @@
                 <div class="card">
                     <div class="card__side card__side--front">
                         <div class="card__picture card__picture--3">
-                            
+
                         </div>
                         <h4 class="card__heading">
                             <span class="card__heading--span card__heading--span--3">Premium Saver</span>
@@ -285,7 +285,7 @@
                                 <p class="card__price--only">only</p>
                                 <p class="card__price--value">$799</p>
                             </div>
-                            <a href="auth.html" class="btn btn--white">Book Now!</a>
+                            <a href="/register/3" class="btn btn--white">Book Now!</a>
                         </div>
                     </div>
                 </div>
@@ -305,7 +305,7 @@
   <!-- connect end -->
 
   <!-- select plan begin -->
- 
+
 
   <!-- select plan end -->
 
@@ -313,4 +313,3 @@
 
 
 @endsection
-  

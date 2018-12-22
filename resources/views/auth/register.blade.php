@@ -16,7 +16,8 @@
             </div>
             <div class="row">
                 <div class="auth-controller text-center" >
-                <form v-if='!login' method="POST" class="form" action="{{route('supplier.add')}}"  id="signup">
+                <form v-if='!login' method="POST" class="form" action="{{route('register')}}"  id="signup">
+                  @csrf
                       <div class="signup-content">
                           <div class="row">
                               <div class="col-md-6">
@@ -30,7 +31,7 @@
                                       <input name="password" type="password" id="password" class="form__input" placeholder="Password" required>
                                   </div>
                                   <div class="form__group">
-                                      <input name="password_confirm" type="confirm_password" id="confirm_password" class="form__input" placeholder="Confirm Password" required>
+                                      <input name="password_confirmation" type="password" id="confirm_password" class="form__input" placeholder="Confirm Password" required>
                                   </div>
                                   <div class="form__group">
                                       <div class="phone-input-group">
@@ -39,6 +40,7 @@
                                         <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
                                       </div>
                                   </div>
+                                  <input type="hidden" name="package_id" value="{{$package_id}}">
                                   <div class="form-group submit-button u-margin-top-medium">
                                       <button class="btn btn--green">Register &rarr;</button>
                                   </div>
@@ -47,20 +49,20 @@
                                   <div class="form__group">
                                       <input name="name" type="text" id="contact_name" class="form__input" placeholder="Contact Name" required>
                                   </div>
-                                 
+
                                   <div class="form__group">
                                       <input name="company" type="text" id="company_name" class="form__input" placeholder="Company Name" >
                                   </div>
                                   <div class="form__group">
                                       <input name="address" type="text" id="company_name" class="form__input" placeholder="Address">
                                   </div>
-                                 
+
                                   <div class="form__group">
                                       <select name="city" class="form__select" id="" required>
                                         <option disabled>Select City</option>
                                         <option value="Bangladesh">Dhaka</option>
-                                        <option value="Bangladesh">Bangladesh</option>
-                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Bangladesh">Barisal</option>
+                                        <option value="Bangladesh">Montreal</option>
                                       </select>
                                   </div>
                                   <div class="form__group select-box">
@@ -69,18 +71,20 @@
                                         <option  v-for="item in countryList" v-if='countryList' :value="item.name">
                                             @{{item.name}}
                                         </option>
-                                       
+
                                       </select>
-                                      <label for="country" class="form__label">&nbsp;</label>                                     
+                                      <label for="country" class="form__label">&nbsp;</label>
                                   </div>
                                   <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
                                     <a  @click="authPage('login')" class="btn-orange">Im already a member</a>
                                   </div>
                               </div>
+
                           </div>
                       </div>
                     </form>
-                    <form v-if='login' id="login" >
+                    <form v-if='login' id="login" method="post" action="{{route('login')}}">
+                      @csrf
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
                             <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
@@ -89,25 +93,25 @@
                         </div>
                         <div class="signin-form u-margin-top-medium">
                             <div class="form__group">
-                                <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>
+                                <input name="email" type="email" id="name" class="form__input" placeholder="Your Username" required>
                             </div>
                             <div class="form__group">
-                                <input type="password" id="email" class="form__input" placeholder="Password" required>
+                                <input name="password" type="password" id="email" class="form__input" placeholder="Password" required>
                             </div>
                             <div class="form-group submit-button text-left">
-                                <button class="btn btn--green">Login &rarr;</button>
+                                <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
                             </div>
                         </div>
                     </form>
-                   
+
                 </div>
             </div>
         </div>
     </section>
   </main>
- 
+
  @endsection
- 
+
  @section('script')
 
  <script>
@@ -136,6 +140,6 @@
             }
         })
 }
-       
+
     </script>
  @endsection

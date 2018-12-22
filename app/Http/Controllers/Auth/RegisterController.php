@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/premium-signup/payment';
 
     /**
      * Create a new controller instance.
@@ -52,7 +52,15 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+        		'username'=> ['required'],
+            'company'=> ['required'],
+        	  'phone'=>  ['required'],
+        		'address'=> ['required'],
+        		'city'=>  ['required'],
+        		'country'=>  ['required'],
+            'package_id'=> [],
         ]);
+        // payment means package_id
     }
 
     /**
@@ -67,6 +75,17 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'username'=> $data['username'],
+            'company'=> $data['company'],
+        	  'phone'=>  $data['phone'],
+        		'address'=> $data['address'],
+        		'city'=>  $data['city'],
+        		'country'=>  $data['country'],
+            'role'=> 1,
+            'payment'=> $data['package_id'],
         ]);
+        // payment means package_id
+
+        // return view($data['package_id']);
     }
 }
