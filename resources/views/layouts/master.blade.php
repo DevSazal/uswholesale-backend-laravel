@@ -31,15 +31,22 @@
     <div class="container" >
       <nav id='cssmenu'>
         <div class="logo">
-          <a href="index.html">
+          <a href="{{ url('/') }}">
             <img src="{{ asset('asset/img/logo.png') }}" alt="logo">
           </a>
         </div>
         <div id="head-mobile"></div>
         <div class="button"></div>
         <ul class="css-ul">
-          <li class='active'><a href='#'>HOME</a></li>
-          <li><a href='#'>PRODUCTS</a>
+          <li class='active'><a href="{{ url('/') }}">HOME</a></li>
+          <li><a href='#'>ABOUT US</a></li>
+          <li><a href='#'>COMMUNITY</a>
+            <ul>
+              <li><a href='#'>NEWS</a>
+              </li>
+            </ul>
+          </li>
+          <!-- <li><a href='#'>PRODUCTS</a>
             <ul>
               <li><a href='#'>Product 1</a>
                 <ul>
@@ -47,16 +54,13 @@
                   <li><a href='#'>Sub Product</a></li>
                 </ul>
               </li>
-              <li><a href='#'>Product 2</a>
+              <li><a href='#'>Community</a>
                 <ul>
-                  <li><a href='#'>Sub Product</a></li>
-                  <li><a href='#'>Sub Product</a></li>
+                  <li><a href='#'>News</a></li>
                 </ul>
               </li>
             </ul>
-          </li>
-          <li><a href='#'>BIO</a></li>
-          <li><a href='#'>VIDEO</a></li>
+          </li> -->
           @guest
           <li><a class="menu-btn" href="{{url('/premium-signup')}}" class="menu-join">Supplier Registration</a></li>
           <li><a class="menu-btn" href="#" class="menu-join">Buyer Registration</a></li>

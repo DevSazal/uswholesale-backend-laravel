@@ -4027,3 +4027,40 @@ header #cssmenu .menu-right .menu-signin {
     display: none;
   }
 }
+
+/* Author: Sazal Ahamed */
+@media screen and (max-width: 1000px){
+#cssmenu ul li:hover {
+    background: unset !important;
+}
+#cssmenu .submenu-button.submenu-opened {
+    background: unset !important;
+}
+#cssmenu ul ul li {
+    background: unset !important;
+}
+#cssmenu ul ul li a {
+    color: #fff;
+}
+#cssmenu ul ul li:hover {
+    background: unset !important;
+}
+#cssmenu ul li {
+    border-top: unset;
+}
+.button {
+    top: 10px;
+}
+.logo {
+    top: -8px !important;
+}
+}
+
+
+header #cssmenu .logo {
+    top: 3px;
+}
+header #cssmenu .css-ul {
+    top: 21px;
+    margin-top: unset;
+}
