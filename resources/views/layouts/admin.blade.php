@@ -378,8 +378,24 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('admin.category.index')}}"><i class="fa fa-circle-o"></i> Add New Category</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> All Category</a></li>
+            <li><a href="{{ route('admin.category.create')}}"><i class="fa fa-circle-o"></i> Add New Category</a></li>
+            <li><a href="{{ route('admin.category.index')}}"><i class="fa fa-circle-o"></i> All Category</a></li>
+          </ul>
+        </li>
+        <li class="
+        @if($segment=='subcategory')
+        active
+        @endif treeview">
+          <a href="#">
+            <i class="fa fa-plus-square"></i>
+            <span>Child Category</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.subcategory.create')}}"><i class="fa fa-circle-o"></i> Add New Child Category</a></li>
+            <li><a href="{{ route('admin.subcategory.index')}}"><i class="fa fa-circle-o"></i>All Child Category</a></li>
           </ul>
         </li>
 
