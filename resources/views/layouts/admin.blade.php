@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="{{ asset('AdminLTE/bower_components/Ionicons/css/ionicons.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('AdminLTE/dist/css/AdminLTE.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('AdminLTE/style.css') }}">
+
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('AdminLTE/dist/css/skins/_all-skins.min.css') }}">
@@ -358,6 +360,19 @@
         </li>
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-plus-square"></i>
+            <span>Category</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> Add New Category</a></li>
+            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> All Category</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
             <span class="pull-right-container">
@@ -517,7 +532,8 @@
     <!-- /.sidebar -->
   </aside>
 
-
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
 
 
 
@@ -531,6 +547,8 @@
 
 
 
+  </div>
+  <!-- /.content-wrapper -->
 
             <footer class="main-footer">
               <div class="pull-right hidden-xs">
