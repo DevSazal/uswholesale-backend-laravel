@@ -346,7 +346,15 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+
+        {{ $segment = Request::segment(2) }}
+        @guest
+        @else
+
+        <li class="
+        @if(!$segment)
+        active
+        @endif treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -354,11 +362,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li class="active"><a href="{{ route('dashboard') }}"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="{{ route('dashboard') }}"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="
+        @if($segment=='category')
+        active
+        @endif treeview">
           <a href="#">
             <i class="fa fa-plus-square"></i>
             <span>Category</span>
@@ -367,10 +378,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> Add New Category</a></li>
+            <li><a href="{{ route('admin.category.index')}}"><i class="fa fa-circle-o"></i> Add New Category</a></li>
             <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> All Category</a></li>
           </ul>
         </li>
+
+        @endguest
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
