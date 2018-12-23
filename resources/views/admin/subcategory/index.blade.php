@@ -57,7 +57,7 @@
                 <span class="label label-warning">Disabled</span>
                 @endif
               </td>
-              <td>{{ $c->cid }}</td>
+              <td>{{ $c->category->name }}</td>
               <td>{{ $c->created_at }}</td>
               <td>{{ $c->updated_at }}</td>
               <td>

@@ -72,6 +72,7 @@ class SubCategoryController extends Controller
      public function edit(SubCategory $subcategory)
      {
          $array['subcategory'] = $subcategory;
+         $array['categories'] = Category::all();
          return view('admin.subcategory.edit')->with($array);
      }
 
@@ -82,9 +83,10 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function update(Request $request, Category $subcategory)
+     public function update(Request $request, SubCategory $subcategory)
      {
          $subcategory->name = $request->name;
+         $subcategory->cid = $request->main_category;
          $subcategory->status = $request->status;
          $subcategory->save();
          return redirect('dashboard/subcategory');
@@ -98,7 +100,7 @@ class SubCategoryController extends Controller
      */
      public function destroy($id)
      {
-         Category::destroy($id);
+         SubCategory::destroy($id);
          return redirect('dashboard/subcategory');
      }
 }
