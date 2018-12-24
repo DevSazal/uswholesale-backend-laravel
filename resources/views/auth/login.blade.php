@@ -100,7 +100,7 @@
                                       <input name="city" type="text" id="phone_number" class="form__input" placeholder="City" required>
                                   </div>
                                   <div class="form__group select-box">
-                                      <select name="country" class="form-control" id="" required>
+                                      <select name="country" class="form__select" id="" required>
                                         <option disabled>Select Country</option>
 
                                         <option  v-for="item in countryList" v-if='countryList' :value="item.name">
