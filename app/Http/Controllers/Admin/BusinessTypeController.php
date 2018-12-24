@@ -65,9 +65,10 @@ class BusinessTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(BusinessType $btype)
     {
-        //
+        $array['btype'] = $btype;
+        return view('admin.businesstype.edit')->with($array);
     }
 
     /**
@@ -77,9 +78,11 @@ class BusinessTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, BusinessType $btype)
     {
-        //
+        $btype->name = $request->name;
+        $btype->save();
+        return redirect('dashboard/btype');
     }
 
     /**
@@ -90,6 +93,7 @@ class BusinessTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        BusinessType::destroy($id);
+        return redirect('dashboard/btype');
     }
 }
