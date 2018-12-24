@@ -411,7 +411,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('admin.btype.create')}}"><i class="fa fa-circle-o"></i> Add New BusinessType</a></li>
-            <li><a href="{{ route('admin.btype.index')}}"><i class="fa fa-circle-o"></i>All Child Category</a></li>
+            <li><a href="{{ route('admin.btype.index')}}"><i class="fa fa-circle-o"></i>All BusinessType</a></li>
           </ul>
         </li>
 
