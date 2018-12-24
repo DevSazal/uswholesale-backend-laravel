@@ -15,6 +15,8 @@ class CreateSupplierBtypesTable extends Migration
     {
         Schema::create('supplier_btypes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('uid');
+            $table->integer('btid');
             $table->timestamps();
         });
     }
