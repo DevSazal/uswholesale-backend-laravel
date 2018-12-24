@@ -10,6 +10,7 @@ use App\BusinessType;
 class BusinessTypeController extends Controller
 {
 
+
     public function __construct()
     {
         $this->middleware('auth');
