@@ -403,7 +403,7 @@
         active
         @endif treeview">
           <a href="#">
-            <i class="fa fa-plus-square"></i>
+            <i class="fa fa-briefcase"></i>
             <span>BusinessType</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
