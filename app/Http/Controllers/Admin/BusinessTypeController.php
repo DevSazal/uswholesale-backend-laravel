@@ -41,9 +41,11 @@ class BusinessTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, BusinessType $btype)
     {
-        //
+        $btype->name = $request->name;
+        $btype->save();
+        return redirect('dashboard/btype');
     }
 
     /**
