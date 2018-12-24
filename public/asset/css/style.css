@@ -4086,3 +4086,9 @@ header #cssmenu .css-ul {
     padding: 10px 18px;
   }
 }
+
+@media screen and (min-width: 600px) {
+  .form-btn-align .btn{
+    padding: 10px 18px;
+  }
+}
