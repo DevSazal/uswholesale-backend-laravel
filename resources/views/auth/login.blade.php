@@ -50,7 +50,7 @@
                               <div>
                                 <a  @click="authPage('signup')" class="btn btn-default btn-orange">Create an account</a>
                               </div>
-                              <div style="margin-right: 12px;">
+                              <div style="margin-right: 20px;">
                                   <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
                               </div>
                             </div>
@@ -100,7 +100,7 @@
                                       <input name="city" type="text" id="phone_number" class="form__input" placeholder="City" required>
                                   </div>
                                   <div class="form__group select-box">
-                                      <select name="country" class="form__select" id="" required>
+                                      <select name="country" class="form-control" id="" required>
                                         <option disabled>Select Country</option>
 
                                         <option  v-for="item in countryList" v-if='countryList' :value="item.name">
@@ -110,7 +110,7 @@
                                       <label for="country" class="form__label">&nbsp;</label>
                                   </div>
                                   <div class="form-btn-align">
-                                    <div style="margin-right: 12px;">
+                                    <div style="margin-right: 20px;">
                                       <a  @click="authPage('login')" class="btn btn-default btn-orange">Im already a member</a>
                                     </div>
                                     <div>
