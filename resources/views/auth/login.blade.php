@@ -27,7 +27,6 @@
                             </div>
                             <div class="form__group">
                                 <input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
-                                <span>error</span>
                             </div>
                             <!-- @if ($errors->has('email'))
                               <span class="invalid-feedback" role="alert">

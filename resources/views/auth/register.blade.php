@@ -10,7 +10,7 @@
         <div class="container">
             <div class="u-center-text u-margin-bottom-small">
                 <h2 class="heading-secondary">
-                    Sign In or Join Now
+                    Sign In or Join Now xxx
                 </h2>
                 <p> You must be signed in to continue. Sign In or Join below.</p>
             </div>
@@ -41,9 +41,9 @@
                                       </div>
                                   </div>
                                   <input type="hidden" name="package_id" value="{{$package_id}}">
-                                  <div class="form-group submit-button u-margin-top-medium">
+                                  <!-- <div class="form-group submit-button u-margin-top-medium">
                                       <button class="btn btn--green">Register &rarr;</button>
-                                  </div>
+                                  </div> -->
                               </div>
                               <div class="col-md-6">
                                   <div class="form__group">
@@ -75,8 +75,16 @@
                                       </select>
                                       <label for="country" class="form__label">&nbsp;</label>
                                   </div>
-                                  <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
+                                  <!-- <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
                                     <a  @click="authPage('login')" class="btn-orange">Im already a member</a>
+                                  </div> -->
+                                  <div class="form-btn-align">
+                                    <div style="margin-right: 20px;">
+                                      <a  @click="authPage('login')" class="btn btn-default btn-orange">Im already a member</a>
+                                    </div>
+                                    <div>
+                                        <button type="submit" name="submit" class="btn btn--green">Register &rarr;</button>
+                                    </div>
                                   </div>
                               </div>
 
@@ -87,9 +95,9 @@
                       @csrf
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
-                            <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
+                            <!-- <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
                                 <a  @click="authPage('signup')" class="btn-orange">Create an account</a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="signin-form u-margin-top-medium">
                             <div class="form__group">
@@ -98,8 +106,13 @@
                             <div class="form__group">
                                 <input name="password" type="password" id="email" class="form__input" placeholder="Password" required>
                             </div>
-                            <div class="form-group submit-button text-left">
-                                <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
+                            <div class="form-btn-align">
+                              <div>
+                                <a  @click="authPage('signup')" class="btn btn-default btn-orange">Create an account</a>
+                              </div>
+                              <div style="margin-right: 20px;">
+                                  <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
+                              </div>
                             </div>
                         </div>
                     </form>
