@@ -65,7 +65,6 @@
                               <div class="col-md-6">
                                   <div class="form__group">
                                       <input name="username" type="text" id="name" class="form__input" placeholder="Your Username" required>
-                                        <span class='signup-error-message'>error</span>
                                     </div>
                                   <div class="form__group">
                                       <input  name="email" type="email" id="email" class="form__input" placeholder="Email" required>
@@ -88,7 +87,6 @@
                                   <div class="form__group">
                                       <input name="name" type="text" id="contact_name" class="form__input" placeholder="Contact Name" required>
                                   </div>
-
                                   <div class="form__group">
                                       <input name="company" type="text" id="company_name" class="form__input" placeholder="Company Name" >
                                   </div>
@@ -102,7 +100,6 @@
                                   <div class="form__group select-box">
                                       <select name="country" class="form__select" id="" required>
                                         <option disabled>Select Country</option>
-
                                         <option  v-for="item in countryList" v-if='countryList' :value="item.name">
                                             @{{item.name}}
                                         </option>
