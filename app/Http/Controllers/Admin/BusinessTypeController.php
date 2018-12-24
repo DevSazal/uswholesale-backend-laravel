@@ -5,8 +5,15 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\BusinessType;
+
 class BusinessTypeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,8 @@ class BusinessTypeController extends Controller
      */
     public function index()
     {
-        //
+        $array['btypes'] = BusinessType::paginate(20);
+        return view('admin.businesstype.index')->with($array);
     }
 
     /**
@@ -24,7 +32,7 @@ class BusinessTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.businesstype.create');
     }
 
     /**
