@@ -398,6 +398,22 @@
             <li><a href="{{ route('admin.subcategory.index')}}"><i class="fa fa-circle-o"></i>All Child Category</a></li>
           </ul>
         </li>
+        <li class="
+        @if($segment=='btype')
+        active
+        @endif treeview">
+          <a href="#">
+            <i class="fa fa-plus-square"></i>
+            <span>BusinessType</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.btype.create')}}"><i class="fa fa-circle-o"></i> Add New BusinessType</a></li>
+            <li><a href="{{ route('admin.btype.index')}}"><i class="fa fa-circle-o"></i>All Child Category</a></li>
+          </ul>
+        </li>
 
         @endguest
 
