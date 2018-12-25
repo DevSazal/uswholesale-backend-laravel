@@ -46,11 +46,13 @@
                                     <li class='item'>* Something went wrong</li>
                                 </ul>
                             </div>
-                            <div class="form-group submit-button text-left u-margin-top-medium">
-                                <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
-                            </div>
-                            <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
+                            <div class="form-btn-align">
+                              <div>
                                 <a  @click="authPage('signup')" class="btn btn-default btn-orange">Create an account</a>
+                              </div>
+                              <div style="margin-right: 12px;">
+                                  <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
+                              </div>
                             </div>
                         </div>
                     </form>
@@ -107,31 +109,18 @@
                                       </select>
                                       <label for="country" class="form__label">&nbsp;</label>
                                   </div>
-                              </div>
-                              <div class="form-group submit-button u-margin-top-medium">
-                                  <button type="submit" name="submit" class="btn btn--green">Register &rarr;</button>
-                              </div>
-                              <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
-                                <a  @click="authPage('login')" class="btn btn-default btn-orange">Im already a member</a>
+                                  <div class="form-btn-align">
+                                    <div style="margin-right: 12px;">
+                                      <a  @click="authPage('login')" class="btn btn-default btn-orange">Im already a member</a>
+                                    </div>
+                                    <div>
+                                        <button type="submit" name="submit" class="btn btn--green">Register &rarr;</button>
+                                    </div>
+                                  </div>
                               </div>
                           </div>
                       </div>
                     </form>
-
-                    <!-- <div class="row">
-                      <form class="" action="index.html" method="post">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <input type="text" class="form-control" name="" value="" placeholder="Name">
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <input type="text" class="form-control" name="" value="" placeholder="Phone">
-                          </div>
-                        </div>
-                      </form>
-                    </div> -->
                 </div>
             </div>
         </div>

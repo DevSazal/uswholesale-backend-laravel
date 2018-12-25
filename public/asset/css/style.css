@@ -179,6 +179,10 @@ button:focus {
   border: none;
   outline: none;
 }
+.form-btn-align{
+  display: flex;
+  justify-content: space-between;
+}
 
 .card {
   perspective: 150rem;
@@ -2206,6 +2210,7 @@ button:focus {
 }
 .section-auth .auth-controller #signup {
   padding: 2rem;
+  padding-bottom: 5rem;
 }
 .section-auth .auth-controller #signup .form__group {
   height: 8rem;
@@ -4075,5 +4080,8 @@ header #cssmenu .css-ul {
   }
   .section-auth .auth-controller #login .signin-form {
     width: 100%;
+  }
+  .form-btn-align .btn{
+    padding: 12px;
   }
 }
