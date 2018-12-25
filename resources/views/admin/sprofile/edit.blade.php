@@ -168,7 +168,7 @@
 
                 <div class="col-sm-5">
 
-                      <input type="file" name="logo" id="exampleInputFile">
+                      <input type="file" name="logo" id="exampleInputFile" required>
 
                       <p class="help-block">Logo size will have equal ratio. (example: 100*100)</p>
 
@@ -182,7 +182,7 @@
 
                 <div class="col-sm-5">
 
-                      <input type="file" name="img" id="exampleInputFile">
+                      <input type="file" name="img" id="exampleInputFile" required>
 
                       <p class="help-block">Photo size ratio 3:1 (example: 600*200)</p>
 

@@ -67,8 +67,8 @@ class SupplierProfileController extends Controller
           $sp->contact_person = $request->cp;
           $sp->est = $request->est;
           $sp->employee = $request->employee;
-          $sp->website = $sp->website;
-          $sp->fax = $sp->fax;
+          $sp->website = $request->website;
+          $sp->fax = $request->fax;
           $sp->summary = $request->summary;
           $sp->description = $request->description;
           $sp->logo = $file;
@@ -117,8 +117,9 @@ class SupplierProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SupplierProfile $sp)
+    public function update(Request $request, $id)
     {
+      $sp = SupplierProfile::find($id);
       if($request->logo->getClientOriginalName()){
           $ext = $request->logo->getClientOriginalExtension();
           $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
@@ -139,12 +140,13 @@ class SupplierProfileController extends Controller
           else
               $file2 = $sp->logo;
         }
+
         $sp->uid = Auth::user()->id;
         $sp->contact_person = $request->cp;
         $sp->est = $request->est;
         $sp->employee = $request->employee;
-        $sp->website = $sp->website;
-        $sp->fax = $sp->fax;
+        $sp->website = $request->website;
+        $sp->fax = $request->fax;
         $sp->summary = $request->summary;
         $sp->description = $request->description;
         $sp->logo = $file;
