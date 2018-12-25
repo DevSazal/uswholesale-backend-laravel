@@ -603,7 +603,7 @@
               <div class="pull-right hidden-xs">
                 <b>Version</b> 2.4.0
               </div>
-              <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+              <strong>Copyright &copy; 2014-2016 <a href="http://www.appsoliclab.com">Appsolic Lab</a>.</strong> All rights
               reserved.
             </footer>
 
@@ -810,6 +810,15 @@
           <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
           <script>
             $.widget.bridge('uibutton', $.ui.button);
+          </script>
+          <script>
+            $(function () {
+              // Replace the <textarea id="editor1"> with a CKEditor
+              // instance, using default configuration.
+              CKEDITOR.replace('editor1')
+              //bootstrap WYSIHTML5 - text editor
+              $('.textarea').wysihtml5()
+            })
           </script>
           <!-- Bootstrap 3.3.7 -->
           <script src="{{ asset('AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
