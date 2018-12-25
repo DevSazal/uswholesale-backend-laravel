@@ -5,8 +5,17 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SupplierBtype extends Controller
+use App\BusinessType;
+use App\SupplierBtype;
+
+use Auth;
+
+class SupplierBtypeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,8 @@ class SupplierBtype extends Controller
      */
     public function index()
     {
-        //
+        $array['btypes'] = BusinessType::all();
+        return view('admin.sbt.index')->with($array);
     }
 
     /**
@@ -35,7 +45,22 @@ class SupplierBtype extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $sbtype->uid = Auth::user()->id;
+        // $sbtype->btid = $request->sbtype;
+        // $sbtype->save();
+
+
+        $typeIdArray =  $request->sbtype;
+        $count = count($typeIdArray);
+
+        for($i = 0; $i < $count; $i++){
+            $sbtype = new SupplierBtype();
+            $sbtype->btid = $typeIdArray[$i];
+            $sbtype->uid = Auth::user()->id;
+            $sbtype->save();
+        }
+
+        return redirect('dashboard/btype');
     }
 
     /**

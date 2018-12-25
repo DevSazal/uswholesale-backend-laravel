@@ -41,3 +41,4 @@ Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::resource('/dashboard/category', 'Admin\CategoryController', ['as'=>'admin']);
 Route::resource('/dashboard/subcategory', 'Admin\SubCategoryController', ['as'=>'admin']);
 Route::resource('/dashboard/btype', 'Admin\BusinessTypeController', ['as'=>'admin']);
+Route::resource('/dashboard/sbtype', 'Admin\SupplierBtypeController', ['as'=>'admin']);

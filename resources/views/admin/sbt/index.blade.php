@@ -4,13 +4,13 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Edit BusinessType
+      Select Your Business Type
       <small>Preview</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">BusinessType</a></li>
-      <li class="active">Edit</li>
+      <li class="active">Select</li>
     </ol>
   </section>
 
@@ -23,19 +23,28 @@
         <!-- Horizontal Form -->
         <div class="box box-info">
           <div class="box-header with-border">
-            <h3 class="box-title">Edit</h3>
+            <h3 class="box-title">Select Business Type</h3>
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form class="form-horizontal" method="post" action="{{ route('admin.btype.update', $btype->id) }}">
+          <form class="form-horizontal" method="post" action="{{ route('admin.sbtype.store') }}">
             @csrf
-            @method('PATCH')
             <div class="box-body">
+
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">BusinessType Title</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Business Type Title</label>
 
                 <div class="col-sm-10">
-                  <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="" value="{{ $btype->name }}" required>
+                  <div class="form-group">
+                    @foreach($btypes as $b)
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="sbtype[]" value="{{ $b->id }}">
+                          {{ $b->name }}
+                        </label>
+                      </div>
+                    @endforeach
+                    </div>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-<title>Auth</title>
+<title>Sign Up</title>
 @endsection
 
 @section('content')
