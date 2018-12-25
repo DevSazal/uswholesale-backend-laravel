@@ -5,18 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\BusinessType;
-use App\SupplierBtype;
-
-use Auth;
-use DB;
-
-class SupplierBtypeController extends Controller
+class TestController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -24,19 +14,7 @@ class SupplierBtypeController extends Controller
      */
     public function index()
     {
-      $role = Auth::user()->role;
-      $id = Auth::user()->id;
-      if($role == 1){
-        $sbt = DB::table('supplier_btypes')->where('uid', $id);
-        if($sbt){
-          return redirect('dashboard/profile');
-        }else{
-          $array['btypes'] = BusinessType::all();
-          return view('admin.sbt.index')->with($array);
-        }
-      }else {
-         return redirect('dashboard/profile');
-      }
+        //
     }
 
     /**
@@ -57,22 +35,7 @@ class SupplierBtypeController extends Controller
      */
     public function store(Request $request)
     {
-        // $sbtype->uid = Auth::user()->id;
-        // $sbtype->btid = $request->sbtype;
-        // $sbtype->save();
-
-
-        $typeIdArray =  $request->sbtype;
-        $count = count($typeIdArray);
-
-        for($i = 0; $i < $count; $i++){
-            $sbtype = new SupplierBtype();
-            $sbtype->btid = $typeIdArray[$i];
-            $sbtype->uid = Auth::user()->id;
-            $sbtype->save();
-        }
-
-        return redirect('dashboard/btype');
+        //
     }
 
     /**
