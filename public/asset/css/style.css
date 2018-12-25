@@ -155,6 +155,7 @@
 
 .btn-orange:link, .btn-orange:visited {
   color: #ff7730 !important;
+  background-color: #ff7730;
   border-bottom: 1px solid #ff7730 !important;
   display: inline-block;
   font-size: 1.5rem;

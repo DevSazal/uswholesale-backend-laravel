@@ -20,9 +20,6 @@
                       @csrf
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
-                            <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
-                                <a  @click="authPage('signup')" class="btn-orange">Create an account</a>
-                            </div>
                         </div>
                         <div class="signin-form u-margin-top-medium">
                             <div class="form__group">
@@ -52,8 +49,13 @@
                             <div class="form-group submit-button text-left u-margin-top-medium">
                                 <button type="submit" name="submit" class="btn btn--green">Login &rarr;</button>
                             </div>
+                            <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
+                                <a  @click="authPage('signup')" class="btn btn-default btn-orange">Create an account</a>
+                            </div>
                         </div>
                     </form>
+
+                    <!-- signup form  -->
                     <form method="POST" v-if='!login' class="form" action="{{route('register')}}"  id="signup">
                       @csrf
                       <div class="signup-content">
@@ -78,9 +80,6 @@
                                         <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="01" required> -
                                         <input name="phone" type="text" id="phone_number" class="form__input" placeholder="622287" required>
                                       </div>
-                                  </div>
-                                  <div class="form-group submit-button u-margin-top-medium">
-                                      <button type="submit" name="submit" class="btn btn--green">Register &rarr;</button>
                                   </div>
                               </div>
                               <div class="col-md-6">
@@ -108,13 +107,31 @@
                                       </select>
                                       <label for="country" class="form__label">&nbsp;</label>
                                   </div>
-                                  <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
-                                    <a  @click="authPage('login')" class="btn-orange">Im already a member</a>
-                                  </div>
+                              </div>
+                              <div class="form-group submit-button u-margin-top-medium">
+                                  <button type="submit" name="submit" class="btn btn--green">Register &rarr;</button>
+                              </div>
+                              <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
+                                <a  @click="authPage('login')" class="btn btn-default btn-orange">Im already a member</a>
                               </div>
                           </div>
                       </div>
                     </form>
+
+                    <!-- <div class="row">
+                      <form class="" action="index.html" method="post">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" name="" value="" placeholder="Name">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" name="" value="" placeholder="Phone">
+                          </div>
+                        </div>
+                      </form>
+                    </div> -->
                 </div>
             </div>
         </div>
