@@ -15,9 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'DefaultController@index')->name('home');
 
 Route::get('/auth', function () {
     return view('auth.login');

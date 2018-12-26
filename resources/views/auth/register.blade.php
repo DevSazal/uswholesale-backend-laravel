@@ -10,7 +10,7 @@
         <div class="container">
             <div class="u-center-text u-margin-bottom-small">
                 <h2 class="heading-secondary">
-                    Sign In or Join Now xxx
+                    Sign In or Join Now
                 </h2>
                 <p> You must be signed in to continue. Sign In or Join below.</p>
             </div>

@@ -11,6 +11,10 @@ use Auth;
 
 class DefaultController extends Controller
 {
+  public function index(){
+    $array['categories'] = DB::table('categories')->where('status', 1)->get();
+    return view('index')->with($array);
+  }
   public function premiumSignUp(){
     return view('supplier');
   }

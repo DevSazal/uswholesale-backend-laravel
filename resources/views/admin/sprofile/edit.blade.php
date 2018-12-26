@@ -164,6 +164,20 @@
                 </div>
               </div>
               <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Supplier Service Title</label>
+
+                <div class="col-sm-10">
+                  <input type="text" name="supplier_service_title" class="form-control" id="inputEmail3" placeholder="" value="{{$sp->supplier_service_title}}" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">All Product Name</label>
+
+                <div class="col-sm-10">
+                  <input type="text" name="all_product_names" class="form-control" id="inputEmail3" placeholder="" value="{{$sp->all_product_names}}"" required>
+                </div>
+              </div>
+              <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Company Logo</label>
 
                 <div class="col-sm-5">
@@ -171,6 +185,20 @@
                       <input type="file" name="logo" id="exampleInputFile" required>
 
                       <p class="help-block">Logo size will have equal ratio. (example: 100*100)</p>
+
+                </div>
+                <div class="col-sm-5">
+                  <img src="{{ asset('storage/CompanyLogo/'.$sp->logo)}}" alt="" style="width: 10%;" class="img-responsive">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Banner Image(Ad)</label>
+
+                <div class="col-sm-5">
+
+                      <input type="file" name="banner_img" id="exampleInputFile" required>
+
+                      <p class="help-block">Banner size will have equal ratio. (example: 200*200)</p>
 
                 </div>
                 <div class="col-sm-5">

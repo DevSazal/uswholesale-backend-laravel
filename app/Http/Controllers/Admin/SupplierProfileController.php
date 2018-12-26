@@ -11,6 +11,10 @@ use Auth;
 USE DB;
 class SupplierProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -63,6 +67,13 @@ class SupplierProfileController extends Controller
           }else{
                 $file2 = '';
           }
+          if($request->banner_img->getClientOriginalName()){
+              $ext = $request->banner_img->getClientOriginalExtension();
+              $file3 = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+              $request->banner_img->storeAs('public/CompanyLogo',$file3);
+              }else{
+              $file3 = '';
+              }
           $sp->uid = Auth::user()->id;
           $sp->contact_person = $request->cp;
           $sp->est = $request->est;
@@ -73,6 +84,7 @@ class SupplierProfileController extends Controller
           $sp->description = $request->description;
           $sp->logo = $file;
           $sp->img = $file2;
+          $sp->banner_img = $file3;
           $sp->url = $request->url;
           $sp->fb = $request->fb;
           $sp->twitter = $request->twitter;
@@ -80,6 +92,8 @@ class SupplierProfileController extends Controller
           $sp->google = $request->google;
           $sp->pinterest = $request->pinterest;
           $sp->subcatgoryid = $request->scid;
+          $sp->supplier_service_title = $request->supplier_service_title;
+          $sp->all_product_names = $request->all_product_names;
           $sp->save();
 
           return redirect('dashboard');
@@ -140,6 +154,16 @@ class SupplierProfileController extends Controller
           else
               $file2 = $sp->logo;
         }
+        if($request->banner_img->getClientOriginalName()){
+            $ext = $request->banner_img->getClientOriginalExtension();
+            $file3 = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+            $request->banner_img->storeAs('public/CompanyLogo',$file3);
+            }else{
+              if(!$sp->banner_img)
+                  $file3 = '';
+              else
+                  $file3 = $sp->banner_img;
+            }
 
         $sp->uid = Auth::user()->id;
         $sp->contact_person = $request->cp;
@@ -151,6 +175,7 @@ class SupplierProfileController extends Controller
         $sp->description = $request->description;
         $sp->logo = $file;
         $sp->img = $file2;
+        $sp->banner_img = $file3;
         $sp->url = $request->url;
         $sp->fb = $request->fb;
         $sp->twitter = $request->twitter;
@@ -158,6 +183,8 @@ class SupplierProfileController extends Controller
         $sp->google = $request->google;
         $sp->pinterest = $request->pinterest;
         $sp->subcatgoryid = $request->scid;
+        $sp->supplier_service_title = $request->supplier_service_title;
+        $sp->all_product_names = $request->all_product_names;
         $sp->save();
 
         return redirect('dashboard/profile/');

@@ -3,7 +3,9 @@
     Home
 </title>
 @endsection @section('content')
-
+<?php
+use Illuminate\Support\Facades\DB;
+ ?>
 <section id="header-ads">
     <div class="container">
         <div class="row">
@@ -47,8 +49,8 @@
             <input type="text" name="" value="" class="form-control" placeholder="Search...">
           </div>
           <button type="submit" name="button" class="search-btn"><i class="fas fa-search"></i></button>
-        </form>
-    </div> -->
+        </form> -->
+    </div>
 </section>
 <!-- _______Ending of search_________  -->
 
@@ -62,52 +64,27 @@
                         <h2>TRENDING CATEGORIES</h2>
                         <nav class="side-nav">
                             <ul class="menu menu-vertical sf-arrows">
-                                <li class="side-nav__item"><a href="category.html"><i class="fas fa-tshirt"></i></i>Apparel</a></li>
+                              @foreach($categories as $c)
                                 <li class="side-nav__item">
-                                    <a href="category.html" class="sf-with-ul"><i class="fas fa-box-open"></i>
-                                Dropshipers</a>
+                                    <a href="category/{{$c->id}}" class="sf-with-ul"><i class="far fa-folder"></i>
+                                {{$c->name}}</a>
+                                    <?php $sub = DB::table('sub_categories')->where('cid', $c->id)->get(); ?>
+                                    @if(count($sub) > 0)
                                     <div class="megamenu megamenu-fixed-width">
                                         <ul class="megamenu__items">
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">1</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">2</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">3</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">4</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">5</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">6</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">7</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">8</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
+
+                                          @foreach($sub as $sc)
+                                            <li class="megamenu__item"><a href="{{$sc->id}}" class="megamenu__link">{{$sc->name}}</a></li>
+                                          @endforeach
+
                                         </ul>
                                     </div>
                                     <!-- End .megamenu -->
+                                    @endif
                                 </li>
-                                <li class="megamenu-container side-nav__item">
-                                    <a href="product.html" class="sf-with-ul"><i class="fas fa-tag"></i>Closeouts</a>
-                                    <div class="megamenu megamenu-fixed-width">
-                                        <ul class="megamenu__items">
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">1</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">2</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">3</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">4</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">5</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">6</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">7</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">8</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                            <li class="megamenu__item"><a href="#" class="megamenu__link">Heriberto Nickel</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- End .megamenu -->
-                                </li>
-                                <li class="side-nav__item">
-                                    <a href="#" class="sf-with-ul"><i class="fas fa-shopping-bag"></i>Handbags</a>
+                                @endforeach
+                                <!-- <li class="side-nav__item">
+                                    <a href="#" class="sf-with-ul"><i class="far fa-folder"></i>Handbags</a>
 
                                     <ul>
                                         <li><a href="cart.html">Shopping Cart</a></li>
@@ -145,7 +122,7 @@
                                 <li class="side-nav__item"><a href="#"><i class="fas fa-money-bill-wave"></i>Doller Store Items</a></li>
                                 <li class="side-nav__item"><a href="#"><i class="fas fa-shoe-prints"></i>Shoes</a></li>
                                 <li class="side-nav__item"><a href="#"><i class="fas fa-mobile-alt"></i>Consumer Electronics</a></li>
-                                <li class="side-nav__item"><a href="#"><i class="fas fa-shopping-cart"></i>General Merchendise</a></li>
+                                <li class="side-nav__item"><a href="#"><i class="fas fa-shopping-cart"></i>General Merchendise</a></li> -->
                             </ul>
                         </nav>
                     </div>
