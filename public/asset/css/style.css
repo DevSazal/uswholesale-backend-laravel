@@ -3819,6 +3819,8 @@ header #cssmenu .menu-right .menu-signin {
   box-shadow: 5px 13px 35px -8px rgba(0,0,0,0.75);
   height:unset;
   padding-bottom:35px;
+  margin-top:20px;
+  overflow:hidden;
 }
 
 #news .card:hover{
