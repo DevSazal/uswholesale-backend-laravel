@@ -3815,6 +3815,41 @@ header #cssmenu .menu-right .menu-signin {
   color: orange;
 }
 
+#news .card{
+  box-shadow: 5px 13px 35px -8px rgba(0,0,0,0.75);
+  height:unset;
+  padding-bottom:35px;
+}
+
+#news .card:hover{
+	box-shadow: 17px 24px 102px -8px rgba(0,0,0,0.75);
+	transition: 1s;
+}
+
+#news .card .card-body{
+	padding:15px;
+}
+
+#news .card .card-body .card-title{
+	text-align: left;
+	font-size: 37px;
+    text-transform: uppercase;
+    color: #6ECF73;
+    padding-top: 10px;
+}
+
+#news .card .card-body span{	
+  
+}
+#news .card .card-body span i{
+	padding-right:8px;
+	color: #6ecf73;
+}
+#news .card .card-body a{
+	border-radius:unset;
+	background:#FF7730;
+}
+
 /*===========================================================
      -         Trade shows     -
   =============================================================*/

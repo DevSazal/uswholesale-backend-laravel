@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\DB;
     <div class="container">
         <div class="row">
             <div class="banner-image-container">
-                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img  id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
             </div>
         </div>
     </div>
@@ -64,18 +64,18 @@ use Illuminate\Support\Facades\DB;
                         <h2>TRENDING CATEGORIES</h2>
                         <nav class="side-nav">
                             <ul class="menu menu-vertical sf-arrows">
-                              @foreach($categories as $c)
+                                @foreach($categories as $c)
                                 <li class="side-nav__item">
                                     <a href="category/{{$c->id}}" class="sf-with-ul"><i class="far fa-folder"></i>
-                                {{$c->name}}</a>
+                                        {{$c->name}}</a>
                                     <?php $sub = DB::table('sub_categories')->where('cid', $c->id)->get(); ?>
                                     @if(count($sub) > 0)
                                     <div class="megamenu megamenu-fixed-width">
                                         <ul class="megamenu__items">
 
-                                          @foreach($sub as $sc)
+                                            @foreach($sub as $sc)
                                             <li class="megamenu__item"><a href="{{$sc->id}}" class="megamenu__link">{{$sc->name}}</a></li>
-                                          @endforeach
+                                            @endforeach
 
                                         </ul>
                                     </div>
@@ -212,8 +212,8 @@ use Illuminate\Support\Facades\DB;
         <div class="row">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary">
-                        Exciting deals for exciting people
-                    </h2>
+                    Exciting deals for exciting people
+                </h2>
             </div>
             <div class="col-md-4">
                 <div class="card-promo">
@@ -223,10 +223,11 @@ use Illuminate\Support\Facades\DB;
 
                         </div>
                         <h4 class="card-promo__heading">
-                              <span class="card-promo__heading--span card-promo__heading--span--1">Wholesale Deals</span>
-                          </h4>
+                            <span class="card-promo__heading--span card-promo__heading--span--1">Wholesale Deals</span>
+                        </h4>
                         <div class="card-promo__detail">
-                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and dropship items, we have you covered.</p>
+                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
+                                dropship items, we have you covered.</p>
                             <a href="#" class="btn-text">Find Your deal</a>
                         </div>
                     </div>
@@ -240,10 +241,11 @@ use Illuminate\Support\Facades\DB;
 
                         </div>
                         <h4 class="card-promo__heading">
-                              <span class="card-promo__heading--span card-promo__heading--span--2">Product Requests</span>
-                          </h4>
+                            <span class="card-promo__heading--span card-promo__heading--span--2">Product Requests</span>
+                        </h4>
                         <div class="card-promo__detail">
-                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and dropship items, we have you covered.</p>
+                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
+                                dropship items, we have you covered.</p>
                             <a href="#" class="btn-text">Get a quote now</a>
                         </div>
                     </div>
@@ -256,10 +258,11 @@ use Illuminate\Support\Facades\DB;
                         <div class="card-promo__picture card-promo__picture--3">
                         </div>
                         <h4 class="card-promo__heading">
-                              <span class="card-promo__heading--span card-promo__heading--span--3">Verified Suppliers</span>
-                          </h4>
+                            <span class="card-promo__heading--span card-promo__heading--span--3">Verified Suppliers</span>
+                        </h4>
                         <div class="card-promo__detail">
-                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and dropship items, we have you covered.</p>
+                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
+                                dropship items, we have you covered.</p>
                             <a href="#" class="btn-text">Get your supplier pass</a>
                         </div>
                     </div>
@@ -275,8 +278,8 @@ use Illuminate\Support\Facades\DB;
     <div class="container">
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
-                      Hot Buys from Wholesale Suppliers
-                  </h2>
+                Hot Buys from Wholesale Suppliers
+            </h2>
         </div>
         <div class="row text-center u-margin-bottom-medium">
             <div class="col-md-2 col-sm-2">
@@ -401,48 +404,48 @@ use Illuminate\Support\Facades\DB;
     <div class="container">
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
-                    Apparel
-                </h2>
+                Apparel
+            </h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, natus.</p>
         </div>
         <div class="apparel">
             <div class="row">
-              <div class="text-center col-md-3">
-                <div class="dresser-container">
-                  <h3>Dresser</h3>
-                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                <div class="text-center col-md-3">
+                    <div class="dresser-container">
+                        <h3>Dresser</h3>
+                        <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                    </div>
                 </div>
-              </div>
-              <div class="text-center col-md-3">
-                <div class="dresser-container">
-                  <h3>Dresser</h3>
-                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                <div class="text-center col-md-3">
+                    <div class="dresser-container">
+                        <h3>Dresser</h3>
+                        <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                    </div>
                 </div>
-              </div>
-              <div class="text-center col-md-3">
-                <div class="dresser-container">
-                  <h3>Dresser</h3>
-                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                <div class="text-center col-md-3">
+                    <div class="dresser-container">
+                        <h3>Dresser</h3>
+                        <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                    </div>
                 </div>
-              </div>
-              <div class="text-center col-md-3">
-                <div class="dresser-container">
-                  <h3>Dresser</h3>
-                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                <div class="text-center col-md-3">
+                    <div class="dresser-container">
+                        <h3>Dresser</h3>
+                        <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                    </div>
                 </div>
-              </div>
-              <div class="text-center col-md-3">
-                <div class="dresser-container">
-                  <h3>Dresser</h3>
-                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                <div class="text-center col-md-3">
+                    <div class="dresser-container">
+                        <h3>Dresser</h3>
+                        <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                    </div>
                 </div>
-              </div>
-              <div class="text-center col-md-3">
-                <div class="dresser-container">
-                  <h3>Dresser</h3>
-                  <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                <div class="text-center col-md-3">
+                    <div class="dresser-container">
+                        <h3>Dresser</h3>
+                        <img src="{{asset('asset/img/shirt.jpg')}}" alt="">
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
     </div>
@@ -452,35 +455,56 @@ use Illuminate\Support\Facades\DB;
     <div class="container">
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
-                    Wholesale News & Videos
-                </h2>
+                Wholesale News & Videos
+            </h2>
             <p>Supplier profiles, trade show coverage, product trends and industry coverage for B2B professionals, sourcing tips and more... more news »</p>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="wholesale-news">
-                    <div class="slide">
-                        <div class="owl-carousel owl-theme" id="slide-inner">
-                            <div class="item main-item">
-                            <div class="card news-card" style="">
-                                <img class="card-img-top" src="https://vitalsignsmktg.com/wp-content/uploads/2015/09/Content-Marketing-News-and-Trends-That-Can-Help-You-Go-Viral-Fast-Marketing-Digest.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <div class="card-about">
-                                        <span class="card-time"><i class="fa fa-calendar" aria-hidden="true"></i>  December 12, 18 .</span>
-                                        <span class="card-author"><i class="fa fa-user-o" aria-hidden="true"></i> John Doe</span>
-                                    </div>
-                                    <h2 class="card-title heading-secondary">Card title</h2>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn-orange">Read more</a>
-                                </div>
-                                </div>
-                            </div>
 
-                        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('asset/img/card.png')}}" alt="Card image cap" width="360">
+                    <div class="card-body">
+                      <span>
+                        <i class="far fa-calendar-alt"></i>December 12, 18 .
+                        <i class="far fa-user"></i>John doe
+                      </span>
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('asset/img/card.png')}}" alt="Card image cap" width="360">
+                    <div class="card-body">
+                      <span>
+                        <i class="far fa-calendar-alt"></i>December 12, 18 .
+                        <i class="far fa-user"></i>John doe
+                      </span>
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('asset/img/card.png')}}" alt="Card image cap" width="360">
+                    <div class="card-body">
+                      <span>
+                        <i class="far fa-calendar-alt"></i>December 12, 18 .
+                        <i class="far fa-user"></i>John doe
+                      </span>
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go</a>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -489,10 +513,11 @@ use Illuminate\Support\Facades\DB;
         <!-- Trade shows -->
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
-                      Trade Shows
-                  </h2>
+                Trade Shows
+            </h2>
             <p>
-                TopTenWholesale produces the <a href="more-link">Apparel Textile Sourcing</a> international trade shows, the fastest growing trade shows in Canada, U.S.A., and Europe. ATS shows are a Global Industry Destination that provide a platform for the world's apparel and textile executives to connect, learn and create opportunities to grow their business.
+                TopTenWholesale produces the <a href="more-link">Apparel Textile Sourcing</a> international trade shows, the fastest growing trade shows in Canada, U.S.A., and Europe. ATS shows are a Global Industry Destination that provide a
+                platform for the world's apparel and textile executives to connect, learn and create opportunities to grow their business.
             </p>
         </div>
         <div class="trade-shows ">
