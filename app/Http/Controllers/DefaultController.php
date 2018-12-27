@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use App\Membership;
+use App\SupplierProfile;
+use App\User;
+use App\SubCategory;
 use Illuminate\Http\Request;
 
 use DB;
@@ -12,14 +14,18 @@ use Auth;
 class DefaultController extends Controller
 {
   public function index(){
+    $array['supplier'] = SupplierProfile::orderBy('created_at', 'desc')->limit(15)->get();
+    // $array['supplier'] = SupplierProfile::limit(15)->get();
+    $array['ad'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 8');
     $array['categories'] = DB::table('categories')->where('status', 1)->get();
     return view('index')->with($array);
   }
+
   public function premiumSignUp(){
     return view('supplier');
   }
-  public function payment()
-  {
+
+  public function payment(){
       if(Auth::check()){
         $id = Auth::user()->id;
         $member = DB::table('memberships')->where('uid', $id)->first();
@@ -33,4 +39,11 @@ class DefaultController extends Controller
       }
 
   }
+
+  public function category($category_id){
+    $subcategory_id = SubCategory::where('cid', $category_id)->value('id');
+    $array['suppliers'] = SupplierProfile::where('subcatgoryid', $subcategory_id)->orderBy('promote', 'desc')->paginate(1);
+    return view('category')->with($array);
+  }
+
 }

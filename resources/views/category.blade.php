@@ -238,13 +238,14 @@
                                             </label>
                                         </div>
                                     </div>
+                                    @foreach($suppliers as $supplier)
                                     <div class="product__box">
                                       <!-- product updated daily remove -->
                                         <!-- <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div> -->
 
                                         <div class="product__box--info">
-                                            <a class="product__box--sub-title">LAShowroom</a>
-                                            <p class="product__box--paragraph">All apparel categories, trendy & basics, new styles daily, premium quality, product image download, fast shipping, various clothing Made in USA, rewards program, lowest price match guarantee, superior customer service</p>
+                                            <a class="product__box--sub-title">{{$supplier->user->company}}</a>
+                                            <p class="product__box--paragraph">{{$supplier->summary}}</p>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-7">
@@ -256,7 +257,7 @@
                                                     </dl>
                                                     <dl class="product__box--list">
                                                         <dt>Main Products:</dt>
-                                                        <dd>Apparel, Designer Inspired Handbags, Fashion Accessories, Ladies Shoes, Luggage, Bags & Cases</dd>
+                                                        <dd>{{$supplier->all_product_names}}</dd>
                                                     </dl>
                                                     <dl class="product__box--list">
                                                         <dt>Location:</dt>
@@ -291,6 +292,7 @@
                                             <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
+                                    @endforeach
                                     <div class="product__box">
                                         <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
 

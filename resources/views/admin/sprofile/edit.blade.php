@@ -202,7 +202,7 @@
 
                 </div>
                 <div class="col-sm-5">
-                  <img src="{{ asset('storage/CompanyLogo/'.$sp->logo)}}" alt="" style="width: 10%;" class="img-responsive">
+                  <img src="{{ asset('storage/BannerImg/'.$sp->banner_img)}}" alt="" style="width: 10%;" class="img-responsive">
                 </div>
               </div>
               <div class="form-group">

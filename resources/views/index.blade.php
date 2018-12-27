@@ -10,14 +10,10 @@ use Illuminate\Support\Facades\DB;
     <div class="container">
         <div class="row">
             <div class="banner-image-container">
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
-                <img id="bnr-035785149" title="Wholesale Refurbished Products" border="0" src="{{ asset('asset/img/1.jpg')}}" class="banner" alt="Wholesale Refurbished Products" />
+              @foreach($ad as $banner)
+                <img id="bnr-035785149" title="{{$banner->company}}" border="0" src="{{ asset('storage/CoverPhoto/'.$banner->img)}} " class="banner" alt="{{$banner->company}}" />
+              @endforeach
+
             </div>
         </div>
     </div>
@@ -281,44 +277,21 @@ use Illuminate\Support\Facades\DB;
                 Hot Buys from Wholesale Suppliers
             </h2>
         </div>
-        <div class="row text-center u-margin-bottom-medium">
-            <div class="col-md-2 col-sm-2">
+        <div class="row text-center ">
+          @foreach($supplier as $sp)
+            <div class="col-md-2 col-sm-2 u-margin-bottom-medium">
                 <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-1.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
+                    <a href="{{$sp->url}}" class="feature-box__link" target="_blank">
+                    <img class="img-responsive feature-box__image" src="{{ asset('storage/BannerImg/'.$sp->banner_img)}}" alt="">
+                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">{{$sp->supplier_service_title}}</h3>
+                    </a>
+                    <a href="{{$sp->website}}" class="feature-box__link" target="_blank">{{$sp->user->company}}</a>
                 </div>
             </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-4.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-2.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-3.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-5.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
+          @endforeach
+
         </div>
-        <div class="row text-center u-margin-bottom-medium">
+        <!-- <div class="row text-center u-margin-bottom-medium">
             <div class="col-md-2 col-sm-2">
                 <div class="feature-box">
                     <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-6.jpg')}}" alt="">
@@ -354,8 +327,8 @@ use Illuminate\Support\Facades\DB;
                     <a href="#" class="feature-box__link">V-k wholesale</a>
                 </div>
             </div>
-        </div>
-        <div class="row text-center u-margin-bottom-medium">
+        </div> -->
+        <!-- <div class="row text-center u-margin-bottom-medium">
             <div class="col-md-2 col-sm-2">
                 <div class="feature-box">
                     <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-11.jpg')}}" alt="">
@@ -391,7 +364,7 @@ use Illuminate\Support\Facades\DB;
                     <a href="#" class="feature-box__link">V-k wholesale</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="u-center-text u-margin-top-big">
             <a href="#" class="btn btn--green">Discover all suppliers !!</a>
         </div>

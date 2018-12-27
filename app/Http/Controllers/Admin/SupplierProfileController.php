@@ -70,7 +70,7 @@ class SupplierProfileController extends Controller
           if($request->banner_img->getClientOriginalName()){
               $ext = $request->banner_img->getClientOriginalExtension();
               $file3 = date('YmdHis').'_'.rand(1,999).'.'.$ext;
-              $request->banner_img->storeAs('public/CompanyLogo',$file3);
+              $request->banner_img->storeAs('public/BannerImg',$file3);
               }else{
               $file3 = '';
               }
@@ -157,7 +157,7 @@ class SupplierProfileController extends Controller
         if($request->banner_img->getClientOriginalName()){
             $ext = $request->banner_img->getClientOriginalExtension();
             $file3 = date('YmdHis').'_'.rand(1,999).'.'.$ext;
-            $request->banner_img->storeAs('public/CompanyLogo',$file3);
+            $request->banner_img->storeAs('public/BannerImg',$file3);
             }else{
               if(!$sp->banner_img)
                   $file3 = '';
