@@ -5,6 +5,54 @@
 @endsection
 
 @section('content')
+<?php
+use Illuminate\Support\Facades\DB;
+ ?>
+ <style>
+   .pagination>.active>span.page-link{
+    height: 45px;
+    width: 45px;
+    line-height: 32px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #55c57a;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 1;
+    margin: 0 8px 0 0;
+    transition: all 0.4s ease 0s;
+    border: 2px solid #55c57a;
+}
+.pagination>.disabled>span.page-link {
+  border: none;
+height: 45px;
+width: 45px;
+line-height: 32px;
+border-radius: 50%;
+background-color: transparent;
+color: #55c57a;
+font-size: 20px;
+font-weight: 700;
+position: relative;
+overflow: hidden;
+letter-spacing: 1px;
+text-transform: uppercase;
+z-index: 1;
+margin: 0 8px 0 0;
+transition: all 0.4s ease 0s;
+}
+/* .pagination li:last-child::before {
+    content: "»";
+    color: #55c57a;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+} */
+ </style>
     <main>
         <!-- _______Starting of search_________  -->
         <section id="home-search">
@@ -57,49 +105,49 @@
         <section class="section__allcategory">
             <div class="container">
                 <ul class="allcategory__list">
-                    <li><a href="/wholesale-apparel-agents-c641?dtype=products">Apparel Agents</a></li>
-                    <li><a href="/wholesale-apparel-design-services-c1662?dtype=products">Apparel Design Services</a></li>
-                    <li><a href="/wholesale-apparel-machinery-c120?dtype=products">Apparel Machinery</a></li>
-                    <li><a href="/wholesale-apparel-machinery-parts-c838?dtype=products">Apparel Machinery Parts</a></li>
-                    <li><a href="/wholesale-apparel-processing-services-c139?dtype=products">Apparel Processing Services</a></li>
-                    <li><a href="/wholesale-apparel-projects-c1752?dtype=products">Apparel Projects</a></li>
-                    <li><a href="/wholesale-apparel-stock-c121?dtype=products">Apparel Stock</a></li>
-                    <li><a href="/wholesale-baby-clothing-c101?dtype=products">Baby Clothing</a></li>
-                    <li><a href="/wholesale-bathrobes-c123?dtype=products">Bathrobes</a></li>
-                    <li><a href="/wholesale-childrens-clothing-c102?dtype=products">Children's Clothing</a></li>
-                    <li><a href="/wholesale-coats-c104?dtype=products">Coats</a></li>
-                    <li><a href="/wholesale-dresses-c97?dtype=products">Dresses</a></li>
-                    <li><a href="/wholesale-ethnic-garments-c98?dtype=products">Ethnic Garments</a></li>
-                    <li><a href="/wholesale-garment-accessories-c118?dtype=products">Garment Accessories</a></li>
-                    <li><a href="/wholesale-jackets-c108?dtype=products">Jackets</a></li>
-                    <li><a href="/wholesale-ladies-blouses-c105?dtype=products">Ladies' Blouses</a></li>
-                    <li><a href="/wholesale-lingerie-c2921?dtype=products">Lingerie</a></li>
-                    <li><a href="/wholesale-mannequins-c999?dtype=products">Mannequins</a></li>
-                    <li><a href="/wholesale-maternity-wear-c129?dtype=products">Maternity Wear</a></li>
-                    <li><a href="/wholesale-mens-shirts-c132?dtype=products">Men's Shirts</a></li>
-                    <li><a href="/wholesale-other-apparel-c122?dtype=products">Other Apparel</a></li>
-                    <li><a href="/wholesale-pajamas-sleepwear-c917?dtype=products">Pajamas &amp; Sleepwear</a></li>
-                    <li><a href="/wholesale-pants-trousers-jeans-c109?dtype=products">Pants, Trousers &amp; Jeans</a></li>
-                    <li><a href="/wholesale-party-costumes-c130?dtype=products">Party Costumes</a></li>
-                    <li><a href="/wholesale-sewing-supplies-c137?dtype=products">Sewing Supplies</a></li>
-                    <li><a href="/wholesale-skirts-c133?dtype=products">Skirts</a></li>
-                    <li><a href="/wholesale-sock-knitting-machinery-c996?dtype=products">Sock Knitting Machinery</a></li>
-                    <li><a href="/wholesale-sock-knitting-machinery-parts-c801?dtype=products">Sock Knitting Machinery Parts</a></li>
-                    <li><a href="/wholesale-socks-stockings-c113?dtype=products">Socks &amp; Stockings</a></li>
-                    <li><a href="/wholesale-special-purpose-clothing-c99?dtype=products">Special Purpose Clothing</a></li>
-                    <li><a href="/wholesale-sportswear-c96?dtype=products">Sportswear</a></li>
-                    <li><a href="/wholesale-stage-wear-c131?dtype=products">Stage Wear</a></li>
-                    <li><a href="/wholesale-suits-tuxedo-c107?dtype=products">Suits &amp; Tuxedo</a></li>
-                    <li><a href="/wholesale-sweaters-c111?dtype=products">Sweaters</a></li>
-                    <li><a href="/wholesale-swimwear-c2933?dtype=products">Swimwear</a></li>
-                    <li><a href="/wholesale-t-shirts-c106?dtype=products">T-Shirts</a></li>
-                    <li><a href="/wholesale-tag-guns-c138?dtype=products">Tag Guns</a></li>
-                    <li><a href="/wholesale-tank-tops-c134?dtype=products">Tank Tops</a></li>
-                    <li><a href="/wholesale-underwear-c103?dtype=products">Underwear</a></li>
-                    <li><a href="/wholesale-uniforms-workwear-c100?dtype=products">Uniforms &amp; Workwear</a></li>
-                    <li><a href="/wholesale-used-clothes-c124?dtype=products">Used Clothes</a></li>
-                    <li><a href="/wholesale-waistcoats-c136?dtype=products">Waistcoats</a></li>
-                    <li><a href="/wholesale-wedding-evening-dresses-c110?dtype=products">Wedding &amp; Evening Dresses</a></li>
+                    <li><a href="">Apparel Agents</a></li>
+                    <li><a href="">Apparel Design Services</a></li>
+                    <li><a href="">Apparel Machinery</a></li>
+                    <li><a href="">Apparel Machinery Parts</a></li>
+                    <li><a href="">Apparel Processing Services</a></li>
+                    <li><a href="">Apparel Projects</a></li>
+                    <li><a href="">Apparel Stock</a></li>
+                    <li><a href="">Baby Clothing</a></li>
+                    <li><a href="">Bathrobes</a></li>
+                    <li><a href="">Children's Clothing</a></li>
+                    <li><a href="">Coats</a></li>
+                    <li><a href="">Dresses</a></li>
+                    <li><a href="">Ethnic Garments</a></li>
+                    <li><a href="">Garment Accessories</a></li>
+                    <li><a href="">Jackets</a></li>
+                    <li><a href="">Ladies' Blouses</a></li>
+                    <li><a href="">Lingerie</a></li>
+                    <li><a href="">Mannequins</a></li>
+                    <li><a href="">Maternity Wear</a></li>
+                    <li><a href="">Men's Shirts</a></li>
+                    <li><a href="">Other Apparel</a></li>
+                    <li><a href="">Pajamas &amp; Sleepwear</a></li>
+                    <li><a href="">Pants, Trousers &amp; Jeans</a></li>
+                    <li><a href="">Party Costumes</a></li>
+                    <li><a href="">Sewing Supplies</a></li>
+                    <li><a href="">Skirts</a></li>
+                    <li><a href="">Sock Knitting Machinery</a></li>
+                    <li><a href="">Sock Knitting Machinery Parts</a></li>
+                    <li><a href="">Socks &amp; Stockings</a></li>
+                    <li><a href="">Special Purpose Clothing</a></li>
+                    <li><a href="">Sportswear</a></li>
+                    <li><a href="">Stage Wear</a></li>
+                    <li><a href="">Suits &amp; Tuxedo</a></li>
+                    <li><a href="">Sweaters</a></li>
+                    <li><a href="">Swimwear</a></li>
+                    <li><a href="">T-Shirts</a></li>
+                    <li><a href="">Tag Guns</a></li>
+                    <li><a href="">Tank Tops</a></li>
+                    <li><a href="">Underwear</a></li>
+                    <li><a href="">Uniforms &amp; Workwear</a></li>
+                    <li><a href="">Used Clothes</a></li>
+                    <li><a href="">Waistcoats</a></li>
+                    <li><a href="">Wedding &amp; Evening Dresses</a></li>
                 </ul>
             </div>
         </section>
@@ -241,10 +289,12 @@
                                     @foreach($suppliers as $supplier)
                                     <div class="product__box">
                                       <!-- product updated daily remove -->
-                                        <!-- <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div> -->
+                                        @if($supplier->promote == 1)
+                                        <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
+                                        @endif
 
                                         <div class="product__box--info">
-                                            <a class="product__box--sub-title">{{$supplier->user->company}}</a>
+                                            <a href="{{$supplier->url}}" target="_blank" class="product__box--sub-title">{{$supplier->user->company}}</a>
                                             <p class="product__box--paragraph">{{$supplier->summary}}</p>
                                         </div>
                                         <div class="row">
@@ -253,7 +303,12 @@
                                                 <div class="product__list-container">
                                                     <dl class="product__box--list">
                                                         <dt>Business Type:</dt>
-                                                        <dd>Wholesaler, Business Service</dd>
+                                                        <?php $business_types = DB::select('SELECT * FROM supplier_btypes JOIN business_types ON supplier_btypes.btid = business_types.id WHERE supplier_btypes.uid = ?  ORDER BY supplier_btypes.id DESC LIMIT 10', [$supplier->uid]); ?>
+                                                        <dd>
+                                                          @foreach($business_types as $type)
+                                                          {{$type->name}},
+                                                          @endforeach
+                                                        </dd>
                                                     </dl>
                                                     <dl class="product__box--list">
                                                         <dt>Main Products:</dt>
@@ -261,7 +316,7 @@
                                                     </dl>
                                                     <dl class="product__box--list">
                                                         <dt>Location:</dt>
-                                                        <dd>Los Angeles, CA, United States
+                                                        <dd>{{$supplier->user->city}}, {{$supplier->user->country}}
                                                             <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
                                                         </dd>
                                                     </dl>
@@ -287,13 +342,14 @@
                                             </div>
                                         </div>
                                         <div class="product__box--button-review">
-                                            <a href="#" class="btn-text">Contact Supplier</a>
-                                            <a href="#"><i class="fa fa-info-circle icons" aria-hidden="true"></i></a>
+                                            <a href="{{$supplier->website}}" target="_blank" class="btn-text">Contact Supplier</a>
+                                            <a href="{{$supplier->website}}" target="_blank"><i class="fa fa-info-circle icons" aria-hidden="true"></i></a>
                                             <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
                                     @endforeach
-                                    <div class="product__box">
+
+                                    <!-- <div class="product__box">
                                         <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
 
                                         <div class="product__box--info">
@@ -344,9 +400,11 @@
                                             <a href="#"><i class="fa fa-info-circle icons" aria-hidden="true"></i></a>
                                             <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <nav class="pagination-box" aria-label="Page navigation">
-                                        <ul class="pagination">
+                                      {{ $suppliers->links() }}
+
+                                        <!-- <ul class="pagination">
                                             <li class="page-item">
                                                 <a href="#" class="page-link" aria-label="Previous">
                                                     <span aria-hidden="true">&laquo;</span>
@@ -372,7 +430,7 @@
                                                     <span aria-hidden="true">&raquo;</span>
                                                 </a>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </nav>
                                 </div>
                                 <div class="tab-pane" id="2">

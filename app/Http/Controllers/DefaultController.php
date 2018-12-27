@@ -42,7 +42,7 @@ class DefaultController extends Controller
 
   public function category($category_id){
     $subcategory_id = SubCategory::where('cid', $category_id)->value('id');
-    $array['suppliers'] = SupplierProfile::where('subcatgoryid', $subcategory_id)->orderBy('promote', 'desc')->paginate(1);
+    $array['suppliers'] = SupplierProfile::where('subcatgoryid', $subcategory_id)->orderBy('promote', 'desc')->paginate(30);
     return view('category')->with($array);
   }
 

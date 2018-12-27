@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('country');
             $table->string('phone',20);
             $table->string('company')->nullable();
-            $table->boolean('role')->deafult(0);
+            $table->boolean('role')->default(0);
             $table->boolean('payment')->nullable();
             $table->text('address')->nullable();
             $table->rememberToken();
