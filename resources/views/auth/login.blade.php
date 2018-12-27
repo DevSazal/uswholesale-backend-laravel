@@ -23,7 +23,7 @@
                         </div>
                         <div class="signin-form u-margin-top-medium">
                             <div class="form__group">
-                                <input name="email" type="email" id="email" class="form__input" placeholder="Your Username" required>
+                                <input name="email" type="email" id="email" class="form__input" placeholder="Email" required>
                             </div>
                             <div class="form__group">
                                 <input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
@@ -38,14 +38,14 @@
                                 <strong>{{ $errors->first('password') }}</strong>
                               </span>
                             @endif -->
-                            <div class="error-container">
+                            <!-- <div class="error-container">
                                 <ul class="list">
                                     <li class="item">* Invalid email</li>
                                     <li class="item">* Invalid password</li>
                                     <li class='item'>* Something went wrong</li>
                                 </ul>
-                            </div>
-                            <div class="form-btn-align">
+                            </div> -->
+                            <div class="form-btn-align" style="padding-top: 30px;">
                               <div>
                                 <a  @click="authPage('signup')" class="btn btn-default btn-orange">Create an account</a>
                               </div>
@@ -76,15 +76,15 @@
                                   </div>
                                   <div class="form__group">
                                       <div class="phone-input-group">
-                                        <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="+88" required> -
-                                        <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="01" required> -
-                                        <input name="phone" type="text" id="phone_number" class="form__input" placeholder="622287" required>
+                                        <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="880" required> -
+                                        <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="501" required> -
+                                        <input name="phone" type="text" id="phone_number" class="form__input" placeholder="1025" required>
                                       </div>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form__group">
-                                      <input name="name" type="text" id="contact_name" class="form__input" placeholder="Contact Name" required>
+                                      <input name="name" type="text" id="contact_name" class="form__input" placeholder="Your Full Name" required>
                                   </div>
                                   <div class="form__group">
                                       <input name="company" type="text" id="company_name" class="form__input" placeholder="Company Name" >
@@ -105,6 +105,7 @@
                                       </select>
                                       <label for="country" class="form__label">&nbsp;</label>
                                   </div>
+                                  <input type="hidden" name="package_id" value="{{$package_id}}">
                                   <div class="form-btn-align">
                                     <div style="margin-right: 20px;">
                                       <a  @click="authPage('login')" class="btn btn-default btn-orange">Im already a member</a>

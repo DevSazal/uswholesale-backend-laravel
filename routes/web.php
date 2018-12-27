@@ -17,9 +17,9 @@
 
 Route::get('/', 'DefaultController@index')->name('home');
 
-Route::get('/auth', function () {
-    return view('auth.login');
-});
+// Route::get('/auth', function () {
+//     return view('auth.login');
+// });
 
 
 // Route::post('supplier/add', 'Supplier\SupplierController@store')->name('supplier.add');

@@ -64,10 +64,10 @@
           @guest
           <li><a class="menu-btn" href="{{url('/premium-signup')}}" class="menu-join">Supplier Registration</a></li>
           <li><a class="menu-btn" href="#" class="menu-join">Buyer Registration</a></li>
-          <li><a href="{{url('/auth')}}" class="menu-signin">Sign In</a></li>
+          <li><a href="{{url('/login')}}" class="menu-signin">Sign In</a></li>
           @else
           <li class="nav-item dropdown">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              <a id="navbarDropdown" class="nav-link dropdown-toggle menu-btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name }} <span class="caret"></span>
               </a>
 

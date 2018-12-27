@@ -34,11 +34,11 @@
                                       <input name="password_confirmation" type="password" id="confirm_password" class="form__input" placeholder="Confirm Password" required>
                                   </div>
                                   <div class="form__group">
-                                      <div class="phone-input-group">
-                                        <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="Country Code" required>
-                                        <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="Phone Code" required>
-                                        <input name="phone" type="text" id="phone_number" class="form__input" placeholder="Phone Number" required>
-                                      </div>
+                                    <div class="phone-input-group">
+                                      <input name="country_code" type="text" id="phone_number" class="form__input" placeholder="880" required> -
+                                      <input name="phone_code" type="text" id="phone_number" class="form__input" placeholder="501" required> -
+                                      <input name="phone" type="text" id="phone_number" class="form__input" placeholder="1025" required>
+                                    </div>
                                   </div>
                                   <input type="hidden" name="package_id" value="{{$package_id}}">
                                   <!-- <div class="form-group submit-button u-margin-top-medium">
@@ -47,7 +47,7 @@
                               </div>
                               <div class="col-md-6">
                                   <div class="form__group">
-                                      <input name="name" type="text" id="contact_name" class="form__input" placeholder="Contact Name" required>
+                                      <input name="name" type="text" id="contact_name" class="form__input" placeholder="Your Full Name" required>
                                   </div>
 
                                   <div class="form__group">
@@ -58,12 +58,7 @@
                                   </div>
 
                                   <div class="form__group">
-                                      <select name="city" class="form__select" id="" required>
-                                        <option disabled>Select City</option>
-                                        <option value="Bangladesh">Dhaka</option>
-                                        <option value="Bangladesh">Barisal</option>
-                                        <option value="Bangladesh">Montreal</option>
-                                      </select>
+                                      <input name="city" type="text" id="phone_number" class="form__input" placeholder="City" required>
                                   </div>
                                   <div class="form__group select-box">
                                       <select name="country" class="form__select" id="" required>
@@ -106,7 +101,7 @@
                             <div class="form__group">
                                 <input name="password" type="password" id="email" class="form__input" placeholder="Password" required>
                             </div>
-                            <div class="form-btn-align">
+                            <div class="form-btn-align" style="padding-top: 30px;">
                               <div>
                                 <a  @click="authPage('signup')" class="btn btn-default btn-orange">Create an account</a>
                               </div>

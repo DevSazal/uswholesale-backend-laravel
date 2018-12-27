@@ -79,46 +79,7 @@ use Illuminate\Support\Facades\DB;
                                     @endif
                                 </li>
                                 @endforeach
-                                <!-- <li class="side-nav__item">
-                                    <a href="#" class="sf-with-ul"><i class="far fa-folder"></i>Handbags</a>
 
-                                    <ul>
-                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                        <li><a href="#">Checkout</a>
-                                            <ul>
-                                                <li><a href="checkout-shipping.html">Checkout Shipping</a></li>
-                                                <li><a href="checkout-shipping-2.html">Checkout Shipping 2</a></li>
-                                                <li><a href="checkout-review.html">Checkout Review</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Dashboard</a>
-                                            <ul>
-                                                <li><a href="dashboard.html">Dashboard</a></li>
-                                                <li><a href="my-account.html">My Account</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="#">Blog</a>
-                                            <ul>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="single.html">Blog Post</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="#" class="login-link">Login</a></li>
-                                        <li><a href="forgot-password.html">Forgot Password</a></li>
-                                    </ul>
-                                </li>
-                                <li class="side-nav__item"><a href="#" class="sf-with-ul"><i class="fas fa-ring"></i>Jwelery</a>
-                                    <ul>
-                                        <li><a href="#">Header Types</a></li>
-                                        <li><a href="#">Footer Types</a></li>
-                                    </ul>
-                                </li>
-                                <li class="side-nav__item"><a href="#"><i class="fas fa-money-bill-wave"></i>Doller Store Items</a></li>
-                                <li class="side-nav__item"><a href="#"><i class="fas fa-shoe-prints"></i>Shoes</a></li>
-                                <li class="side-nav__item"><a href="#"><i class="fas fa-mobile-alt"></i>Consumer Electronics</a></li>
-                                <li class="side-nav__item"><a href="#"><i class="fas fa-shopping-cart"></i>General Merchendise</a></li> -->
                             </ul>
                         </nav>
                     </div>
@@ -291,80 +252,7 @@ use Illuminate\Support\Facades\DB;
           @endforeach
 
         </div>
-        <!-- <div class="row text-center u-margin-bottom-medium">
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-6.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-7.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-8.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-9.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-10.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-        </div> -->
-        <!-- <div class="row text-center u-margin-bottom-medium">
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-11.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-12.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-13.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-14.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-                <div class="feature-box">
-                    <img class="img-responsive feature-box__image" src="{{asset('asset/vendor/images/products/product-15.jpg')}}" alt="">
-                    <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">C-store Supply</h3>
-                    <a href="#" class="feature-box__link">V-k wholesale</a>
-                </div>
-            </div>
-        </div> -->
+
         <div class="u-center-text u-margin-top-big">
             <a href="#" class="btn btn--green">Discover all suppliers !!</a>
         </div>
