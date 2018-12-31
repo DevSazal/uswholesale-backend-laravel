@@ -3269,10 +3269,16 @@ header #cssmenu .menu-right .menu-signin {
 }
 .dresser-container{
   padding: 12px;
-  -webkit-box-shadow: -1px 3px 49px -10px rgba(0,0,0,0.75);
-  -moz-box-shadow: -1px 3px 49px -10px rgba(0,0,0,0.75);
-  box-shadow: -1px 3px 49px -10px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   margin-bottom: 35px;
+}
+.dresser-container:hover{
+  cursor: pointer;
+  transform:translateY(-8px);
+  transition:all 0.2s;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
 }
 .dresser-container img{
   height: 8rem;
@@ -3816,7 +3822,7 @@ header #cssmenu .menu-right .menu-signin {
 }
 
 #news .card{
-  box-shadow: 5px 13px 35px -8px rgba(0,0,0,0.75);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   height:unset;
   padding-bottom:35px;
   margin-top:20px;
@@ -3824,8 +3830,9 @@ header #cssmenu .menu-right .menu-signin {
 }
 
 #news .card:hover{
-	box-shadow: 17px 24px 102px -8px rgba(0,0,0,0.75);
-	transition: 1s;
+	box-shadow:0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+	transition:all 0.2s;
+  transform: translateY(-8px);
 }
 
 #news .card .card-body{
@@ -3840,8 +3847,8 @@ header #cssmenu .menu-right .menu-signin {
     padding-top: 10px;
 }
 
-#news .card .card-body span{	
-  
+#news .card .card-body span{
+
 }
 #news .card .card-body span i{
 	padding-right:8px;
