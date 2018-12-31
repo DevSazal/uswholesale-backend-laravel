@@ -24,9 +24,9 @@ Route::get('/', 'DefaultController@index')->name('home');
 
 // Route::post('supplier/add', 'Supplier\SupplierController@store')->name('supplier.add');
 
-// Route::get('/category', function () {
-//     return view('category');
-// });
+Route::get('/profile', function () {
+    return view('profile.index');
+});
 Route::get('/category/{category_id}', 'DefaultController@category')->name('category')->where('category_id', '[0-9]+');
 Route::get('/premium-signup', 'DefaultController@premiumSignUp')->name('package');
 Route::get('register/{package_id}', 'Auth\RegisterController@showRegistrationForm')->name('register')->where('package_id', '[0-9]+');
