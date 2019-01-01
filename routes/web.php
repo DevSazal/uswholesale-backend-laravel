@@ -20,7 +20,7 @@ Route::get('/', 'DefaultController@index')->name('home');
 // Route::get('/auth', function () {
 //     return view('auth.login');
 // });
- 
+
 
 // Route::post('supplier/add', 'Supplier\SupplierController@store')->name('supplier.add');
 
@@ -42,3 +42,4 @@ Route::resource('/dashboard/subcategory', 'Admin\SubCategoryController', ['as'=>
 Route::resource('/dashboard/btype', 'Admin\BusinessTypeController', ['as'=>'admin']);
 Route::resource('/dashboard/sbtype', 'Admin\SupplierBtypeController', ['as'=>'admin']);
 Route::resource('/dashboard/profile', 'Admin\SupplierProfileController', ['as'=>'admin']);
+Route::resource('/dashboard/product', 'Admin\SupplierProductController', ['as'=>'admin']);
