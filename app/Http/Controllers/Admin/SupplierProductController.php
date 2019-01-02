@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Product;
+use App\SubCategory;
 
 class SupplierProductController extends Controller
 {
@@ -31,7 +32,8 @@ class SupplierProductController extends Controller
      */
     public function create()
     {
-        //
+        $array['subcategories'] = SubCategory::all();
+        return view('admin.supplierproduct.create')->with($array);
     }
 
     /**
