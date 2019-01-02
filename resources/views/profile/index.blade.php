@@ -44,15 +44,19 @@
               <div class="d-col1">
                 <span class="d-title">Company</span>
                 <div class="d-info">
-                  <p>ShoppingCart.com</p>
+                  <p style="color:red; font-weight:bold">ShoppingCart.com</p>
                   <p>129 shantibag</p>
                   <p>129 shantibag</p>
                   <p>Malibag shantinogor</p>
                   <p>Dhaka</p>
+                  <hr style="padding:unset; margin:15px 0">
                   <span>
                     <p>Phone: <span>01685558993</span></p>
-                    <p>Website: <span>ShoppingCart.com</span></p>
+                    <p>Website: <span><a href="#"style="color:red; font-weight:bold">ShoppingCart.com</a></span></p>
                   </span>
+                  <hr style="padding:unset; margin:15px 0">
+                  <a href="#"style="color:red; font-weight:bold; font-size:12px;">Share</a>
+                  <a href="#"style="color:red; font-weight:bold; font-size:12px; padding-left:5px;">Favourite</a>
                 </div>
               </div>
             </div>
@@ -60,29 +64,91 @@
               <div class="d-col1">
                 <span class="d-title">About</span>
                 <div class="d-info">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p style="font-size:14px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eium ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <a href="#" style="text-decoration:underline; color:red;">more ></a></p>
                 </div>
               </div>
             </div>
             <div class="col-md-2">
               <div class="d-col1">
-                <span class="d-title">Company</span>
+                <span class="d-title">Member status</span>
                 <div class="d-info">
-                  <p>ShoppingCart.com</p>
-                  <p>129 shantibag</p>
-                  <p>129 shantibag</p>
-                  <p>Malibag shantinogor</p>
-                  <p>Dhaka</p>
-                  <span>
-                    <p>Phone: <span>01685558993</span></p>
-                    <p>Website: <span>ShoppingCart.com</span></p>
-                  </span>
+                  <a href="#">Supplier Pass® <br>
+                    verified supplier
+                  </a>
+                  <p>2014</p>
+                  <img src="{{ asset('asset/img/supplier-pass.png')}}" alt="Supplier pass">
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="latest-product">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="porduct-info">
+                <div class="product-title">
+                  latest product<a href="#">view more</a>
+                </div>
+                <div class="product-img">
+                  <div class="row">
+                    <div class="col-md-2  text-center">
+                      <div class="item">
+                        <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                        <a href="#">Flowerbomb- Fb1058</a>
+                      </div>
+                    </div>
+                    <div class="col-md-2  text-center">
+                      <div class="item">
+                        <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                        <a href="#">Flowerbomb- Fb1058</a>
+                      </div>
+                    </div>
+                    <div class="col-md-2  text-center">
+                      <div class="item">
+                        <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                        <a href="#">Flowerbomb- Fb1058</a>
+                      </div>
+                    </div>
+                    <div class="col-md-2  text-center">
+                      <div class="item">
+                        <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                        <a href="#">Flowerbomb- Fb1058</a>
+                      </div>
+                    </div>
+                    <div class="col-md-2  text-center">
+                      <div class="item">
+                        <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                        <a href="#">Flowerbomb- Fb1058</a>
+                      </div>
+                    </div>
+                    <div class="col-md-2  text-center">
+                      <div class="item">
+                        <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                        <a href="#">Flowerbomb- Fb1058</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <span class="p-more"><a href="#" class="text-right">view more</a></span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          
+        <div class="message">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="message-title">
+                Send Message<a href="#">Contact Info</a>
+              </div>
+              <div class="message-info">
+                <p>You must be signed in to contact this supplier.</p>
+                <p>Not a Member? <a href="">Join Now FREE </a></p>
+                <p>Already a member? <a href="">Sign In </a></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
   </div>
