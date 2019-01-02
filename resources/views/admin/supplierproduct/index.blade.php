@@ -52,7 +52,7 @@
               <td>{{ $p->id }}</td>
               <td>{{ $p->name }}</td>
               <td>
-                $p->price
+                {{$p->price}}
               </td>
               <td>{{ $p->subcategory->name }}</td>
               <td>{{ $p->img }}</td>

@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Product;
 use App\SubCategory;
 
+use Auth;
+
 class SupplierProductController extends Controller
 {
   public function __construct()
@@ -42,10 +44,29 @@ class SupplierProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+     public function store(Request $request, Product $p)
+     {
+         if($request->img->getClientOriginalName()){
+             $ext = $request->img->getClientOriginalExtension();
+             $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+             $request->img->storeAs('public/ProductImg',$file);
+             }else{
+             $file = '';
+             }
+
+           $p->name = $request->name;
+           $p->sub_category_id = $request->scid;
+           $p->price = $request->price;
+           $p->img = $file;
+           $p->description = $request->description;
+           $p->purl = $request->purl;
+
+           $p->sid = Auth::user()->supplier->id;
+           $p->save();
+
+           return redirect('dashboard/product');
+
+     }
 
     /**
      * Display the specified resource.
