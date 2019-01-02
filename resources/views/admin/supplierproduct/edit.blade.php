@@ -46,7 +46,7 @@
                     <select name="scid" class="form-control select2" style="width: 100%;" required>
                       <option value="">Select Service Category</option>
                       @foreach($subcategories as $s)
-                        @if($s->id == $product->subcatgoryid)
+                        @if($s->id == $product->sub_category_id)
                         <option value="{{ $s->id }}" selected>{{ $s->name }}</option>
                         @else
                       <option value="{{ $s->id }}">{{ $s->name }}</option>

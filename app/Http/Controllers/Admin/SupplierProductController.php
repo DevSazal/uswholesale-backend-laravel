@@ -101,7 +101,30 @@ class SupplierProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $p = Product::find($id);
+
+        if($request->img->getClientOriginalName()){
+            $ext = $request->img->getClientOriginalExtension();
+            $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+            $request->img->storeAs('public/ProductImg',$file);
+            }else{
+              if(!$p->img)
+                  $file = '';
+              else
+                  $file = $p->img;
+            }
+
+          $p->name = $request->name;
+          $p->sub_category_id = $request->scid;
+          $p->price = $request->price;
+          $p->img = $file;
+          $p->description = $request->description;
+          $p->purl = $request->purl;
+
+          // $p->sid = Auth::user()->supplier->id;
+          $p->save();
+
+          return redirect('dashboard/product');
     }
 
     /**
