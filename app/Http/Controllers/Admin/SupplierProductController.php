@@ -87,7 +87,9 @@ class SupplierProductController extends Controller
      */
     public function edit($id)
     {
-        //
+      $array['product'] = Product::find($id);;
+      $array['subcategories'] = SubCategory::all();
+      return view('admin.supplierproduct.edit')->with($array);
     }
 
     /**
