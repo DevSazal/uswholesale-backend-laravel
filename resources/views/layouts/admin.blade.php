@@ -391,14 +391,30 @@
         @endif treeview">
           <a href="#">
             <i class="fa fa-cubes"></i>
-            <span>Child Category</span>
+            <span>SubCategory</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('admin.subcategory.create')}}"><i class="fa fa-circle-o"></i> Add New Child Category</a></li>
-            <li><a href="{{ route('admin.subcategory.index')}}"><i class="fa fa-circle-o"></i>All Child Category</a></li>
+            <li><a href="{{ route('admin.subcategory.create')}}"><i class="fa fa-circle-o"></i> Add New SubCategory</a></li>
+            <li><a href="{{ route('admin.subcategory.index')}}"><i class="fa fa-circle-o"></i>All SubCategory</a></li>
+          </ul>
+        </li>
+        <li class="
+        @if($segment=='product')
+        active
+        @endif treeview">
+          <a href="#">
+            <i class="fa fa-cubes"></i>
+            <span>Product</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.product.create')}}"><i class="fa fa-circle-o"></i> Add New Product</a></li>
+            <li><a href="{{ route('admin.product.index')}}"><i class="fa fa-circle-o"></i>All Products</a></li>
           </ul>
         </li>
         <li class="
