@@ -6,6 +6,8 @@ use App\Membership;
 use App\SupplierProfile;
 use App\User;
 use App\SubCategory;
+use App\Product;
+
 use Illuminate\Http\Request;
 
 use DB;
@@ -50,9 +52,16 @@ class DefaultController extends Controller
 
     // $array['suppliers'] = DB::select('SELECT * FROM supplier_profiles JOIN sub_categories ON supplier_profiles.subcatgoryid = sub_categories.id
     //                                   WHERE sub_categories.cid = ?  ORDER BY supplier_profiles.promote DESC', [$category_id]);
-    $array['suppliers'] = SupplierProfile::leftJoin('sub_categories', 'supplier_profiles.subcatgoryid', '=', 'sub_categories.id')->where('sub_categories.cid', $category_id)->orderBy('promote', 'desc')->paginate(30);
+    $array['suppliers'] = SupplierProfile::leftJoin('sub_categories', 'supplier_profiles.subcatgoryid', '=', 'sub_categories.id')
+                          ->where('sub_categories.cid', $category_id)
+                          ->orderBy('promote', 'desc')
+                          ->paginate(30);
+    $array['products'] = Product::Join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
+                          ->where('sub_categories.cid', $category_id)
+                          ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img')
+                          ->orderBy('products.id', 'desc')
+                          ->paginate(20);
     return view('category')->with($array);
   }
-
 
 }

@@ -447,19 +447,22 @@ transition: all 0.4s ease 0s;
                                         </div>
                                     </div>
                                     <div class="row">
+                                        @foreach($products as $product)
                                         <div class="col-md-6">
                                             <div class="product__box">
+                                                @if($product->supplier->promote == 1)
                                                 <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
+                                                @endif
                                                 <div class="product__box--image-tab-2">
-                                                    <img src="https://www.toptenwholesale.com/ttw/images/products/2395674.jpg" alt="">
+                                                    <img src="{{ asset('storage/ProductImg/'.$product->img) }}" alt="">
                                                 </div>
                                                 <div class="product__box--info">
-                                                    <a class="product__box--main-title">
-                                  Apparel
+                                                    <a href="{{$product->purl}}" target="_blank" class="product__box--main-title">
+                                  {{ $product->name }}
                                 </a>
-                                                    <a class="product__box--sub-title">LAShowroom</a>
+                                                    <a class="product__box--sub-title">{{ $product->supplier->user->company}}</a>
                                                     <div class="product__box--location">
-                                                        Los Angeles, CA, United States
+                                                        {{$product->supplier->user->city}}, {{$product->supplier->user->country}}
                                                         <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
                                                     </div>
                                                 </div>
@@ -469,38 +472,15 @@ transition: all 0.4s ease 0s;
                                                     <a href="#"><i class="fa fa-info-circle icons" aria-hidden="true"></i></a>
                                                     <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a>
                                                 </div>
-                                                <a href="#" class="btn-text">Contact Supplier</a>
+                                                <a href="{{$product->supplier->website}}" target="_blank" class="btn-text">Contact Supplier</a>
                                             </div>
 
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="product__box">
-                                              <!-- verified product removed for product tab  -->
-                                                <!-- <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div> -->
-                                                <div class="product__box--image-tab-2">
-                                                    <img src="https://www.toptenwholesale.com/ttw/images/products/2395674.jpg" alt="">
-                                                </div>
-                                                <div class="product__box--info">
-                                                    <a class="product__box--main-title">
-                                    Apparel
-                                  </a>
-                                                    <a class="product__box--sub-title">LAShowroom</a>
-                                                    <div class="product__box--location">
-                                                        Los Angeles, CA, United States
-                                                        <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div class="product__box--button-review">
-                                                    <a href="#" class="verify"><img src="{{ asset('asset/img/icon_spass.png')}}" alt=""> Verified Supplier <sup>5YR</sup></a>
-                                                    <a href="#"><i class="fa fa-info-circle icons" aria-hidden="true"></i></a>
-                                                    <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a>
-                                                </div>
-                                                <a href="#" class="btn-text">Contact Supplier</a>
-                                            </div>
-
-                                        </div>
+                                        @endforeach
                                     </div>
+                                    <nav class="pagination-box" aria-label="Page navigation">
+                                      {{ $products->links() }}
+                                    </nav>
 
                                 </div>
                                 <div class="tab-pane" id="3">
