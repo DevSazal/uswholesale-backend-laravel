@@ -62,6 +62,6 @@ class DefaultController extends Controller
                           ->orderBy('products.id', 'desc')
                           ->paginate(20);
     return view('category')->with($array);
-  }
+  } 
 
 }
