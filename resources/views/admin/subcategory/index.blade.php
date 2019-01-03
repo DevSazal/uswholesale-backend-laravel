@@ -5,12 +5,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    All Child Categories
-    <small>preview of child categories</small>
+    All Sub Categories
+    <small>preview of sub categories</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Child Category</a></li>
+    <li><a href="#">Sub Category</a></li>
     <li class="active">List</li>
   </ol>
 </section>
@@ -22,7 +22,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Child Category List</h3>
+          <h3 class="box-title">Sub Category List</h3>
 
           <!-- <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -39,7 +39,7 @@
           <table class="table table-hover">
             <tr>
               <th>#</th>
-              <th>Child Category Name</th>
+              <th>Sub Category Name</th>
               <th>Status</th>
               <th>Category</th>
               <th>Created</th>
