@@ -55,7 +55,7 @@
                 {{$p->price}}
               </td>
               <td>{{ $p->subcategory->name }}</td>
-              <td>{{ $p->img }}</td>
+              <td><img src="{{ asset('storage/ProductImg/'.$p->img) }}" alt="" style="height: 30px;"/></td>
               <td>{{ $p->created_at }}</td>
               <td>{{ $p->updated_at }}</td>
               <td>
