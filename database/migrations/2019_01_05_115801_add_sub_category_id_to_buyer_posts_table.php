@@ -14,7 +14,7 @@ class AddSubCategoryIdToBuyerPostsTable extends Migration
     public function up()
     {
         Schema::table('buyer_posts', function (Blueprint $table) {
-            //
+            $table->integer('sub_category_id');
         });
     }
 
