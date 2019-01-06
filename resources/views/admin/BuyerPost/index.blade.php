@@ -52,16 +52,16 @@
               <td>{{ $p->id }}</td>
               <td>{{ $p->title }}</td>
               <td>
-                {{$p->quantity}}
+                {{$p->quantity}} {{$p->qtype}}
               </td>
               <td>{{ $p->expire }}</td>
               <td>{{ $p->subcategory->name }}</td>
               <td><img src="{{ asset('storage/ProductImg/'.$p->img) }}" alt="" style="height: 30px;"/></td>
               <td>{{ $p->created_at }}</td>
               <td>
-                    <a href="{{ route('admin.product.edit', $p->id) }}" class="btn btn-info btn-sm">Edit</a>
+                    <a href="{{ route('admin.request.edit', $p->id) }}" class="btn btn-info btn-sm">Edit</a>
                     <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" class="btn btn-danger btn-sm">Delete</a>
-                    <form method="POST" action="{{ route('admin.product.destroy', $p->id) }}">
+                    <form method="POST" action="{{ route('admin.request.destroy', $p->id) }}">
 
                     @method('DELETE')
                     @csrf

@@ -4,12 +4,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Create A Product
+      Create A Buyer Request
       <small></small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Product</a></li>
+      <li><a href="#">BuyerRequest</a></li>
       <li class="active">Create</li>
     </ol>
   </section>
@@ -23,45 +23,44 @@
         <!-- Horizontal Form -->
         <div class="box box-info">
           <div class="box-header with-border">
-            <h3 class="box-title">Add Product Information</h3>
+            <h3 class="box-title">Add Product Request Information</h3>
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form class="form-horizontal" method="post" action="{{ route('admin.product.store') }}" enctype="multipart/form-data">
+          <form class="form-horizontal" method="post" action="{{ route('admin.request.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="box-body">
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Product Title</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Product Request Title</label>
 
                 <div class="col-sm-10">
                   <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">Select Product Category</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Quantity</label>
 
-                <div class="col-sm-10">
-                  <!-- /.form-group -->
-                    <select name="scid" class="form-control select2" style="width: 100%;" required>
-                      <option value="">Select Service Category</option>
-                      @foreach($subcategories as $s)
-                      <option value="{{ $s->id }}">{{ $s->name }}</option>
-                      @endforeach
-                      <!-- <option disabled="disabled">California (disabled)</option> -->
-                    </select>
+                <div class="col-sm-5">
 
-                  <!-- /.form-group -->
+                        <input type="number" name="quantity" class="form-control" placeholder="0.00" >
 
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Price</label>
+                <div class="col-sm-5">
+                    <select name="qtype" class="form-control select2" style="width: 100%;" required>
+                      <option value="">Select Quantity Type</option>
 
-                <div class="col-sm-10">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
-                        <input type="number" step="any" name="price" class="form-control" placeholder="0.00" >
-                      </div>
+                      <option value="Piece(s)">Piece(s)</option>
+                      <option value="Pack(s)">Pack(s)</option>
+                      <option value="Pair">Pair</option>
+                      <option value="Pound">Pound</option>
+                      <option value="Square Meter">Square Meter</option>
+                      <option value="Metric Ton">Metric Ton</option>
+                      <!-- <option value="Meter">Meter</option>
+                      <option value="Meter">Meter</option> -->
+
+
+                      <!-- <option disabled="disabled">California (disabled)</option> -->
+                    </select>
                 </div>
               </div>
               <div class="form-group">
@@ -71,25 +70,42 @@
 
                       <input type="file" name="img" id="exampleInputFile" required>
 
-                      <p class="help-block">Photo size ratio 3:1 (example: 600*200)</p>
+                      <p class="help-block">Photo size ratio 1:1 (example: 600*200)</p>
 
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Product URL (Redirect)</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Expire Date</label>
 
                 <div class="col-sm-10">
-                      <div class="input-group">
-                        <span class="input-group-addon">http://</span>
-                        <input type="text" name="purl" class="form-control" placeholder="www.example.com" >
-                      </div>
+                      <!-- <div class="input-group">
+                        <span class="input-group-addon">http://</span> -->
+                        <input type="date" name="date" class="form-control" placeholder="" >
+                      <!-- </div> -->
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Description</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Comment</label>
 
                 <div class="col-sm-10">
-                  <textarea name="description" class="form-control" rows="5" id="comment" required></textarea>
+                  <textarea name="comment" class="form-control" rows="5" id="comment" placeholder="looking for girl dresses and shoes." required></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Select Product Category</label>
+
+                <div class="col-sm-10">
+                  <!-- /.form-group -->
+                    <select name="scid" class="form-control select2" style="width: 100%;" required>
+                      <option value="">Select product Category</option>
+                      @foreach($subcategories as $s)
+                      <option value="{{ $s->id }}">{{ $s->name }}</option>
+                      @endforeach
+                      <!-- <option disabled="disabled">California (disabled)</option> -->
+                    </select>
+
+                  <!-- /.form-group -->
+
                 </div>
               </div>
 

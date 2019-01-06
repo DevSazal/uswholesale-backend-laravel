@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\BuyerPost;
+use App\SubCategory;
+use Auth;
 
 class BuyerPostController extends Controller
 {
@@ -31,7 +33,8 @@ class BuyerPostController extends Controller
      */
     public function create()
     {
-        //
+        $array['subcategories'] = SubCategory::all();
+        return view('admin.BuyerPost.create')->with($array);
     }
 
     /**
@@ -40,10 +43,30 @@ class BuyerPostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+     public function store(Request $request, BuyerPost $p)
+     {
+         if($request->img->getClientOriginalName()){
+             $ext = $request->img->getClientOriginalExtension();
+             $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+             $request->img->storeAs('public/ProductImg',$file);
+             }else{
+             $file = '';
+             }
+
+           $p->title = $request->name;
+           $p->sub_category_id = $request->scid;
+           $p->quantity = $request->quantity;
+           $p->qtype = $request->qtype;
+           $p->img = $file;
+           $p->comment = $request->comment;
+           $p->expire = $request->date;
+
+           $p->uid = Auth::user()->id;
+           $p->save();
+
+           return redirect('dashboard/request');
+
+     }
 
     /**
      * Display the specified resource.
