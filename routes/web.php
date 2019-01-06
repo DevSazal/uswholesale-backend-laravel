@@ -43,3 +43,4 @@ Route::resource('/dashboard/btype', 'Admin\BusinessTypeController', ['as'=>'admi
 Route::resource('/dashboard/sbtype', 'Admin\SupplierBtypeController', ['as'=>'admin']);
 Route::resource('/dashboard/profile', 'Admin\SupplierProfileController', ['as'=>'admin']);
 Route::resource('/dashboard/product', 'Admin\SupplierProductController', ['as'=>'admin']);
+Route::resource('/dashboard/request', 'Admin\BuyerPostController', ['as'=>'admin']);

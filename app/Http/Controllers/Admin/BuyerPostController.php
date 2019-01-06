@@ -5,8 +5,14 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\BuyerPost;
+
 class BuyerPostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class BuyerPostController extends Controller
      */
     public function index()
     {
-        //
+        $array['posts'] = BuyerPost::paginate(20);
+        return view('admin.BuyerPost.index')->with($array);
     }
 
     /**
