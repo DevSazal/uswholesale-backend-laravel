@@ -87,7 +87,9 @@ class BuyerPostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $array['post'] = BuyerPost::find($id);
+        $array['subcategories'] = SubCategory::all();
+        return view('admin.BuyerPost.edit')->with($array);
     }
 
     /**
@@ -99,7 +101,31 @@ class BuyerPostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $p = BuyerPost::find($id);
+
+      if($request->img->getClientOriginalName()){
+          $ext = $request->img->getClientOriginalExtension();
+          $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+          $request->img->storeAs('public/ProductImg',$file);
+          }else{
+            if(!$p->img)
+                $file = '';
+            else
+                $file = $p->img;
+          }
+
+          $p->title = $request->name;
+          $p->sub_category_id = $request->scid;
+          $p->quantity = $request->quantity;
+          $p->qtype = $request->qtype;
+          $p->img = $file;
+          $p->comment = $request->comment;
+          $p->expire = $request->date;
+
+          $p->uid = Auth::user()->id;
+          $p->save();
+
+        return redirect('dashboard/request');
     }
 
     /**
@@ -110,6 +136,7 @@ class BuyerPostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        BuyerPost::destroy($id);
+        return redirect('dashboard/request');
     }
 }

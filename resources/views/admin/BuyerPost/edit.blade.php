@@ -4,12 +4,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Edit Product
+      Edit Buyer Request
       <small>Preview</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Product</a></li>
+      <li><a href="#">BuyerRequest</a></li>
       <li class="active">Edit</li>
     </ol>
   </section>
@@ -23,50 +23,45 @@
         <!-- Horizontal Form -->
         <div class="box box-info">
           <div class="box-header with-border">
-            <h3 class="box-title">Edit Product Information</h3>
+            <h3 class="box-title">Edit Product Request Information</h3>
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form class="form-horizontal" method="post" action="{{ route('admin.product.update', $product->id) }}" enctype="multipart/form-data">
+          <form class="form-horizontal" method="post" action="{{ route('admin.request.update', $post->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <div class="box-body">
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Product Title</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Product Request Title</label>
 
                 <div class="col-sm-10">
-                  <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="" value="{{$product->name}}" required>
+                  <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="" value="{{$post->title}}" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">Select Product Category</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Quantity</label>
 
-                <div class="col-sm-10">
-                  <!-- /.form-group -->
-                    <select name="scid" class="form-control select2" style="width: 100%;" required>
-                      <option value="">Select Service Category</option>
-                      @foreach($subcategories as $s)
-                        @if($s->id == $product->sub_category_id)
-                        <option value="{{ $s->id }}" selected>{{ $s->name }}</option>
-                        @else
-                      <option value="{{ $s->id }}">{{ $s->name }}</option>
-                        @endif
-                      @endforeach
+                <div class="col-sm-5">
+
+                        <input type="number" name="quantity" class="form-control" value="{{$post->quantity}}" placeholder="0" required>
+
+                </div>
+                <div class="col-sm-5">
+                    <select name="qtype" class="form-control select2" style="width: 100%;" required>
+                      <option value="">Select Quantity Type</option>
+
+                      <option value="Piece(s)">Piece(s)</option>
+                      <option value="Pack(s)">Pack(s)</option>
+                      <option value="Pair">Pair</option>
+                      <option value="Pound">Pound</option>
+                      <option value="Square Meter">Square Meter</option>
+                      <option value="Metric Ton">Metric Ton</option>
+                      <!-- <option value="Meter">Meter</option>
+                      <option value="Meter">Meter</option> -->
+
+
                       <!-- <option disabled="disabled">California (disabled)</option> -->
                     </select>
-
-                  <!-- /.form-group -->
-
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Price</label>
-
-                <div class="col-sm-10">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
-                        <input type="number" step="any" name="price" class="form-control" placeholder="0.00" value="{{ $product->price }}">
-                      </div>
                 </div>
               </div>
               <div class="form-group">
@@ -76,47 +71,54 @@
 
                       <input type="file" name="img" id="exampleInputFile" required>
 
-                      <p class="help-block">Photo size ratio 3:1 (example: 600*200)</p>
+                      <p class="help-block">Photo size ratio 1:1 (example: 600*200)</p>
 
                 </div>
                 <div class="col-sm-5">
-                  <img src="{{ asset('storage/ProductImg/'.$product->img)}}" alt="" style="height: 250px;" class="img-responsive">
+                  <img src="{{ asset('storage/ProductImg/'.$post->img)}}" alt="" style="height: 250px;" class="img-responsive">
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Product URL (Redirect)</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Expire Date</label>
 
                 <div class="col-sm-10">
-                      <div class="input-group">
-                        <span class="input-group-addon">http://</span>
-                        <input type="text" name="purl" class="form-control" placeholder="www.example.com" value="{{$product->purl}}">
-                      </div>
+                      <!-- <div class="input-group">
+                        <span class="input-group-addon">http://</span> -->
+                        <?php
+                        $date = new DateTime($post->expire);
+                        // echo $date->format('m/d/Y');
+                         ?>
+                        <input type="date" name="date" class="form-control" placeholder="" value="<?php echo $date->format('Y-m-d'); ?>">
+                      <!-- </div> -->
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Description</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Comment</label>
 
                 <div class="col-sm-10">
-                  <textarea name="description" class="form-control" rows="5" id="comment" required>{{$product->description}}</textarea>
+                  <textarea name="comment" class="form-control" rows="5" id="comment" placeholder="looking for girl dresses and shoes." required>{{$post->comment}}</textarea>
                 </div>
               </div>
-              <!-- radio -->
-              <!-- <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="status" id="optionsRadios1" value="1" checked>
-                    Publish
-                  </label>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Select Product Category</label>
+
+                <div class="col-sm-10">
+                  <!-- /.form-group -->
+                    <select name="scid" class="form-control select2" style="width: 100%;" required>
+                      <option value="">Select product Category</option>
+                      @foreach($subcategories as $s)
+                        @if($s->id == $post->sub_category_id)
+                        <option value="{{ $s->id }}" selected>{{ $s->name }}</option>
+                        @else
+                      <option value="{{ $s->id }}">{{ $s->name }}</option>
+                        @endif
+                      @endforeach
+                      <!-- <option disabled="disabled">California (disabled)</option> -->
+                    </select>
+
                 </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="status" id="optionsRadios2" value="0">
-                    Disable
-                  </label>
-                </div>
-                </div>
-              </div> -->
+              </div>
+
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

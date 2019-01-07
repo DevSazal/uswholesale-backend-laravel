@@ -433,6 +433,22 @@
             <li><a href="{{ route('admin.btype.index')}}"><i class="fa fa-circle-o"></i>All BusinessType</a></li>
           </ul>
         </li>
+        <li class="
+        @if($segment=='request')
+        active
+        @endif treeview">
+          <a href="#">
+            <i class="fa fa-briefcase"></i>
+            <span>Buyer Request</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.request.create')}}"><i class="fa fa-circle-o"></i> Add New Request</a></li>
+            <li><a href="{{ route('admin.request.index')}}"><i class="fa fa-circle-o"></i>All Request</a></li>
+          </ul>
+        </li>
 
 
 

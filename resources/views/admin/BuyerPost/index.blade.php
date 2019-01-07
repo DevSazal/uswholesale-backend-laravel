@@ -42,8 +42,10 @@
               <th>Request Title</th>
               <th>Quantity</th>
               <th>Expire</th>
-              <th>Image</th>
+              <th>Left:</th>
+
               <th>Category</th>
+              <th>Image</th>
               <th>Created</th>
               <th>Action</th>
             </tr>
@@ -55,6 +57,13 @@
                 {{$p->quantity}} {{$p->qtype}}
               </td>
               <td>{{ $p->expire }}</td>
+              <td>
+              <?php
+              $date1 = new DateTime($p->created_at);
+              $date2 = new DateTime($p->expire);
+              echo $date1->diff($date2)->format("%d Day %h Hour");
+               ?></td>
+
               <td>{{ $p->subcategory->name }}</td>
               <td><img src="{{ asset('storage/ProductImg/'.$p->img) }}" alt="" style="height: 30px;"/></td>
               <td>{{ $p->created_at }}</td>
