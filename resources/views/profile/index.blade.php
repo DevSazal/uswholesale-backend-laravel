@@ -83,7 +83,7 @@
             </div>
           </div>
         </div>
-        <div class="latest-product">
+        <!-- <div class="latest-product">
           <div class="row">
             <div class="col-md-12">
               <div class="porduct-info">
@@ -133,6 +133,52 @@
               </div>
             </div>
           </div>
+        </div> -->
+        <div class="latest-product">
+          <div class="d-col1">
+            <span class="d-title">latest product</span>
+
+              <div class="product-page-img">
+                <div class="row">
+                  <div class="col-md-2  text-center">
+                    <div class="item">
+                      <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                      <a href="#">Flowerbomb- Fb1058</a>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <div class="item">
+                      <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                      <a href="#">Flowerbomb- Fb1058</a>
+                    </div>
+                  </div>
+                  <div class="col-md-2  text-center">
+                    <div class="item">
+                      <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                      <a href="#">Flowerbomb- Fb1058</a>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <div class="item">
+                      <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                      <a href="#">Flowerbomb- Fb1058</a>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <div class="item">
+                      <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                      <a href="#">Flowerbomb- Fb1058</a>
+                    </div>
+                  </div>
+                  <div class="col-md-2  text-center">
+                    <div class="item">
+                      <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
+                      <a href="#">Flowerbomb- Fb1058</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+         </div>
         </div>
 
         <div class="message">
@@ -151,5 +197,4 @@
         </div>
       </div>
   </div>
-
 @endsection

@@ -89,9 +89,9 @@
            </div>
          </div>
          <div class="col-md-9">
-           <span class="d-title">contact</span>
 
            <div class="d-col2">
+             <span class="d-title">contact</span>
              <div class="d-info">
                <div class="row">
                  <div class="col-md-8">
