@@ -25,19 +25,19 @@
         </div>
         <div class="profile-navbar text-right">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">profile</a></li>
-            <li><a href="#">products</a><span id="p-number">(2500)</span></li>
-            <li><a href="#">videos</a></li>
-            <li><a href="#">photos</a></li>
-            <li><a href="#">contact</a></li>
+            <li><a href="{{ url('/company')}}">Home</a></li>
+            <li><a href="{{ url('/company/profile')}}">profile</a></li>
+            <li><a href="{{ url('/company/product')}}">products</a><span id="p-number">(2500)</span></li>
+            <li><a href="{{ url('/company/video')}}">videos</a></li>
+            <li><a href="{{ url('/company/photos')}}">photos</a></li>
+            <li><a href="{{ url('/company/contact')}}">contact</a></li>
           </ul>
         </div>
       </div>
     </section>
 
       <!-- profile description -->
-      <div class="profile-container" id="profile">
+      <div class="profile-container" id="description">
         <div class="decription">
           <div class="row">
             <div class="col-md-2">
@@ -129,7 +129,6 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <span class="p-more"><a href="#" class="text-right">view more</a></span> -->
                 </div>
               </div>
             </div>

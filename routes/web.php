@@ -24,8 +24,23 @@ Route::get('/', 'DefaultController@index')->name('home');
 
 // Route::post('supplier/add', 'Supplier\SupplierController@store')->name('supplier.add');
 
-Route::get('/profile', function () {
+Route::get('/company', function () {
     return view('profile.index');
+});
+Route::get('/company/video', function () {
+    return view('profile.video');
+});
+Route::get('/company/profile', function () {
+    return view('profile.profile');
+});
+Route::get('/company/product', function () {
+    return view('profile.product');
+});
+Route::get('/company/photos', function () {
+    return view('profile.photos');
+});
+Route::get('/company/contact', function () {
+    return view('profile.contact');
 });
 Route::get('/category/{category_id}', 'DefaultController@category')->name('category')->where('category_id', '[0-9]+');
 Route::get('/premium-signup', 'DefaultController@premiumSignUp')->name('package');

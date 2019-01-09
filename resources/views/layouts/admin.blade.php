@@ -347,6 +347,7 @@
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
+      <div id="cssmenu">
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
@@ -468,6 +469,7 @@
 
         @endguest
       </ul>
+    </div>
     </section>
     <!-- /.sidebar -->
   </aside>

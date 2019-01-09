@@ -4147,8 +4147,9 @@ header #cssmenu .css-ul {
 /*  Supplier profile home page     */
 /********************/
 #profile {
-  margin: 50px 0;
+  margin: 50px 0 0 0;
   /* box-shadow: 6px 10px 89px 2px rgba(0,0,0,0.55); */
+  overflow: hidden;
 }
 #profile .profile-container{
   margin: 0 30px;
@@ -4166,6 +4167,7 @@ header #cssmenu .css-ul {
   box-sizing: border-box;
   border: 10px solid #66cc9b;
   border-bottom: unset;
+  overflow: hidden;
 }
 #profile .profile-nav{
   background: #66cc9b;
@@ -4203,10 +4205,14 @@ header #cssmenu .css-ul {
   padding-left: 4px;
   color: #6d6868;
 }
-#profile .decription{
+.profile-container{
+  /* background: #f7f7f7; */
+  padding: 50px 0px;
+}
+#description .decription{
   margin-bottom: 60px;
 }
-#profile .decription .d-title{
+#description .decription .d-title{
   background: #66cc9b;
   display: block;
   color: white;
@@ -4214,30 +4220,45 @@ header #cssmenu .css-ul {
   font-weight: bold;
   font-size: 16px;
   padding-left: 15px;
+  text-transform: capitalize;
 }
-#profile .decription .d-info{
+#description .decription .d-info{
   padding: 17px 14px;
 }
-#profile .decription .d-info p{
+#description .decription .d-info p{
   margin: unset;
   font-size: 11px;
 }
-#profile .decription .d-col1{
+#description .decription .d-col1{
   margin: 15px 0;
   background: #f5f5f5c9;
   height: 300px;
 }
-#profile .decription .d-col1 .d-info a{
+
+#description .decription .d-col1 .d-info a{
   color: red;
   font-weight: bold;
 }
-#profile .decription .d-col1 .d-info a:hover{
+#description .decription .d-col1 .d-info a:hover{
   text-decoration: underline;
 }
-#profile .latest-product{
+
+#description .decription .d-col2{
+  margin: 15px 0;
+  background: #f5f5f5c9;
+}
+
+#description .decription .d-col2 .d-info a{
+  color: red;
+  font-weight: bold;
+}
+#description .decription .d-col2 .d-info a:hover{
+  text-decoration: underline;
+}
+#description .latest-product{
   margin-bottom: 60px;
 }
-#profile .latest-product .porduct-info .product-title{
+#description .latest-product .porduct-info .product-title{
   background: #66cc9b;
   display: block;
   color: white;
@@ -4246,20 +4267,20 @@ header #cssmenu .css-ul {
   padding-left: 15px;
   text-transform: capitalize;
 }
-#profile .latest-product .porduct-info .product-title a{
+#description .latest-product .porduct-info .product-title a{
   float: right;
   color: red;
   /* font-weight: bold; */
   font-size: 12px;
-  padding: 0 50px;
+  padding: 4px 50px;
 }
-#profile .latest-product .porduct-info .product-title a:hover{
+#description .latest-product .porduct-info .product-title a:hover{
   text-decoration: underline;
 }
-#profile .latest-product .porduct-info .product-img{
+#description .latest-product .porduct-info .product-img{
   margin-top: 25px;
 }
-#profile .latest-product .porduct-info .product-img .item {
+#description .latest-product .porduct-info .product-img .item {
   position: relative;
   overflow: hidden;
   width: 150px;
@@ -4267,22 +4288,22 @@ header #cssmenu .css-ul {
   margin: 0 auto;
 }
 
-#profile .latest-product .porduct-info .product-img .item img {
+#description .latest-product .porduct-info .product-img .item img {
   max-width: 100px;
   transition: 0.8s;
   padding-bottom: 10px;
 }
 
-#profile .latest-product .porduct-info .product-img .item:hover img,
-#profile .latest-product .porduct-info .product-img .item:hover a,
-#profile .latest-product .porduct-info .product-img .item a:hover  {
+#description .latest-product .porduct-info .product-img .item:hover img,
+#description .latest-product .porduct-info .product-img .item:hover a,
+#description .latest-product .porduct-info .product-img .item a:hover  {
   transform: scale(1.1);
   color: red;
   text-decoration: underline;
   transition: .5s;
 }
 
-#profile .message .message-title{
+#description .message .message-title{
   background: #66cc9b;
   display: block;
   color: white;
@@ -4292,28 +4313,150 @@ header #cssmenu .css-ul {
   text-transform: capitalize;
 
 }
-#profile .message .message-title a{
+#description .message .message-title a{
   float: right;
   color: red;
   /* font-weight: bold; */
   font-size: 12px;
-  padding: 0 50px;
+  padding: 4px 50px;
 }
-#profile .message .message-title a:hover{
+#description .message .message-title a:hover{
   text-decoration: underline;
 }
-#profile .message .message-info{
+#description .message .message-info{
  padding: 15px;
  margin-bottom: 60px;
 }
-#profile .message .message-info p{
+#description .message .message-info p{
   margin: unset;
   padding: unset;
 }
-#profile .message .message-info p a{
+#description .message .message-info p a{
   color: red;
   font-weight: bold;
 }
-#profile .message .message-info p a:hover{
+#description .message .message-info p a:hover{
   text-decoration: underline;
+}
+#description .decription .row .col-md-3{
+  /* float: unset; */
+}
+#description .s-info{
+  padding: 2px 14px;
+}
+#description .s-icon{
+  margin-bottom: 0;
+  font-size: 25px;
+  padding: 0 4px;
+  transition: all .5s;
+}
+#description .s-info .fb{
+  color: #4666A9;
+  transition: all .5s;
+
+}
+#description .s-info .fb:hover{
+  color: #17589e;
+}
+#description .s-info .tw{
+  color: #5FA8DB;
+  transition: all .5s;
+
+}
+#description .s-info .tw:hover{
+  color: #379ce2;
+}
+#description .s-info .li{
+  color: #1589C9;
+  transition: all .5s;
+
+}
+#description .s-info .li:hover{
+  color: #2a6a8e;
+}
+#description .s-info .go{
+  color: #EC1515;
+  transition: all .5s;
+
+}
+#description .s-info .go:hover{
+  color: #D63239;
+}
+#description .s-info .pi{
+  color: #D63239;
+  transition: all .5s;
+
+}
+#description .s-info .pi:hover{
+  color: #d8676c;
+}
+
+.dl{
+padding: 5px 0;
+margin: 0;
+/* width: 660px; */
+overflow: hidden;
+}
+.dt{
+  float: left;
+  padding: 0;
+  width: 180px;
+  line-height: 19px;
+  overflow: hidden;
+  font-weight: bold;
+}
+.dd{
+  float: left;
+  padding: 0;
+  /* width: 480px; */
+  color: #38393b;
+  line-height: 19px;
+  overflow: hidden;
+}
+/* Supplier product page */
+
+#description .product-info-supplier{
+  padding: 17px 14px;
+  height: 496px;
+  overflow-y: scroll;
+}
+#description .product-info-supplier a{
+ color: red;
+ font-size: 13px;
+}
+#description .product-info-supplier a:hover{
+  text-decoration: underline
+}
+#description   .product-page-img{
+  margin-top: 25px;
+  overflow: hidden;
+}
+#description  .product-page-img .item {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  margin: 10px auto;
+}
+
+#description .product-page-img .item img {
+  max-width: 100px;
+  transition: 0.8s;
+  padding-bottom: 10px;
+}
+#description .product-page-img  a{
+  font-size: 10px;
+}
+
+#description .product-page-img .item:hover img,
+#description .product-page-img .item:hover a,
+#description .product-page-img  a:hover  {
+  transform: scale(1.1);
+  color: red;
+  text-decoration: underline;
+  transition: .5s;
+}
+#contact-right {
+    float: left;
+    padding-left: 30px;
+    width: 260px;
 }
