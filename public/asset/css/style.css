@@ -4458,3 +4458,8 @@ overflow: hidden;
 #contact-right {
   width: 240px;
 }
+.pagination{
+  padding: 12px;
+}
+.page-item{
+  text-align: center;
