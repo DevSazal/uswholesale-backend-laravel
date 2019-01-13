@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+<?php
+use Illuminate\Support\Facades\DB;
+ ?>
   <main>
     <section class="section-auth" id='app'>
         <div class="container">
@@ -94,14 +97,19 @@
                                   </div>
 
                                   <div class="form__group">
-                                      <input name="city" type="text" id="phone_number" class="form__input" placeholder="City" required>
+                                      <input name="city" type="text" id="city" class="form__input" placeholder="City" required>
                                   </div>
                                   <div class="form__group select-box">
                                       <select name="country" class="form__select" id="" required>
-                                        <option disabled>Select Country</option>
-                                        <option  v-for="item in countryList" v-if='countryList' :value="item.name">
-                                            @{{item.name}}
-                                        </option>
+                                        <option value="">Select Country</option>
+                                        <?php $countries = DB::table('countries')->get(); ?>
+
+                                        @if(count($countries) > 0)
+                                          @foreach($countries as $country)
+                                            <option value="{{$country->id}}">{{$country->name}}</option>
+                                          @endforeach
+                                        @endif
+
                                       </select>
                                       <label for="country" class="form__label">&nbsp;</label>
                                   </div>
@@ -155,4 +163,16 @@
 }
 
     </script>
+    <script type="text/javascript">
+    var path = "{{ url('livesearch') }}";
+    $('#city').typeahead({
+         minLength: 2,
+        source:  function (query, process) {
+        return $.get(path, { query: query }, function (data) {
+                return process(data);
+            });
+        }
+    });
+</script>
+
  @endsection

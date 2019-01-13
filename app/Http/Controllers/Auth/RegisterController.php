@@ -80,7 +80,7 @@ class RegisterController extends Controller
         	  'phone'=>  $data['phone'],
         		'address'=> $data['address'],
         		'city'=>  $data['city'],
-        		'country'=>  $data['country'],
+        		'country_id'=>  $data['country'],
             'role'=> 1,
             'payment'=> $data['package_id'],
         ]);

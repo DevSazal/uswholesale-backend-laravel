@@ -7,6 +7,7 @@ use App\SupplierProfile;
 use App\User;
 use App\SubCategory;
 use App\Product;
+use App\City;
 
 use Illuminate\Http\Request;
 
@@ -62,6 +63,11 @@ class DefaultController extends Controller
                           ->orderBy('products.id', 'desc')
                           ->paginate(20);
     return view('category')->with($array);
-  } 
+  }
+
+  public function result(Request $request){
+        $result=City::where('name', 'LIKE', "%{$request->input('query')}%")->get();
+        return response()->json($result);
+    }
 
 }

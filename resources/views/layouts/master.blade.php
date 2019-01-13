@@ -19,6 +19,8 @@
   @yield('title')
   <!-- development version, includes helpful console warnings -->
   <script src="{{asset('asset/js/vue.js')}}"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>  -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   @yield('script')
 </head>
