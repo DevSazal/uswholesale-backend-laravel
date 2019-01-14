@@ -30,4 +30,7 @@ class User extends Authenticatable
     public function supplier(){
       return $this->belongsTo('App\SupplierProfile', 'id', 'uid');
     }
+    public function country(){
+      return $this->belongsTo('App\Country', 'country_id');
+    }
 }

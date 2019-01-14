@@ -316,7 +316,7 @@ transition: all 0.4s ease 0s;
                                                     </dl>
                                                     <dl class="product__box--list">
                                                         <dt>Location:</dt>
-                                                        <dd>{{$supplier->user->city}}, {{$supplier->user->country}}
+                                                        <dd>{{$supplier->user->city}}, {{$supplier->user->country->name}}
                                                             <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
                                                         </dd>
                                                     </dl>
@@ -462,7 +462,7 @@ transition: all 0.4s ease 0s;
                                 </a>
                                                     <a class="product__box--sub-title">{{ $product->supplier->user->company}}</a>
                                                     <div class="product__box--location">
-                                                        {{$product->supplier->user->city}}, {{$product->supplier->user->country}}
+                                                        {{$product->supplier->user->city}}, {{$product->supplier->user->country->name}}
                                                         <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
                                                     </div>
                                                 </div>
