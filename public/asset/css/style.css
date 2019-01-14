@@ -4463,3 +4463,19 @@ overflow: hidden;
 }
 .page-item{
   text-align: center;
+}
+.is-invalid{
+  outline: none;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ff7730 !important;
+}
+.valid-input{
+  border-bottom: 1px solid #55c57a !important;
+}
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #e3342f;
+}

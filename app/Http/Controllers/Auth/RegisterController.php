@@ -50,10 +50,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-        		'username'=> ['required'],
+            'rEmail' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'rPassword' => ['required', 'string', 'min:6', 'confirmed'],
+        		'username'=> ['required', 'min:6', 'alpha_dash', 'unique:users'],
+            // 'username'=> ['required', 'min:6', 'alpha_dash', 'regex:/^\S*$/u', 'unique:users'],
             'company'=> [],
+            'phone1'=>  ['required'],
+            'phone2'=>  ['required'],
         	  'phone'=>  ['required'],
         		'address'=> ['required'],
         		'city'=>  ['required'],
@@ -73,11 +76,11 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'email' => $data['rEmail'],
+            'password' => Hash::make($data['rPassword']),
             'username'=> $data['username'],
             'company'=> $data['company'],
-        	  'phone'=>  $data['phone'],
+        	  'phone'=>  $data['phone1'].''.$data['phone2'].''.$data['phone'],
         		'address'=> $data['address'],
         		'city'=>  $data['city'],
         		'country_id'=>  $data['country'],

@@ -64,7 +64,7 @@
             </ul>
           </li> -->
           @guest
-          <li><a class="menu-btn" href="{{url('/premium-signup')}}" class="menu-join">Supplier Registration</a></li>
+          <li><a class="menu-btn" href="{{url('/premium-signup')}}" class="menu-join">Wholesale Registration</a></li>
           <li><a class="menu-btn" href="#" class="menu-join">Buyer Registration</a></li>
           <li><a href="{{url('/login')}}" class="menu-signin">Sign In</a></li>
           @else
