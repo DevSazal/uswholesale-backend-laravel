@@ -49,7 +49,7 @@ use Illuminate\Support\Facades\DB;
                                       @endif
                                   </div>
                                   <div class="form__group">
-                                      <input name="password_confirmation" type="password" id="confirm_password" class="form__input {{ $errors->has('name') ? 'is-invalid' : 'valid-input' }}" value="{{ old('name') }}" placeholder="Confirm Password" required>
+                                      <input name="password_confirmation" type="password" id="confirm_password" class="form__input {{ $errors->has('password') ? 'is-invalid' : 'valid-input' }}" value="{{ old('password') }}" placeholder="Confirm Password" required>
                                   </div>
                                   <div class="form__group">
                                     <div class="phone-input-group">
