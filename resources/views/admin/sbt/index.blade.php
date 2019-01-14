@@ -51,7 +51,7 @@
             <!-- /.box-body -->
             <div class="box-footer">
               <button type="button" class="btn btn-default" onclick="history.back()">Cancel</button>
-              <button type="submit" class="btn btn-info pull-right">Save</button>
+              <button type="submit" class="btn btn-info pull-right" {{ count($btypes) == 0 ? 'disabled' : '' }}>Save</button>
             </div>
             <!-- /.box-footer -->
           </form>

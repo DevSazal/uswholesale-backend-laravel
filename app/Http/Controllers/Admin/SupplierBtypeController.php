@@ -27,8 +27,8 @@ class SupplierBtypeController extends Controller
       $role = Auth::user()->role;
       $id = Auth::user()->id;
       if($role == 1){
-        $sbt = DB::table('supplier_btypes')->where('uid', $id);
-        if($sbt){
+        $sbt = DB::table('supplier_btypes')->where('uid', $id)->count();
+        if($sbt > 0){
           return redirect('dashboard/profile');
         }else{
           $array['btypes'] = BusinessType::all();
@@ -72,7 +72,7 @@ class SupplierBtypeController extends Controller
             $sbtype->save();
         }
 
-        return redirect('dashboard/btype');
+        return redirect('dashboard/profile');
     }
 
     /**

@@ -29,9 +29,9 @@ class HomeController extends Controller
         $role = Auth::user()->role;
         $id = Auth::user()->id;
         if($role == 1){
-          $ad = DB::table('supplier_profiles')->where('uid', $id);
-          $sbt = DB::table('supplier_btypes')->where('uid', $id);
-          if($ad && $sbt){
+          $ad = DB::table('supplier_profiles')->where('uid', $id)->count();
+          $sbt = DB::table('supplier_btypes')->where('uid', $id)->count();
+          if($ad > 0 && $sbt > 0){
             return view('admin.index');
           }else{
             return redirect('dashboard/sbtype');

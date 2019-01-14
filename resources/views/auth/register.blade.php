@@ -33,18 +33,18 @@ use Illuminate\Support\Facades\DB;
                                       @endif
                                   </div>
                                   <div class="form__group">
-                                      <input  name="rEmail" type="email" id="email" class="form__input {{ $errors->has('rEmail') ? 'is-invalid' : 'valid-input' }}" value="{{ old('rEmail') }}" placeholder="Email" required>
-                                      @if ($errors->has('rEmail'))
+                                      <input  name="email" type="email" id="email" class="form__input {{ $errors->has('email') ? 'is-invalid' : 'valid-input' }}" value="{{ old('email') }}" placeholder="Email" required>
+                                      @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
-                                          <strong> {{ $errors->first('rEmail') }} </strong>
+                                          <strong> {{ $errors->first('email') }} </strong>
                                         </span>
                                       @endif
                                   </div>
                                   <div class="form__group">
-                                      <input name="rPassword" type="password" id="password" class="form__input {{ $errors->has('rPassword') ? 'is-invalid' : 'valid-input' }}" value="{{ old('rPassword') }}" placeholder="Password" required>
-                                      @if ($errors->has('rPassword'))
+                                      <input name="password" type="password" id="password" class="form__input {{ $errors->has('password') ? 'is-invalid' : 'valid-input' }}" value="{{ old('password') }}" placeholder="Password" required>
+                                      @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
-                                          <strong> {{ $errors->first('rPassword') }} </strong>
+                                          <strong> {{ $errors->first('password') }} </strong>
                                         </span>
                                       @endif
                                   </div>
@@ -64,9 +64,6 @@ use Illuminate\Support\Facades\DB;
                                     </div>
                                   </div>
                                   <input type="hidden" name="package_id" value="{{$package_id}}">
-                                  <!-- <div class="form-group submit-button u-margin-top-medium">
-                                      <button class="btn btn--green">Register &rarr;</button>
-                                  </div> -->
                               </div>
                               <div class="col-md-6">
                                   <div class="form__group">
@@ -117,9 +114,8 @@ use Illuminate\Support\Facades\DB;
                                       </select>
                                       <label for="country" class="form__label">&nbsp;</label>
                                   </div>
-                                  <!-- <div class="form__group text-right u-margin-top-medium" style="margin-right: 3rem">
-                                    <a  @click="authPage('login')" class="btn-orange">Im already a member</a>
-                                  </div> -->
+
+
                                   <div class="form-btn-align">
                                     <div style="margin-right: 20px;">
                                       <a  @click="authPage('login')" class="btn btn-default btn-orange">Im already a member</a>
@@ -137,9 +133,7 @@ use Illuminate\Support\Facades\DB;
                       @csrf
                         <div class="signin-image">
                             <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sing up image"></figure>
-                            <!-- <div class="form__group text-center u-margin-top-medium" style="margin-right: 3rem">
-                                <a  @click="authPage('signup')" class="btn-orange">Create an account</a>
-                            </div> -->
+
                         </div>
                         <div class="signin-form u-margin-top-medium">
                             <div class="form__group">
