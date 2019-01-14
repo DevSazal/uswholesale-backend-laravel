@@ -512,24 +512,25 @@ transition: all 0.4s ease 0s;
                                         </div>
                                     </div>
                                     <ul class="buyer-list">
+                                @foreach ($requests as $r)
                                       <li class="buyer-item">
                                           <div class="buyer-box">
                                               <div class="buyer-box__left-box">
-                                                  <h3 class="buyer-box__main-title">Slipper Socks</h3>
+                                                  <h3 class="buyer-box__main-title">{{ $r->title }}</h3>
                                                   <div class="box-flex">
                                                       <div class="image-box">
-                                                          <img class="img-responsive" src="https://www.toptenwholesale.com/ttw/attachments/7308/tan%20cashmere%20poncho.jpg" alt="">
+                                                          <img class="img-responsive" src="{{ asset('storage/ProductImg/'.$r->img) }}" alt="">
                                                         </div>
                                                         <div class="info-box">
                                                             <div class="buyer-box__location">
                                                                 <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
-                                                                <span>United States</span>
+                                                                <span>{{ $r->user->country->name }}</span>
                                                             </div>
                                                             <div class="buyer-box__quantity">
                                                                 <span class="grey">Quantity Required:</span>
-                                                                <span>10 pair</span>
+                                                                <span>{{ $r->quantity }} {{ $r->qtype }} </span>
                                                             </div>
-                                                            <p class="buyer-box__paragraph">thick slipper socks for men, women and children</p>
+                                                            <p class="buyer-box__paragraph">{{ $r->comment }}</p>
                                                         </div>
                                                   </div>
                                               </div>
@@ -537,11 +538,17 @@ transition: all 0.4s ease 0s;
                                                 <ul class="list">
                                                   <li>
                                                       <span class="grey">Time Left:</span>
-                                                      <span>17D 8H</span>
+                                                      <span>
+                                                      <?php
+                                                        $date1 = new DateTime(date('Y-m-d H:i:s'));
+                                                        $date2 = new DateTime($r->expire);
+                                                        echo $date1->diff($date2)->format("%dD %hH");
+                                                        ?>
+                                                      </span>
                                                   </li>
                                                   <li>
                                                       <span class="grey">Date Posted:</span>
-                                                      <span>2018-12-09</span>
+                                                      <span>{{ $r->created_at->format('Y-m-d') }}</span>
                                                   </li>
                                                   <li>
                                                      <a href="#" class="btn-text">Quote now</a>
@@ -550,7 +557,9 @@ transition: all 0.4s ease 0s;
                                               </div>
                                           </div>
                                       </li>
-                                      <li class="buyer-item">
+                                @endforeach
+
+                                      <!-- <li class="buyer-item">
                                           <div class="buyer-box">
                                               <div class="buyer-box__left-box">
                                                   <h3 class="buyer-box__main-title">Slipper Socks</h3>
@@ -585,8 +594,12 @@ transition: all 0.4s ease 0s;
                                                 </ul>
                                               </div>
                                           </div>
-                                      </li>
+                                      </li> -->
                                     </ul>
+                                
+                                    <nav class="pagination-box" aria-label="Page navigation">
+                                      {{ $requests->links() }}
+                                    </nav>
                                 </div>
                             </div>
                         </div>

@@ -59,7 +59,8 @@
               <td>{{ $p->expire }}</td>
               <td>
               <?php
-              $date1 = new DateTime($p->created_at);
+              // $date1 = new DateTime($p->created_at);
+              $date1 = new DateTime(date('Y-m-d H:i:s'));
               $date2 = new DateTime($p->expire);
               echo $date1->diff($date2)->format("%d Day %h Hour");
                ?></td>

@@ -8,6 +8,7 @@ use App\User;
 use App\SubCategory;
 use App\Product;
 use App\City;
+use App\BuyerPost;
 
 use Illuminate\Http\Request;
 
@@ -62,6 +63,11 @@ class DefaultController extends Controller
                           ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img')
                           ->orderBy('products.id', 'desc')
                           ->paginate(20);
+    $array['requests'] = BuyerPost::Join('sub_categories', 'buyer_posts.sub_category_id', '=', 'sub_categories.id')
+                          ->where('sub_categories.cid', $category_id)
+                          ->select('buyer_posts.title', 'buyer_posts.quantity', 'buyer_posts.qtype', 'buyer_posts.expire', 'buyer_posts.img', 'buyer_posts.uid', 'buyer_posts.created_at',  'buyer_posts.comment')
+                          ->orderBy('buyer_posts.id', 'desc')
+                          ->paginate(30);
     return view('category')->with($array);
   }
 
