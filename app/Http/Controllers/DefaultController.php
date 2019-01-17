@@ -71,6 +71,10 @@ class DefaultController extends Controller
     return view('category')->with($array);
   }
 
+  public function subCategory($category_id, $subcategory_id){
+    return 'test';
+  }
+
   public function result(Request $request){
         $result=City::where('name', 'LIKE', "%{$request->input('query')}%")->get();
         return response()->json($result);

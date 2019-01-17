@@ -62,7 +62,7 @@ use Illuminate\Support\Facades\DB;
                             <ul class="menu menu-vertical sf-arrows">
                                 @foreach($categories as $c)
                                 <li class="side-nav__item">
-                                    <a href="category/{{$c->id}}" class="sf-with-ul"><i class="far fa-folder"></i>
+                                    <a href="{{ url('category/'.$c->id) }}" class="sf-with-ul"><i class="far fa-folder"></i>
                                         {{$c->name}}</a>
                                     <?php $sub = DB::table('sub_categories')->where('cid', $c->id)->get(); ?>
                                     @if(count($sub) > 0)
@@ -70,7 +70,7 @@ use Illuminate\Support\Facades\DB;
                                         <ul class="megamenu__items">
 
                                             @foreach($sub as $sc)
-                                            <li class="megamenu__item"><a href="{{$sc->id}}" class="megamenu__link">{{$sc->name}}</a></li>
+                                            <li class="megamenu__item"><a href="{{ url('category/'.$c->id.'/'.$sc->id) }}" class="megamenu__link">{{$sc->name}}</a></li>
                                             @endforeach
 
                                         </ul>
