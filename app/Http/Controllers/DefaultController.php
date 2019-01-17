@@ -72,7 +72,7 @@ class DefaultController extends Controller
   }
 
   public function subCategory($category_id, $subcategory_id){
-    return 'test';
+    return 'subcategory page';
   }
 
   public function result(Request $request){
