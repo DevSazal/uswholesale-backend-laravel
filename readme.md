@@ -15,7 +15,11 @@ composer update
 ```
 2. create a blank mysql database called "us_wholesale"
 3. config your .env file for laravel project
-4. Run Laravel 
+4. App key generate
+```
+php artisan key:generate
+```
+5. Run Laravel 
 ```
 php artisan serve
 ```
