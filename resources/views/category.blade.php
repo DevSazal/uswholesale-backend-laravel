@@ -156,7 +156,7 @@ transition: all 0.4s ease 0s;
                 <div class="row">
                     <div class="col-lg-3">
                         <form action="#">
-                            <div class="section-checkbox__container">
+                            <!-- <div class="section-checkbox__container">
                                 <h3 class="heading-tertiary">Region</h3>
                                 <div class="input-group">
                                     <input name="america" class="form-control styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
@@ -173,46 +173,25 @@ transition: all 0.4s ease 0s;
                                     <label for="styled-checkbox-3">Asia (147)
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="section-checkbox__container">
                                 <h3 class="heading-tertiary">Country</h3>
                                 <div class="scrollbar">
                                     <div class="overflow">
+                                    <?php $countries = DB::select('SELECT countries.id, countries.name, countries.code, COUNT(users.country_id) as total 
+                                                        FROM countries JOIN users ON countries.id = users.country_id WHERE users.role = ? 
+                                                        GROUP BY name ORDER BY countries.id ASC LIMIT 10', [1]); ?>
+                                    @foreach($countries as $c)
+
                                         <div class="input-group">
-                                            <input name="america" class="form-control styled-checkbox" id="styled-checkbox-usa" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-usa">United States America (247)
+                                            <input class="form-control styled-checkbox" id="styled-checkbox-{{$c->name}}" type="checkbox" value="value1">
+                                            <label for="styled-checkbox-{{$c->name}}">{{$c->name}} ({{$c->total}})
                                             </label>
                                         </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-china" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-china">China (47)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-uk" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-uk">United Kingdom (147)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-Canada" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-Canada">Canada (147)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-Turkey" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-Turkey">Turkey (147)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-bd" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-bd">Bangladesh (147)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-nepal" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-nepal">Nepal (147)
-                                            </label>
-                                        </div>
+
+                                    <!-- {{$c->name}}#{{$c->id}}#{{$c->code}}#{{$c->total}} -->
+                                    @endforeach
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -454,7 +433,7 @@ transition: all 0.4s ease 0s;
                                                 <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
                                                 @endif
                                                 <div class="product__box--image-tab-2">
-                                                    <img src="{{ asset('storage/ProductImg/'.$product->img) }}" alt="">
+                                                    <img src="{{ asset('storage/ProductImg/'.$product->img) }}" alt="" style="max-height: 200px;">
                                                 </div>
                                                 <div class="product__box--info">
                                                     <a href="{{$product->purl}}" target="_blank" class="product__box--main-title">
