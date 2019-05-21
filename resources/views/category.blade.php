@@ -105,49 +105,11 @@ transition: all 0.4s ease 0s;
         <section class="section__allcategory">
             <div class="container">
                 <ul class="allcategory__list">
-                    <li><a href="">Apparel Agents</a></li>
-                    <li><a href="">Apparel Design Services</a></li>
-                    <li><a href="">Apparel Machinery</a></li>
-                    <li><a href="">Apparel Machinery Parts</a></li>
-                    <li><a href="">Apparel Processing Services</a></li>
-                    <li><a href="">Apparel Projects</a></li>
-                    <li><a href="">Apparel Stock</a></li>
-                    <li><a href="">Baby Clothing</a></li>
-                    <li><a href="">Bathrobes</a></li>
-                    <li><a href="">Children's Clothing</a></li>
-                    <li><a href="">Coats</a></li>
-                    <li><a href="">Dresses</a></li>
-                    <li><a href="">Ethnic Garments</a></li>
-                    <li><a href="">Garment Accessories</a></li>
-                    <li><a href="">Jackets</a></li>
-                    <li><a href="">Ladies' Blouses</a></li>
-                    <li><a href="">Lingerie</a></li>
-                    <li><a href="">Mannequins</a></li>
-                    <li><a href="">Maternity Wear</a></li>
-                    <li><a href="">Men's Shirts</a></li>
-                    <li><a href="">Other Apparel</a></li>
-                    <li><a href="">Pajamas &amp; Sleepwear</a></li>
-                    <li><a href="">Pants, Trousers &amp; Jeans</a></li>
-                    <li><a href="">Party Costumes</a></li>
-                    <li><a href="">Sewing Supplies</a></li>
-                    <li><a href="">Skirts</a></li>
-                    <li><a href="">Sock Knitting Machinery</a></li>
-                    <li><a href="">Sock Knitting Machinery Parts</a></li>
-                    <li><a href="">Socks &amp; Stockings</a></li>
-                    <li><a href="">Special Purpose Clothing</a></li>
-                    <li><a href="">Sportswear</a></li>
-                    <li><a href="">Stage Wear</a></li>
-                    <li><a href="">Suits &amp; Tuxedo</a></li>
-                    <li><a href="">Sweaters</a></li>
-                    <li><a href="">Swimwear</a></li>
-                    <li><a href="">T-Shirts</a></li>
-                    <li><a href="">Tag Guns</a></li>
-                    <li><a href="">Tank Tops</a></li>
-                    <li><a href="">Underwear</a></li>
-                    <li><a href="">Uniforms &amp; Workwear</a></li>
-                    <li><a href="">Used Clothes</a></li>
-                    <li><a href="">Waistcoats</a></li>
-                    <li><a href="">Wedding &amp; Evening Dresses</a></li>
+                    <?php $sub = DB::table('sub_categories')->where('cid', $cid)->get(); ?>
+                    @foreach($sub as $sc)
+                      <li><a href="{{ url('category/'.$cid.'/'.$sc->id) }}">{{$sc->name}}</a></li>
+                    @endforeach
+                    
                 </ul>
             </div>
         </section>
@@ -178,8 +140,8 @@ transition: all 0.4s ease 0s;
                                 <h3 class="heading-tertiary">Country</h3>
                                 <div class="scrollbar">
                                     <div class="overflow">
-                                    <?php $countries = DB::select('SELECT countries.id, countries.name, countries.code, COUNT(users.country_id) as total 
-                                                        FROM countries JOIN users ON countries.id = users.country_id WHERE users.role = ? 
+                                    <?php $countries = DB::select('SELECT countries.id, countries.name, countries.code, COUNT(users.country_id) as total
+                                                        FROM countries JOIN users ON countries.id = users.country_id WHERE users.role = ?
                                                         GROUP BY name ORDER BY countries.id ASC LIMIT 10', [1]); ?>
                                     @foreach($countries as $c)
 
@@ -191,7 +153,7 @@ transition: all 0.4s ease 0s;
 
                                     <!-- {{$c->name}}#{{$c->id}}#{{$c->code}}#{{$c->total}} -->
                                     @endforeach
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -199,41 +161,17 @@ transition: all 0.4s ease 0s;
                                 <h3 class="heading-tertiary">Business Type</h3>
                                 <div class="scrollbar">
                                     <div class="overflow">
-                                        <div class="input-group">
-                                            <input name="america" class="form-control styled-checkbox" id="styled-checkbox-reseller" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-reseller">Reseller (247)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-Buyer" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-Buyer">Buyer (47)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-iso" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-iso">ISO 9901 (147)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-sa" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-sa">SA800 (147)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-Agent" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-Agent">Agent (147)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-Dropshier" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-Dropshier">Dropshier (147)
-                                            </label>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="form-control styled-checkbox" id="styled-checkbox-Association" type="checkbox" value="value1">
-                                            <label for="styled-checkbox-Association">Association (147)
-                                            </label>
-                                        </div>
+                                      <?php $types = DB::select('SELECT supplier_btypes.btid, supplier_btypes.uid, business_types.name, COUNT(supplier_btypes.btid) as total
+                                                          FROM supplier_btypes JOIN business_types ON supplier_btypes.btid = business_types.id
+                                                          GROUP BY name ORDER BY supplier_btypes.btid ASC LIMIT 10'); ?>
+                                        @foreach($types as $t)
+                                          <div class="input-group">
+                                              <input class="form-control styled-checkbox" id="styled-checkbox-{{$t->name}}" type="checkbox" value="value1">
+                                              <label for="styled-checkbox-{{$t->name}}">{{$t->name}} ({{$t->total}})
+                                              </label>
+                                          </div>
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>
@@ -575,7 +513,7 @@ transition: all 0.4s ease 0s;
                                           </div>
                                       </li> -->
                                     </ul>
-                                
+
                                     <nav class="pagination-box" aria-label="Page navigation">
                                       {{ $requests->links() }}
                                     </nav>

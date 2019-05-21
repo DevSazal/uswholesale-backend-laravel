@@ -54,6 +54,7 @@ class DefaultController extends Controller
 
     // $array['suppliers'] = DB::select('SELECT * FROM supplier_profiles JOIN sub_categories ON supplier_profiles.subcatgoryid = sub_categories.id
     //                                   WHERE sub_categories.cid = ?  ORDER BY supplier_profiles.promote DESC', [$category_id]);
+    $array['cid'] = $category_id;
     $array['suppliers'] = SupplierProfile::leftJoin('sub_categories', 'supplier_profiles.subcatgoryid', '=', 'sub_categories.id')
                           ->where('sub_categories.cid', $category_id)
                           ->orderBy('promote', 'desc')
