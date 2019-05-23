@@ -8,12 +8,12 @@
         <div class="row">
           <div class="col-md-3">
             <div class="profile-img text-center">
-                <img src="{{ asset('asset/img/profile.png')}}" alt="" width="175">
+                <img src="{{ asset('storage/CompanyLogo/'.$user->supplier->logo) }}" alt="" width="175">
             </div>
           </div>
           <div class="col-md-9">
             <div class="banner-img">
-                <img src="{{ asset('asset/img/p-banner.jpg')}}" alt="" width="848" height="277">
+                <img src="{{ asset('storage/CoverPhoto/'.$user->supplier->img) }}" alt="" width="848" height="277">
             </div>
           </div>
         </div>

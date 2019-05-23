@@ -23,6 +23,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>  -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   @yield('script')
+
+  <style>
+    .dropdown-menu {
+          min-width: 119px;
+    }
+    .dropdown-menu a{
+          padding: 6px 5px;
+    }
+    header #cssmenu .css-ul {
+      float: right;
+    }
+  </style>
 </head>
 
 
@@ -69,15 +81,18 @@
           <li><a href="{{url('/login')}}" class="menu-signin">Sign In</a></li>
           @else
           <li class="nav-item dropdown">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle menu-btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                  {{ Auth::user()->name }} <span class="caret"></span>
+              <a id="navbarDropdown" class="nav-link dropdown-toggle menu-btn" href="{{ url('/dashboard') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  <i class="fa fa-tachometer" aria-hidden="true"></i> {{ Auth::user()->name }}
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url('/dashboard') }}">
+                      <i class="fa fa-user-o" aria-hidden="true"></i> Dashboard
+                  </a>
                   <a class="dropdown-item" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
+                      <i class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }}
                   </a>
 
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

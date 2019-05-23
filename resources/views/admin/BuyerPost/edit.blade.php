@@ -69,7 +69,7 @@
 
                 <div class="col-sm-5">
 
-                      <input type="file" name="img" id="exampleInputFile" required>
+                      <input type="file" name="img" id="exampleInputFile" >
 
                       <p class="help-block">Photo size ratio 1:1 (example: 600*200)</p>
 
@@ -116,6 +116,13 @@
                       <!-- <option disabled="disabled">California (disabled)</option> -->
                     </select>
 
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Contact Link</label>
+
+                <div class="col-sm-10">
+                  <input type="text" name="link" class="form-control" id="inputEmail3" placeholder="" value="{{$post->contact_url}}" required>
                 </div>
               </div>
 

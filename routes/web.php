@@ -16,6 +16,7 @@
 // });
 
 Route::get('/', 'DefaultController@index')->name('home');
+Route::get('/company/{id}', 'DefaultController@company')->name('company')->where('id', '[0-9]+');
 
 // Route::get('/auth', function () {
 //     return view('auth.login');
@@ -24,9 +25,9 @@ Route::get('/', 'DefaultController@index')->name('home');
 
 // Route::post('supplier/add', 'Supplier\SupplierController@store')->name('supplier.add');
 
-Route::get('/company', function () {
-    return view('profile.index');
-});
+// Route::get('/company', function () {
+//     return view('profile.index');
+// });
 Route::get('/company/video', function () {
     return view('profile.video');
 });

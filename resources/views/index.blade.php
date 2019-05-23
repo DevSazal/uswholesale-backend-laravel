@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\DB;
         <div class="row">
             <div class="banner-image-container">
               @foreach($ad as $banner)
+              <a href="{{ url(''.$banner->url)}}" target="_blank">
                 <img id="bnr-035785149" title="{{$banner->company}}" border="0" src="{{ asset('storage/CoverPhoto/'.$banner->img)}} " class="banner" alt="{{$banner->company}}" />
+              </a>
               @endforeach
 
             </div>
@@ -139,7 +141,20 @@ use Illuminate\Support\Facades\DB;
             </div>
             <div class="col-lg-3">
                 <div class="main-add-container">
+                  @foreach($ad2 as $banner)
                     <div class="add__card">
+                      <a href="{{ url(''.$banner->url)}}" target="_blank">
+                        <div class="add__card--image-container">
+                            <img class="img-responsive add__card--image" src="{{ asset('storage/CoverPhoto/'.$banner->img)}}" alt="">
+                        </div>
+                        <h3 class="add__card--heading">{{$banner->company}} | {{ $banner->supplier_service_title }}</h3>
+                        <p class="add__card--paragraph">
+                            {{ \Illuminate\Support\Str::words($banner->summary, 18,'....') }}
+                        </p>
+                      </a>
+                    </div>
+                  @endforeach
+                    <!-- <div class="add__card">
                         <div class="add__card--image-container">
                             <img class="img-responsive add__card--image" src="{{asset('asset/vendor/images/add-1.jpg')}}" alt="">
                         </div>
@@ -147,16 +162,7 @@ use Illuminate\Support\Facades\DB;
                         <p class="add__card--paragraph">
                             Buy Wholesale Inventory Direct from Walmart 70-90% OFF Retail | All Product Categories
                         </p>
-                    </div>
-                    <div class="add__card">
-                        <div class="add__card--image-container">
-                            <img class="img-responsive add__card--image" src="{{asset('asset/vendor/images/add-1.jpg')}}" alt="">
-                        </div>
-                        <h3 class="add__card--heading">Walmart Liquidations | Pallets + Truckloads</h3>
-                        <p class="add__card--paragraph">
-                            Buy Wholesale Inventory Direct from Walmart 70-90% OFF Retail | All Product Categories
-                        </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

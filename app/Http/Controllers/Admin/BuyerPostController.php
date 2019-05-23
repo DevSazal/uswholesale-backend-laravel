@@ -45,13 +45,33 @@ class BuyerPostController extends Controller
      */
      public function store(Request $request, BuyerPost $p)
      {
-         if($request->img->getClientOriginalName()){
-             $ext = $request->img->getClientOriginalExtension();
-             $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
-             $request->img->storeAs('public/ProductImg',$file);
-             }else{
-             $file = '';
-             }
+            if(isset($request->file)){
+                   if($request->file->getClientOriginalName()){
+                           $ext = $request->file->getClientOriginalExtension();
+                           $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+                           $request->file->storeAs('public/researchfile',$file);
+
+                           $files = new File();
+                           $files->file = $file;
+                           $files->research_id = $research->id;
+                           $files->save();
+                       }else{
+                           $file = NULL;
+                       }
+               }else{
+                   $file = NULL;
+               }
+        if(isset($request->img)){
+           if($request->img->getClientOriginalName()){
+               $ext = $request->img->getClientOriginalExtension();
+               $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+               $request->img->storeAs('public/ProductImg',$file);
+               }else{
+               $file = '';
+               }
+           }else{
+               $file = NULL;
+           }
 
            $p->title = $request->name;
            $p->sub_category_id = $request->scid;
@@ -60,6 +80,7 @@ class BuyerPostController extends Controller
            $p->img = $file;
            $p->comment = $request->comment;
            $p->expire = $request->date;
+           $p->contact_url = $request->link;
 
            $p->uid = Auth::user()->id;
            $p->save();
@@ -103,15 +124,22 @@ class BuyerPostController extends Controller
     {
       $p = BuyerPost::find($id);
 
-      if($request->img->getClientOriginalName()){
-          $ext = $request->img->getClientOriginalExtension();
-          $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
-          $request->img->storeAs('public/ProductImg',$file);
+      if(isset($request->img)){
+        if($request->img->getClientOriginalName()){
+            $ext = $request->img->getClientOriginalExtension();
+            $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
+            $request->img->storeAs('public/ProductImg',$file);
+            }else{
+              if(!$p->img)
+                  $file = '';
+              else
+                  $file = $p->img;
+            }
           }else{
-            if(!$p->img)
-                $file = '';
-            else
-                $file = $p->img;
+              if(!$p->img)
+                  $file = NULL;
+              else
+                  $file = $p->img;    
           }
 
           $p->title = $request->name;
@@ -120,6 +148,7 @@ class BuyerPostController extends Controller
           $p->qtype = $request->qtype;
           $p->img = $file;
           $p->comment = $request->comment;
+          $p->contact_url = $request->link;
           $p->expire = $request->date;
 
           $p->uid = Auth::user()->id;
