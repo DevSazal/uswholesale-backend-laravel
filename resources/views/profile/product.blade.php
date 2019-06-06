@@ -8,12 +8,12 @@
         <div class="row">
           <div class="col-md-3">
             <div class="profile-img text-center">
-                <img src="{{ asset('asset/img/profile.png')}}" alt="" width="175">
+                <img src="{{ asset('storage/CompanyLogo/'.$user->supplier->logo) }}" alt="" width="175">
             </div>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9"  id="div850">
             <div class="banner-img">
-                <img src="{{ asset('asset/img/p-banner.jpg')}}" alt="" width="848" height="277">
+                <img src="{{ asset('storage/CoverPhoto/'.$user->supplier->img) }}" alt="" width="848" height="277">
             </div>
           </div>
         </div>
@@ -25,12 +25,12 @@
         </div>
         <div class="profile-navbar text-right">
           <ul>
-            <li><a href="{{ url('/company')}}">Home</a></li>
-            <li><a href="{{ url('/company/profile')}}">profile</a></li>
-            <li><a href="{{ url('/company/product')}}">products</a><span id="p-number">(2500)</span></li>
-            <li><a href="{{ url('/company/video')}}">videos</a></li>
-            <li><a href="{{ url('/company/photos')}}">photos</a></li>
-            <li><a href="{{ url('/company/contact')}}">contact</a></li>
+            <li><a href="{{ url('/company/'.$user->id)}}">Home</a></li>
+            <li><a href="{{ url('/company/'.$user->id.'/profile')}}">profile</a></li>
+            <li><a href="{{ url('/company/'.$user->id.'/product')}}">products</a><span id="p-number">({{ $count = \App\Product::where('sid',$user->supplier->id)->count() }})</span></li>
+            <!-- <li><a href="{{ url('/company/video')}}">videos</a></li>
+            <li><a href="{{ url('/company/photos')}}">photos</a></li> -->
+            <li><a href="{{ url('/company/'.$user->id.'/contact')}}">contact</a></li>
           </ul>
         </div>
       </div>
@@ -43,15 +43,14 @@
            <div class="d-col2">
              <span class="d-title">Company</span>
              <div class="d-info">
-               <p style="color:red; font-weight:bold">ShoppingCart.com</p>
-               <p>129 shantibag</p>
-               <p>129 shantibag</p>
-               <p>Malibag shantinogor</p>
-               <p>Dhaka</p>
+               <p style="color:red; font-weight:bold">{{ $user->company }}</p>
+               <p>{{ $user->address }}</p>
+               <p>{{ $user->city }}</p>
+               <p>{{ $user->country->name }}</p>
                <hr style="padding:unset; margin:15px 0">
                <span>
-                 <p>Phone: <span>01685558993</span></p>
-                 <p>Website: <span><a href="#"style="color:red; font-weight:bold">ShoppingCart.com</a></span></p>
+                 <p>Phone: <span>{{ $user->phone }}</span></p>
+                 <p>Website: <span><a href="{{ $user->supplier->website }}" target="_blank" style="color:red; font-weight:bold">{{ $user->supplier->website }}</a></span></p>
                </span>
                <hr style="padding:unset; margin:15px 0">
                <a href="#"style="color:red; font-weight:bold; font-size:12px;">Share</a>
@@ -63,54 +62,14 @@
              <span class="d-title">product category</span>
              <div class="product-info-supplier">
                <ul>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
-                 <li><a href="#">Baby Clothing</a></li>
+                 <?php
+                     $categories = DB::select('SELECT categories.name, products.price, COUNT(sub_categories.id) as total
+                                         FROM products JOIN sub_categories ON products.sub_category_id = sub_categories.id JOIN categories ON sub_categories.cid = categories.id WHERE products.sid = ?
+                                         GROUP BY sub_categories.id ORDER BY sub_categories.id ASC', [$user->supplier->id]);
+                  ?>
+                 @foreach($categories as $c)
+                 <li><a href="#">{{ $c->name }} ({{$c->total}})</a></li>
+                 @endforeach
                </ul>
              </div>
            </div>
@@ -122,119 +81,31 @@
 
                <div class="product-page-img">
                  <div class="row">
-                   <div class="col-md-2  text-center">
+                   <?php $products = \App\Product::where('sid',$user->supplier->id)->paginate(30); ?>
+
+                                     @foreach($products as $p)
+                                     <div class="col-md-2  text-center">
+                                       <div class="item">
+                                         <a href="{{ $p->purl }}" target="_blank"><img src="{{ asset('storage/ProductImg/'.$p->img) }}" alt=""></a>
+                                         <a href="{{ $p->purl }}" target="_blank">{{ $p->name }} - {{ $p->subcategory->name }} ({{ $p->price }} USD)</a>
+                                       </div>
+                                     </div>
+                                     @endforeach
+
+
+                   <!-- <div class="col-md-2  text-center">
                      <div class="item">
                        <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
 
                      </div>
                       <a href="#">Flowerbomb- Fb1058</a>
-                   </div>
-                   <div class="col-md-2 text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2 text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2 text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
-                   <div class="col-md-2  text-center">
-                     <div class="item">
-                       <a href="#"><img src="{{ asset('asset/img/p1.jpg')}}" alt=""></a>
-                       <div></div>
-                       <a href="#">Flowerbomb- Fb1058</a>
-                     </div>
-                   </div>
+                   </div> -->
+
+
                  </div>
                  <nav aria-label="Page navigation example">
-  <ul class="pagination">
+                   {{ $products->links() }}
+  <!-- <ul class="pagination">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
@@ -250,7 +121,7 @@
         <span class="sr-only">Next</span>
       </a>
     </li>
-  </ul>
+  </ul> -->
 </nav>
                </div>
 

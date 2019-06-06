@@ -17,6 +17,9 @@
 
 Route::get('/', 'DefaultController@index')->name('home');
 Route::get('/company/{id}', 'DefaultController@company')->name('company')->where('id', '[0-9]+');
+Route::get('/company/{id}/profile', 'DefaultController@companyProfile')->where('id', '[0-9]+');
+Route::get('/company/{id}/product', 'DefaultController@companyProduct')->where('id', '[0-9]+');
+Route::get('/company/{id}/contact', 'DefaultController@companyContact')->where('id', '[0-9]+');
 
 // Route::get('/auth', function () {
 //     return view('auth.login');
@@ -31,18 +34,18 @@ Route::get('/company/{id}', 'DefaultController@company')->name('company')->where
 Route::get('/company/video', function () {
     return view('profile.video');
 });
-Route::get('/company/profile', function () {
-    return view('profile.profile');
-});
-Route::get('/company/product', function () {
-    return view('profile.product');
-});
+// Route::get('/company/profile', function () {
+//     return view('profile.profile');
+// });
+// Route::get('/company/product', function () {
+//     return view('profile.product');
+// });
 Route::get('/company/photos', function () {
     return view('profile.photos');
 });
-Route::get('/company/contact', function () {
-    return view('profile.contact');
-});
+// Route::get('/company/contact', function () {
+//     return view('profile.contact');
+// });
 Route::get('/category/{category_id}', 'DefaultController@category')->name('category')->where('category_id', '[0-9]+');
 Route::get('/category/{category_id}/{sub_category_id}', 'DefaultController@subCategory')->where(['category_id' => '[0-9]+', 'category_id' => '[0-9]+']);
 Route::get('/premium-signup', 'DefaultController@premiumSignUp')->name('package');

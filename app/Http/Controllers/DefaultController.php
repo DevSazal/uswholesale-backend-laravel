@@ -105,6 +105,18 @@ class DefaultController extends Controller
     $array['user'] = User::find($id);
     return view('profile.index')->with($array);
   }
+  public function companyProfile($id){
+    $array['user'] = User::find($id);
+    return view('profile.profile')->with($array);
+  }
+  public function companyProduct($id){
+    $array['user'] = User::find($id);
+    return view('profile.product')->with($array);
+  }
+  public function companyContact($id){
+    $array['user'] = User::find($id);
+    return view('profile.contact')->with($array);
+  }
 
   public function result(Request $request){
         $result=City::where('name', 'LIKE', "%{$request->input('query')}%")->get();

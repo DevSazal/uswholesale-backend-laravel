@@ -34,6 +34,13 @@
     header #cssmenu .css-ul {
       float: right;
     }
+    @media only screen
+    and (max-width: 768px) {
+      #div850{
+        display: none;
+      }
+    }
+
   </style>
 </head>
 

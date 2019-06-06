@@ -267,7 +267,7 @@ use Illuminate\Support\Facades\DB;
     </div>
 </section>
 
-<section id="apparel">
+<!-- <section id="apparel">
     <div class="container">
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
@@ -316,7 +316,7 @@ use Illuminate\Support\Facades\DB;
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section id="news">
     <div class="container">

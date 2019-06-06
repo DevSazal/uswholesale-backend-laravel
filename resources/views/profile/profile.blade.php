@@ -8,12 +8,12 @@
         <div class="row">
           <div class="col-md-3">
             <div class="profile-img text-center">
-                <img src="{{ asset('asset/img/profile.png')}}" alt="" width="175">
+                <img src="{{ asset('storage/CompanyLogo/'.$user->supplier->logo) }}" alt="" width="175">
             </div>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9"  id="div850">
             <div class="banner-img">
-                <img src="{{ asset('asset/img/p-banner.jpg')}}" alt="" width="848" height="277">
+                <img src="{{ asset('storage/CoverPhoto/'.$user->supplier->img) }}" alt="" width="848" height="277">
             </div>
           </div>
         </div>
@@ -21,16 +21,16 @@
       <!-- profile nav -->
       <div class="profile-nav">
         <div class="logo-name" style="float:left;">
-          <p>Shopping cart</p>
+          <p>{{ $user->company }}</p>
         </div>
         <div class="profile-navbar text-right">
           <ul>
-            <li><a href="{{ url('/company')}}">Home</a></li>
-            <li><a href="{{ url('/company/profile')}}">profile</a></li>
-            <li><a href="{{ url('/company/product')}}">products</a><span id="p-number">(2500)</span></li>
-            <li><a href="{{ url('/company/video')}}">videos</a></li>
-            <li><a href="{{ url('/company/photos')}}">photos</a></li>
-            <li><a href="{{ url('/company/contact')}}">contact</a></li>
+            <li><a href="{{ url('/company/'.$user->id)}}">Home</a></li>
+            <li><a href="{{ url('/company/'.$user->id.'/profile')}}">profile</a></li>
+            <li><a href="{{ url('/company/'.$user->id.'/product')}}">products</a><span id="p-number">({{ $count = \App\Product::where('sid',$user->supplier->id)->count() }})</span></li>
+            <!-- <li><a href="{{ url('/company/video')}}">videos</a></li>
+            <li><a href="{{ url('/company/photos')}}">photos</a></li> -->
+            <li><a href="{{ url('/company/'.$user->id.'/contact')}}">contact</a></li>
           </ul>
         </div>
       </div>
@@ -43,15 +43,14 @@
            <div class="d-col2">
              <span class="d-title">Company</span>
              <div class="d-info">
-               <p style="color:red; font-weight:bold">ShoppingCart.com</p>
-               <p>129 shantibag</p>
-               <p>129 shantibag</p>
-               <p>Malibag shantinogor</p>
-               <p>Dhaka</p>
+               <p style="color:red; font-weight:bold">{{ $user->company }}</p>
+               <p>{{ $user->address }}</p>
+               <p>{{ $user->city }}</p>
+               <p>{{ $user->country->name }}</p>
                <hr style="padding:unset; margin:15px 0">
                <span>
-                 <p>Phone: <span>01685558993</span></p>
-                 <p>Website: <span><a href="#"style="color:red; font-weight:bold">ShoppingCart.com</a></span></p>
+                 <p>Phone: <span>{{ $user->phone }}</span></p>
+                 <p>Website: <span><a href="{{ $user->supplier->website }}" target="_blank" style="color:red; font-weight:bold">{{ $user->supplier->website }}</a></span></p>
                </span>
                <hr style="padding:unset; margin:15px 0">
                <a href="#"style="color:red; font-weight:bold; font-size:12px;">Share</a>
@@ -65,36 +64,45 @@
                <a href="#">Supplier Pass® <br>
                  verified supplier
                </a>
-               <p>2014</p>
+               <p>{{ $user->supplier->est }}</p>
                <img src="{{ asset('asset/img/supplier-pass.png')}}" alt="Supplier pass">
              </div>
            </div>
            <div class="d-col2">
              <span class="d-title">social icons</span>
              <div class="s-info">
-               <a href="#" class="s-icon"><i class="fab fa-facebook fb"></i></a>
-               <a href="#" class="s-icon"><i class="fab fa-twitter-square tw"></i></a>
-               <a href="#" class="s-icon"><i class="fab fa-linkedin-in li"></i></a>
-               <a href="#" class="s-icon"><i class="fab fa-google-plus-square go"></i></a>
-               <a href="#" class="s-icon"><i class="fab fa-pinterest pi"></i></a>
+               @if($user->supplier->fb != NULL)
+               <a href="{{ $user->supplier->fb }}" class="s-icon"><i class="fab fa-facebook fb"></i></a>
+               @endif
+               @if($user->supplier->twitter != NULL)
+               <a href="{{ $user->supplier->twitter }}" class="s-icon"><i class="fab fa-twitter-square tw"></i></a>
+               @endif
+               @if($user->supplier->linkedin != NULL)
+               <a href="{{ $user->supplier->linkedin }}" class="s-icon"><i class="fab fa-linkedin-in li"></i></a>
+               @endif
+               @if($user->supplier->google != NULL)
+               <a href="{{ $user->supplier->google }}" class="s-icon"><i class="fab fa-google-plus-square go"></i></a>
+               @endif
+               @if($user->supplier->pinterest != NULL)
+               <a href="{{ $user->supplier->pinterest }}" class="s-icon"><i class="fab fa-pinterest pi"></i></a>
+               @endif
              </div>
            </div>
 
-           <div class="d-col2">
+           <!-- <div class="d-col2">
              <span class="d-title">Market Place</span>
              <div class="d-info">
                <p>Dhaka</p>
                <p>Dhaka</p>
              </div>
-           </div>
+           </div> -->
          </div>
          <div class="col-md-9">
            <div class="d-col2">
              <span class="d-title">About</span>
              <div class="d-info">
                <p style="font-size:14px;">
-                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eium ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eium ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                 {{ strip_tags($user->supplier->description) }}
              </div>
            </div>
            <div class="d-col2">
@@ -102,33 +110,40 @@
              <div class="d-info">
                <div class="dl">
                 <div class="dt">Company Name:</div>
-                <div class="dd">LAShowroom.com</div>
+                <div class="dd">{{ $user->company }}</div>
                </div>
               <div class="dl">
                <div class="dt">Country:</div>
-               <div class="dd">United States</div>
+               <div class="dd">{{ $user->supplier->name }}</div>
               </div>
               <div class="dl">
                <div class="dt">Registered Address:</div>
-               <div class="dd">110 E 9th Street, Ste B1111<br />Los Angeles, CA 90079</div>
+               <div class="dd">{{ $user->address }}<br />{{ $user->city }}</div>
              </div>
              <div class="dl">
               <div class="dt">Business Type:</div>
               <div class="dd">
                 <ul>
-                 <li>Wholesaler</li>
-                 <li>Business Service</li>
+                  <?php $types = \App\SupplierBtype::where('uid', $user->id)->get(); ?>
+                  @foreach($types as $type)
+                    <li>{{ $type->btype->name }}</li>
+                  @endforeach
                 </ul>
               </div>
              </div>
              <div class="dl">
-               <div class="dt">Brands:</div>
+               <div class="dt">Categories:</div>
                 <div class="dd">
                <ul>
-                <li>Active Basic</li>
-                <li>Active Basic</li>
-                <li>Active Basic</li>
-                <li>Active Basic</li>
+                 <?php
+                     $types = DB::select('SELECT categories.name, products.price, COUNT(sub_categories.id) as total
+                                         FROM products JOIN sub_categories ON products.sub_category_id = sub_categories.id JOIN categories ON sub_categories.cid = categories.id WHERE products.sid = ?
+                                         GROUP BY sub_categories.id ORDER BY sub_categories.id ASC', [$user->supplier->id]);
+                  ?>
+                 @foreach($types as $type)
+                  <li>{{ $type->name }} ({{$type->total}})</li>
+                 @endforeach
+
 
                 </div>
               </div>

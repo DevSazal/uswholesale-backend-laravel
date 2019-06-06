@@ -192,6 +192,7 @@ transition: all 0.4s ease 0s;
                                             </label>
                                         </div> -->
                                     </div>
+                                    
                                     @foreach($suppliers as $supplier)
                                     <div class="product__box">
                                       <!-- product updated daily remove -->

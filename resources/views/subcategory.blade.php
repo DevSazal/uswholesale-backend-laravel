@@ -192,6 +192,10 @@ transition: all 0.4s ease 0s;
                                             </label>
                                         </div> -->
                                     </div>
+                                    <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
+                                  border-color: #d6e9c6;">
+                                      No information Found.
+                                    </div>
                                     @foreach($suppliers as $supplier)
                                     <div class="product__box">
                                       <!-- product updated daily remove -->
@@ -352,6 +356,10 @@ transition: all 0.4s ease 0s;
                                             </label>
                                         </div> -->
                                     </div>
+                                    <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
+                                  border-color: #d6e9c6;">
+                                      No information Found.
+                                    </div>
                                     <div class="row">
                                         @foreach($products as $product)
                                         <div class="col-md-6">
@@ -416,6 +424,10 @@ transition: all 0.4s ease 0s;
                                                 <span class="form__radio-button"></span> QTY Low
                                             </label>
                                         </div> -->
+                                    </div>
+                                    <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
+                                  border-color: #d6e9c6;">
+                                      No information Found.
                                     </div>
                                     <ul class="buyer-list">
                                 @foreach ($requests as $r)
