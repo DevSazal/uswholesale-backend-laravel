@@ -91,4 +91,14 @@ class RegisterController extends Controller
 
         // return view($data['package_id']);
     }
+
+    /**
+     * Show registration form
+     * @param  integer $package_id 0 = free(buyer), [1,2,3] = suppliers
+     * @return Response
+     */
+     public function showRegistrationForm($package_id = 0)
+     {
+       return view('auth.register', compact('package_id'));
+     }
 }
