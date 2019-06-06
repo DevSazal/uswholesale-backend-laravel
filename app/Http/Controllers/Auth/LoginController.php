@@ -36,4 +36,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Show the login form
+     * @param  integer $package_id 0 = free(buyer), [1,2,3] = suppliers
+     * @return Response
+     */
+    public function showLoginForm($package_id = 0)
+    {
+        return view('auth.login', compact('package_id'));
+    }
 }
