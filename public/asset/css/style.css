@@ -2525,6 +2525,7 @@ header {
   position: relative;
   width: 100%;
   background-image: linear-gradient(to right, #7ed56f 0%, #55c57a 50%, #28b485 100%);
+  min-height: 95px;
 }
 header #cssmenu {
   position: relative;
@@ -2540,7 +2541,7 @@ header #cssmenu .logo {
 }
 header #cssmenu .logo img {
   height: 7rem;
-  width: 9rem;
+  width: auto;
 }
 header #cssmenu .css-ul {
   float: left;

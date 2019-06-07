@@ -54,7 +54,7 @@
       <nav id='cssmenu'>
         <div class="logo">
           <a href="{{ url('/') }}">
-            <img src="{{ asset('asset/img/logo.png') }}" alt="logo">
+            <img src="{{ asset('asset/img/WholesaleFinder-Logo.jpg') }}" alt="logo" width="auto">
           </a>
         </div>
         <div id="head-mobile"></div>
