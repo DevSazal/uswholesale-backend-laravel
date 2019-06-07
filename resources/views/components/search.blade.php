@@ -9,7 +9,7 @@
             <div class="text">
               <input type="text" autocomplete="off" id="q" name="q" value="{{ request()->q ?? '' }}" placeholder="What are you searching for">
             </div>
-            <input type="submit" value="Search" class="sbutton">
+            <button type="submit" value="Search" class="sbutton"><i class="fa fa-search"></i> Search</button>
             <!-- <div class="suggest">
                 <span class="suggest__tag">
         Related Searches:

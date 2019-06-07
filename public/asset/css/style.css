@@ -3106,10 +3106,10 @@ header #cssmenu .menu-right .menu-signin {
   background: #fff;
   box-shadow: none;
   width: 50rem;
-  height: 4rem;
+  height: 6rem;
   line-height: normal;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 400;
   color: #999;
   position: relative;
@@ -3126,6 +3126,8 @@ header #cssmenu .menu-right .menu-signin {
   width: 100%;
   border: none;
   height: 100%;
+  font-size: 1.75rem;
+  color: #313235;
 }
 
 #home-search form .text>input:focus {
@@ -3141,13 +3143,13 @@ header #cssmenu .menu-right .menu-signin {
   border-top-right-radius: 0.6rem;
   border-bottom-right-radius: 0.6rem;
   background: #55c57a;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #fff;
   text-align: left;
   width: 12rem;
-  height: 4rem;
+  height: 6rem;
   line-height: 3.6rem;
   cursor: pointer;
   vertical-align: top;
@@ -3169,15 +3171,15 @@ header #cssmenu .menu-right .menu-signin {
   position: relative;
   border: 1px solid #55c57a;
   font-family: "Open Sans", sans-serif;
-  color: #999;
+  color: #313235;
   border-radius: 0.6rem;
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  height: 4rem;
+  height: 6rem;
   line-height: 3.8rem;
   text-decoration: none;
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   outline: none;
   background: #fff;
   -moz-border-radius: 0;
