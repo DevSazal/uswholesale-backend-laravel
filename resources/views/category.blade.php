@@ -67,13 +67,14 @@ transition: all 0.4s ease 0s;
                     <ul class="pages__list">
                         <li class="pages__item"><a href="#" class="pages__link">Home  ></a></li>
                         <li class="pages__item"><a href="#" class="pages__link">Wholesale Directory  ></a></li>
-                        <li class="pages__item"><a href="#" class="pages__link">{{ $category->name }}</a></li>
+                        @if(isset($category))<li class="pages__item"><a href="#" class="pages__link">{{ $category->name }}</a></li>@endif
                     </ul>
                 </div>
             </div>
         </section>
         <section class="section__allcategory">
             <div class="container">
+                @if(isset($cid))
                 <ul class="allcategory__list">
                     <?php $sub = DB::table('sub_categories')->where('cid', $cid)->get(); ?>
                     @foreach($sub as $sc)
@@ -81,6 +82,7 @@ transition: all 0.4s ease 0s;
                     @endforeach
 
                 </ul>
+                @endif
             </div>
         </section>
         <section class="section-categories u-margin-bottom-medium">
@@ -136,16 +138,16 @@ transition: all 0.4s ease 0s;
                     <div class="col-lg-9 ">
                         <div id="exTab2">
                             <ul class="nav nav-tabs custom-tab">
-                                <li class="active">
+                                <li class="{{ !request()->action && !request()->q ? 'active' : '' }}{{ request()->action == 'suppliers' ? 'active' : '' }}">
                                     <a href="#1" data-toggle="tab">Supplier</a>
                                 </li>
-                                <li><a href="#2" data-toggle="tab">Products</a>
+                                <li class="{{ request()->action == 'products' ? 'active' : '' }}"><a href="#2" data-toggle="tab">Products</a>
                                 </li>
                                 <li><a href="#3" data-toggle="tab">Buyer</a>
                                 </li>
                             </ul>
                             <div class="tab-content ">
-                                <div class="tab-pane active" id="1">
+                                <div class="tab-pane {{ !request()->action && !request()->q ? 'active' : '' }}{{ request()->action == 'suppliers' ? 'active' : '' }}" id="1">
                                     <div class="tab-checkbox-container">
                                         <!-- <div class="input-group">
                                             <input class="form-control styled-checkbox" id="styled-checkbox-Verified" type="checkbox" value="value1">
@@ -159,7 +161,7 @@ transition: all 0.4s ease 0s;
                                         </div> -->
                                     </div>
 
-                                    @foreach($suppliers as $supplier)
+                                    @forelse($suppliers as $supplier)
                                     <div class="product__box">
                                       <!-- product updated daily remove -->
                                         @if($supplier->promote == 1)
@@ -220,7 +222,14 @@ transition: all 0.4s ease 0s;
                                             <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a> -->
                                         </div>
                                     </div>
-                                    @endforeach
+                                    @empty
+                                    @endforelse
+
+                                    @if($suppliers->count())
+                                    <nav class="pagination-box" aria-label="Page navigation">
+                                      {{ $suppliers->links() }}
+                                    </nav>
+                                    @endif
 
                                     <!-- <div class="product__box">
                                         <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
@@ -274,8 +283,9 @@ transition: all 0.4s ease 0s;
                                             <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a>
                                         </div>
                                     </div> -->
+                                    <!--
                                     <nav class="pagination-box" aria-label="Page navigation">
-                                      {{ $suppliers->links() }}
+
 
                                         <!-- <ul class="pagination">
                                             <li class="page-item">
@@ -304,9 +314,9 @@ transition: all 0.4s ease 0s;
                                                 </a>
                                             </li>
                                         </ul> -->
-                                    </nav>
+                                    <!--</nav>-->
                                 </div>
-                                <div class="tab-pane" id="2">
+                                <div class="tab-pane {{ request()->action == 'products' ? 'active' : '' }}" id="2">
                                     <div class="tab-checkbox-container">
                                         <!-- <div class="input-group">
                                             <input class="form-control styled-checkbox" id="styled-checkbox-Verified" type="checkbox" value="value1">
@@ -320,7 +330,7 @@ transition: all 0.4s ease 0s;
                                         </div> -->
                                     </div>
                                     <div class="row">
-                                        @foreach($products as $product)
+                                        @forelse($products as $product)
                                         <div class="col-md-6">
                                             <div class="product__box">
                                                 @if($product->supplier->promote == 1)
@@ -349,11 +359,15 @@ transition: all 0.4s ease 0s;
                                             </div>
 
                                         </div>
-                                        @endforeach
+                                        @empty
+                                        @endforelse
                                     </div>
+
+                                    @if($products->count())
                                     <nav class="pagination-box" aria-label="Page navigation">
                                       {{ $products->links() }}
                                     </nav>
+                                    @endif
 
                                 </div>
                                 <div class="tab-pane" id="3">
@@ -469,10 +483,11 @@ transition: all 0.4s ease 0s;
                                           </div>
                                       </li> -->
                                     </ul>
-
+                                    @if($requests->count())
                                     <nav class="pagination-box" aria-label="Page navigation">
                                       {{ $requests->links() }}
                                     </nav>
+                                    @endif
                                 </div>
                             </div>
                         </div>

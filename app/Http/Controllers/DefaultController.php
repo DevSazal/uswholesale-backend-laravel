@@ -51,6 +51,36 @@ class DefaultController extends Controller
   //   $array['suppliers'] = SupplierProfile::where('subcatgoryid', $subcategory_id)->orderBy('promote', 'desc')->paginate(30);
   //   return view('category')->with($array);
   // }
+  //
+  public function search(Request $request)
+  {
+      if($request->action == "suppliers")
+        $array['suppliers'] = SupplierProfile::leftJoin('sub_categories', 'supplier_profiles.subcatgoryid', '=', 'sub_categories.id')
+                              ->leftJoin('users', 'supplier_profiles.uid', '=', 'users.id')
+                              ->where('users.company', 'like', "%{$request->q}%")
+                              ->orderBy('promote', 'desc')
+                              ->paginate(30);
+      else
+        $array['suppliers'] = collect([]);
+
+
+      if($request->action == "products")
+        $array['products'] = Product::Join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
+                              ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img')
+                              ->where('products.name', 'like', "%{$request->q}%")
+                              ->orderBy('products.id', 'desc')
+                              ->paginate(20);
+      else
+        $array['products'] = collect([]);
+
+
+
+      $array['requests'] = collect([]);
+
+
+      $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 8');
+      return view('category')->with($array);
+  }
 
   public function category($category_id){
 

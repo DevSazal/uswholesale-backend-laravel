@@ -17,6 +17,7 @@
 
 Route::get('/', 'DefaultController@index')->name('home');
 Route::get('/autocomplete_search', 'DefaultController@autocomplete_search')->name('autocomplete_search');
+Route::get('/search', 'DefaultController@search')->name('search');
 Route::get('/company/{id}', 'DefaultController@company')->name('company')->where('id', '[0-9]+');
 Route::get('/company/{id}/profile', 'DefaultController@companyProfile')->where('id', '[0-9]+');
 Route::get('/company/{id}/product', 'DefaultController@companyProduct')->where('id', '[0-9]+');
