@@ -1,13 +1,13 @@
 <!-- _______Starting of search_________  -->
 <section id="home-search">
     <div class="wrap">
-        <form name="searchForm" method="get" action="" onsubmit="">
+        <form name="searchForm" method="get" action="{{ route('search') }}" onsubmit="">
             <select id="act-select" name="action" class="selectBox-dropdown">
-                <option value="suppliers">Search Suppliers</option>
-                <option value="products">Search Products</option>
+                <option value="suppliers" {{ request()->action == 'suppliers' ? 'selected' : '' }}>Search Suppliers</option>
+                <option value="products" {{ request()->action == 'products' ? 'selected' : '' }}>Search Products</option>
             </select>
             <div class="text">
-              <input type="text" autocomplete="off" id="q" name="q" value="" placeholder="Explore millions of Wholesale Products">
+              <input type="text" autocomplete="off" id="q" name="q" value="{{ request()->q ?? '' }}" placeholder="Explore millions of Wholesale Products">
             </div>
             <input type="submit" value="Search" class="sbutton">
             <!-- <div class="suggest">
