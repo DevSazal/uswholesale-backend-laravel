@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{asset('asset/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
+  <link rel="stylesheet" href="{{asset('asset/css/bootstrap-typeahead.css')}}">
   @yield('title')
   <!-- development version, includes helpful console warnings -->
   <script src="{{asset('asset/js/vue.js')}}"></script>
@@ -262,7 +263,7 @@
 
   <!-- Main JS File -->
   <script src="{{asset('asset/vendor/js/main.min.js')}}"></script>
-
+  @yield('scripts')
 
 </body>
 

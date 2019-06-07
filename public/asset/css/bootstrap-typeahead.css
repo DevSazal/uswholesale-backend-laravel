@@ -1,0 +1,12 @@
+ul.typeahead.dropdown-menu {
+  width: 100%;
+  padding: 0;
+  margin-top: 5px;
+  margin-left: -10px;
+  border-radius: 0px;
+  border: 1px solid #55c57a;
+}
+
+ul.typeahead.dropdown-menu > li.active > a{
+  background-color: #55c57a;
+}
