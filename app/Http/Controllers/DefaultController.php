@@ -46,6 +46,13 @@ class DefaultController extends Controller
 
   }
 
+  public function charge(Request $request)
+  {
+    $request->user()
+            ->newSubscription('main', 2)
+            ->create($request->stripeToken);
+  }
+
   // public function category($category_id){
   //   $subcategory_id = SubCategory::where('cid', $category_id)->value('id');
   //   $array['suppliers'] = SupplierProfile::where('subcatgoryid', $subcategory_id)->orderBy('promote', 'desc')->paginate(30);
