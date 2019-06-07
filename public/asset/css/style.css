@@ -3112,6 +3112,7 @@ header #cssmenu .menu-right .menu-signin {
   font-size: 1.5rem;
   font-weight: 400;
   color: #999;
+  position: relative;
 }
 #home-search form .text:focus {
   outline: none;
@@ -3119,6 +3120,18 @@ header #cssmenu .menu-right .menu-signin {
 #home-search form .text::placeholder {
   color: #999;
 }
+
+#home-search form .text>input {
+  display: block;
+  width: 100%;
+  border: none;
+  height: 100%;
+}
+
+#home-search form .text>input:focus {
+  outline: none;
+}
+
 
 #home-search form .sbutton {
   padding: 0 0 0 2.8rem;
