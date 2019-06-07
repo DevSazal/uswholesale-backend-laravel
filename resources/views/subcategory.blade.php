@@ -58,43 +58,7 @@ transition: all 0.4s ease 0s;
 } */
  </style>
     <main>
-        <!-- _______Starting of search_________  -->
-        <section id="home-search">
-            <div class="wrap">
-                <form name="searchForm" method="get" action="" onsubmit="">
-                    <select id="act-select" name="action" class="selectBox-dropdown">
-                        <option value="search">Search Suppliers</option>
-                        <option value="products">Search Products</option>
-                        <option value="buyers">Search Buyers</option>
-                    </select>
-                    <input class="text" type="text" autocomplete="off" id="" name="" value="" placeholder="Explore millions of Wholesale Products">
-                    <input type="submit" value="Search" class="sbutton">
-                    <!-- <div class="suggest">
-                        <span class="suggest__tag">
-                Related Searches:
-            </span>
-                        <ul class="suggest__list u-margin-top-small">
-                            <li class="suggest__item">
-                                <a href="#" class="suggest__link">children's skiing apparel</a>
-                            </li>
-                            <li class="suggest__item">
-                                <a href="#" class="suggest__link">children's skiing apparel</a>
-                            </li>
-                            <li class="suggest__item">
-                                <a href="#" class="suggest__link">children's skiing apparel</a>
-                            </li>
-                            <li class="suggest__item">
-                                <a href="#" class="suggest__link">children's skiing apparel</a>
-                            </li>
-                            <li class="suggest__item">
-                                <a href="#" class="suggest__link">children's skiing apparel</a>
-                            </li>
-                        </ul>
-                    </div> -->
-                </form>
-            </div>
-        </section>
-        <!-- _______Ending of search_________  -->
+        @include('components.search')
         <section class="section__steps">
             <div class="container">
                 <div class="pages">

@@ -22,35 +22,7 @@ use Illuminate\Support\Facades\DB;
     <!-- _______ending of header ads_________  -->
 </section>
 
-<!-- _______Starting of search_________  -->
-<section id="home-search">
-    <div class="wrap">
-        <form name="searchForm" method="get" action="" onsubmit="">
-            <select id="act-select" name="action" class="selectBox-dropdown">
-                <option value="search">Search Suppliers</option>
-                <option value="products">Search Products</option>
-                <option value="buyers">Search Buyers</option>
-            </select>
-            <input class="text" type="text" autocomplete="off" id="" name="" value="" placeholder="Explore millions of Wholesale Products">
-            <input type="submit" value="Search" class="sbutton">
-            <div id="suggest"></div>
-        </form>
-        <!-- <form class="form-inline" action="index.html" method="post">
-          <div class="form-group">
-            <select name="">
-              <option value="">Select</option>
-              <option value="">Supplier</option>
-              <option value="">Supplier</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <input type="text" name="" value="" class="form-control" placeholder="Search...">
-          </div>
-          <button type="submit" name="button" class="search-btn"><i class="fas fa-search"></i></button>
-        </form> -->
-    </div>
-</section>
-<!-- _______Ending of search_________  -->
+@include('components.search')
 
 <!-- _______Starting of Main Cointainer_________  -->
 <section id="categories-slider">
