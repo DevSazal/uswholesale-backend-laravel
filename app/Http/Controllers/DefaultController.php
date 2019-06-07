@@ -123,4 +123,30 @@ class DefaultController extends Controller
         return response()->json($result);
     }
 
+  public function autocomplete_search(Request $request)
+  {
+      $action = $request->action;
+
+      if($action == "products")
+      {
+        $result = Product::where('name', 'LIKE', "%{$request->q}%")->take(5)->get(['name']);
+
+        $result = $result->map(function($item){
+          return $item->name;
+        })->all();
+      }
+
+
+      if($action == "suppliers")
+      {
+        $result = User::whereHas('supplier')->where('company', 'LIKE', "%{$request->q}%")->take(5)->get(['company']);
+
+        $result = $result->map(function($item){
+          return $item->company;
+        })->all();
+      }
+
+      return response()->json($result);
+  }
+
 }
