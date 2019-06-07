@@ -7,7 +7,7 @@
                 <option value="products" {{ request()->action == 'products' ? 'selected' : '' }}>Search Products</option>
             </select>
             <div class="text">
-              <input type="text" autocomplete="off" id="q" name="q" value="{{ request()->q ?? '' }}" placeholder="Explore millions of Wholesale Products">
+              <input type="text" autocomplete="off" id="q" name="q" value="{{ request()->q ?? '' }}" placeholder="What are you searching for">
             </div>
             <input type="submit" value="Search" class="sbutton">
             <!-- <div class="suggest">
