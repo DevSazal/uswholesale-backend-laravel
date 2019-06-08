@@ -41,6 +41,31 @@
   <script src="{{ asset('asset/js/typeahead.min.js') }}"></script>
   <script>
     $(function() {
+      $.fn.typeahead.Constructor.prototype.select = function() {
+          var val = this.$menu.find('.active').attr('data-value');
+          if (val) {
+            this.$element
+              .val(this.updater(val))
+              .change();
+          }
+          return this.hide()
+      };
+
+      $.fn.typeahead.Constructor.prototype.click = function (e) {
+        e.preventDefault()
+        let target = e.currentTarget
+
+        let val = $(target).find('.active > a').text()
+
+        if (val) {
+          this.$element
+            .val(this.updater(val))
+            .change();
+        }
+
+        this.hide()
+      }
+
       $('#q').typeahead({
         source: function(query, process){
           let path = "{{ route('autocomplete_search') }}"
