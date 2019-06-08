@@ -356,8 +356,8 @@ transition: all 0.4s ease 0s;
                                                     <a href="{{$product->purl}}" target="_blank" class="product__box--main-title">
                                   {{ $product->name }}
                                 </a>
+                                <div>$ {{ number_format($product->price, 2) }}</div>
                                                     <a class="product__box--sub-title">{{ $product->supplier->user->company}}</a>
-                                                    <div>$ {{ number_format($product->price, 2) }}</div>
                                                     <div class="product__box--location">
                                                         {{$product->supplier->user->city}}, {{$product->supplier->user->country->name}}
                                                         <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
