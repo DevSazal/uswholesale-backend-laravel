@@ -32,6 +32,14 @@ class DefaultController extends Controller
   }
 
   public function payment(){
+      if(
+        auth()->user()->subscribed('Basic') ||
+        auth()->user()->subscribed('Standard') ||
+        auth()->user()->subscribed('Premium')
+      ) {
+        return redirect(route('dashboard'));
+      }
+
       if(Auth::check()){
         $id = Auth::user()->id;
         $member = DB::table('memberships')->where('uid', $id)->first();
@@ -48,9 +56,46 @@ class DefaultController extends Controller
 
   public function charge(Request $request)
   {
-    $request->user()
-            ->newSubscription('main', 2)
-            ->create($request->stripeToken);
+    if(
+      auth()->user()->subscribed('Basic') ||
+      auth()->user()->subscribed('Standard') ||
+      auth()->user()->subscribed('Premium')
+    ) {
+      return redirect(route('dashboard'));
+    }
+
+    switch(auth()->user()->payment)
+    {
+      case 1:
+        $subscription = ['plan' => "Basic", 'price' => 59, 'plan_id' => "plan_FDZ35H0dzULItl"];
+        break;
+      case 2:
+        $subscription = ['plan' => "Standard", 'price' => 175, 'plan_id' => "plan_FDZ4UtqL2jhTHo"];
+        break;
+      default:
+        $subscription = ['plan' => "Premium", 'price' => 255, 'plan_id' => "plan_FDZ4Rm73vwcD0f"];
+    }
+
+    $user = $request->user();
+
+    $user->newSubscription($subscription['plan'], $subscription['plan_id'])
+          ->create($request->stripeToken);
+
+    $date = \Carbon\Carbon::now();
+
+    $membership = Membership::create([
+      'uid' => $user->id,
+      'package' => $user->payment,
+      'start' => $date,
+      'end' => $date->addMonth(),
+      'paytype' => 'credit card',
+      'price' => $subscription['price'],
+      'created_at' => now(),
+      'updated_at' => now()
+    ]);
+
+    return view('paymentSuccess');
+
   }
 
   // public function category($category_id){
