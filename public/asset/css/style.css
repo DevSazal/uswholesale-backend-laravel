@@ -4495,3 +4495,10 @@ overflow: hidden;
     font-size: 80%;
     color: #e3342f;
 }
+.text-white{
+  color: #fff;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}

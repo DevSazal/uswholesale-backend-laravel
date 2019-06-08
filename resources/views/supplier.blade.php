@@ -2,7 +2,7 @@
   <!-- _______ending of Navbar_________  -->
 
 @section('title')
-<title>Suppliar</title>
+<title>Supplier</title>
 @endsection
 
 @section('content')
@@ -211,21 +211,21 @@
                         </h4>
                         <div class="card__detail">
                             <ul>
-                                <li>10 day tour</li>
-                                <li>Upto 50 people</li>
-                                <li>8 tour guide</li>
-                                <li>Sleep in cozy hotel</li>
-                                <li>Difficulty: hard</li>
+                                <li>List 7 products</li>
+                                <li>3 photos per product</li>
+                                <li>1 video per product</li>
                             </ul>
                         </div>
                     </div>
                     <div class="card__side card__side--back card__side--back--1 ">
                         <div class="card__cta">
                             <div class="card__price--box">
-                                <p class="card__price--only">only</p>
-                                <p class="card__price--value">$99</p>
+                                <p class="card__price--only">Monthly</p>
+                                <p class="card__price--value">$59</p>
+                                <p class="card__price--only">Anually</p>
+                                <p class="card__price--value">$708</p>
                             </div>
-                            <a href="/register/1" class="btn btn--white">Book Now!</a>
+                            <a href="/register/1" class="btn btn--white">Continue</a>
                         </div>
                     </div>
                 </div>
@@ -237,25 +237,27 @@
 
                         </div>
                         <h4 class="card__heading">
-                            <span class="card__heading--span card__heading--span--2">Premium</span>
+                            <span class="card__heading--span card__heading--span--2">Standard</span>
                         </h4>
                         <div class="card__detail">
-                            <ul>
-                                <li>10 day tour</li>
-                                <li>Upto 50 people</li>
-                                <li>8 tour guide</li>
-                                <li>Sleep in cozy hotel</li>
-                                <li>Difficulty: hard</li>
-                            </ul>
+                          <ul>
+                              <li class="card__picture--2 text-white font-weight-bold">Highly Recommended</li>
+                              <li>List 21 products</li>
+                              <li>5 photos per product</li>
+                              <li>2 video per product</li>
+                              <li>Product keywords</li>
+                          </ul>
                         </div>
                     </div>
                     <div class="card__side card__side--back card__side--back--2 ">
                         <div class="card__cta">
                             <div class="card__price--box">
-                                <p class="card__price--only">only</p>
-                                <p class="card__price--value">$425</p>
+                                <p class="card__price--only">Monthly</p>
+                                <p class="card__price--value">$175</p>
+                                <p class="card__price--only">Anually</p>
+                                <p class="card__price--value">$2100</p>
                             </div>
-                            <a href="/register/2" class="btn btn--white">Book Now!</a>
+                            <a href="/register/2" class="btn btn--white">Continue</a>
                         </div>
                     </div>
                 </div>
@@ -267,25 +269,29 @@
 
                         </div>
                         <h4 class="card__heading">
-                            <span class="card__heading--span card__heading--span--3">Premium Saver</span>
+                            <span class="card__heading--span card__heading--span--3">Premium</span>
                         </h4>
                         <div class="card__detail">
                             <ul>
-                                <li>10 day tour</li>
-                                <li>Upto 50 people</li>
-                                <li>8 tour guide</li>
-                                <li>Sleep in cozy hotel</li>
-                                <li>Difficulty: hard</li>
+                              <ul>
+                                  <li class="card__picture--3 text-white font-weight-bold">Highly Competitive</li>
+                                  <li>List 40 products</li>
+                                  <li>5 photos per product</li>
+                                  <li>3 video per product</li>
+                                  <li>Product keywords</li>
+                              </ul>
                             </ul>
                         </div>
                     </div>
                     <div class="card__side card__side--back card__side--back--3 ">
                         <div class="card__cta">
                             <div class="card__price--box">
-                                <p class="card__price--only">only</p>
-                                <p class="card__price--value">$799</p>
+                              <p class="card__price--only">Monthly</p>
+                              <p class="card__price--value">$255</p>
+                              <p class="card__price--only">Anually</p>
+                              <p class="card__price--value">$3060</p>
                             </div>
-                            <a href="/register/3" class="btn btn--white">Book Now!</a>
+                            <a href="/register/3" class="btn btn--white">Continue</a>
                         </div>
                     </div>
                 </div>
