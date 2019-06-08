@@ -134,16 +134,16 @@ transition: all 0.4s ease 0s;
                     <div class="col-lg-9 ">
                         <div id="exTab2">
                             <ul class="nav nav-tabs custom-tab">
-                                <li class="active">
+                                <li class="{{ !isset(request()->sortBy) ? 'active' : '' }}">
                                     <a href="#1" data-toggle="tab">Supplier</a>
                                 </li>
-                                <li><a href="#2" data-toggle="tab">Products</a>
+                                <li class="{{ isset(request()->sortBy) ? 'active' : '' }}"><a href="#2" data-toggle="tab">Products</a>
                                 </li>
                                 <li><a href="#3" data-toggle="tab">Buyer</a>
                                 </li>
                             </ul>
                             <div class="tab-content ">
-                                <div class="tab-pane active" id="1">
+                                <div class="tab-pane {{ !isset(request()->sortBy) ? 'active' : '' }}" id="1">
                                     <div class="tab-checkbox-container">
                                         <!-- <div class="input-group">
                                             <input class="form-control styled-checkbox" id="styled-checkbox-Verified" type="checkbox" value="value1">
@@ -156,11 +156,8 @@ transition: all 0.4s ease 0s;
                                             </label>
                                         </div> -->
                                     </div>
-                                    <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
-                                  border-color: #d6e9c6;">
-                                      No information Found.
-                                    </div>
-                                    @foreach($suppliers as $supplier)
+
+                                    @forelse($suppliers as $supplier)
                                     <div class="product__box">
                                       <!-- product updated daily remove -->
                                         @if($supplier->promote == 1)
@@ -221,7 +218,14 @@ transition: all 0.4s ease 0s;
                                             <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a> -->
                                         </div>
                                     </div>
-                                    @endforeach
+                                    @empty
+                                    <div class="col-xs-12">
+                                      <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
+                                    border-color: #d6e9c6;">
+                                        No information Found.
+                                      </div>
+                                    </div>
+                                    @endforelse
 
                                     <!-- <div class="product__box">
                                         <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
@@ -307,8 +311,9 @@ transition: all 0.4s ease 0s;
                                         </ul> -->
                                     </nav>
                                 </div>
-                                <div class="tab-pane" id="2">
+                                <div class="tab-pane {{ isset(request()->sortBy) ? 'active' : '' }}" id="2">
                                     <div class="tab-checkbox-container">
+                                        @include('components.sorter')
                                         <!-- <div class="input-group">
                                             <input class="form-control styled-checkbox" id="styled-checkbox-Verified" type="checkbox" value="value1">
                                             <label for="styled-checkbox-Verified">Verified Supplier (147)
@@ -320,12 +325,8 @@ transition: all 0.4s ease 0s;
                                             </label>
                                         </div> -->
                                     </div>
-                                    <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
-                                  border-color: #d6e9c6;">
-                                      No information Found.
-                                    </div>
                                     <div class="row">
-                                        @foreach($products as $product)
+                                        @forelse($products as $product)
                                         <div class="col-md-6">
                                             <div class="product__box">
                                                 @if($product->supplier->promote == 1)
@@ -338,6 +339,7 @@ transition: all 0.4s ease 0s;
                                                     <a href="{{$product->purl}}" target="_blank" class="product__box--main-title">
                                   {{ $product->name }}
                                 </a>
+                                <div class="text-muted">$ {{ number_format($product->price,2) }}</div>
                                                     <a class="product__box--sub-title">{{ $product->supplier->user->company}}</a>
                                                     <div class="product__box--location">
                                                         {{$product->supplier->user->city}}, {{$product->supplier->user->country->name}}
@@ -354,7 +356,14 @@ transition: all 0.4s ease 0s;
                                             </div>
 
                                         </div>
-                                        @endforeach
+                                        @empty
+                                        <div class="col-xs-12">
+                                          <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
+                                        border-color: #d6e9c6;">
+                                            No information Found.
+                                          </div>
+                                        </div>
+                                        @endforelse
                                     </div>
                                     <nav class="pagination-box" aria-label="Page navigation">
                                       {{ $products->links() }}

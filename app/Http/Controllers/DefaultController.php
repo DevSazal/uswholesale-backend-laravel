@@ -72,11 +72,25 @@ class DefaultController extends Controller
 
 
       if($request->action == "products")
+      {
         $array['products'] = Product::Join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
-                              ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img')
-                              ->where('products.name', 'like', "%{$request->q}%")
-                              ->orderBy('products.id', 'desc')
-                              ->paginate(20);
+                              ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img', 'products.price')
+                              ->where('products.name', 'like', "%{$request->q}%");
+
+        if(isset($request->sortBy))
+        {
+          $array['products'] = $request->sortBy == "MinToMax"
+                             ? $array['products']->orderBy('price')
+                             : $array['products']->orderByDesc('price');
+        } else {
+          $array['products'] = $array['products']->orderByDesc('products.id');
+        }
+
+        $array['products'] = $array['products']->paginate(20);
+
+
+      }
+
       else
         $array['products'] = collect([]);
 
@@ -101,9 +115,18 @@ class DefaultController extends Controller
                           ->paginate(30);
     $array['products'] = Product::Join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
                           ->where('sub_categories.cid', $category_id)
-                          ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img')
-                          ->orderBy('products.id', 'desc')
-                          ->paginate(20);
+                          ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img', 'products.price');
+
+    if(isset($request->sortBy))
+    {
+       $request->sortBy == "MinToMax"
+                         ? $array['products']->orderBy('price')
+                         : $array['products']->orderByDesc('price');
+    } else {
+      $array['products'] = $array['products']->orderByDesc('products.id');
+    }
+
+    $array['products'] = $array['products']->paginate(20);
     $array['requests'] = BuyerPost::Join('sub_categories', 'buyer_posts.sub_category_id', '=', 'sub_categories.id')
                           ->where('sub_categories.cid', $category_id)
                           ->select('buyer_posts.title', 'buyer_posts.quantity', 'buyer_posts.qtype', 'buyer_posts.expire', 'buyer_posts.img', 'buyer_posts.uid', 'buyer_posts.created_at',  'buyer_posts.comment',  'buyer_posts.contact_url')
@@ -125,9 +148,18 @@ class DefaultController extends Controller
                           ->paginate(30);
     $array['products'] = Product::Join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
                           ->where('sub_categories.id', $subcategory_id)
-                          ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img')
-                          ->orderBy('products.id', 'desc')
-                          ->paginate(20);
+                          ->select('products.name', 'products.sid', 'products.name', 'products.purl', 'products.img', 'products.price');
+
+    if(isset(request()->sortBy))
+    {
+       request()->sortBy == "MinToMax"
+                         ? $array['products']->orderBy('price')
+                         : $array['products']->orderByDesc('price');
+    } else {
+      $array['products'] = $array['products']->orderByDesc('products.id');
+    }
+    $array['products'] = $array['products']->paginate(20);
+
     $array['requests'] = BuyerPost::Join('sub_categories', 'buyer_posts.sub_category_id', '=', 'sub_categories.id')
                           ->where('sub_categories.id', $subcategory_id)
                           ->select('buyer_posts.title', 'buyer_posts.quantity', 'buyer_posts.qtype', 'buyer_posts.expire', 'buyer_posts.img', 'buyer_posts.uid', 'buyer_posts.created_at',  'buyer_posts.comment',  'buyer_posts.contact_url')

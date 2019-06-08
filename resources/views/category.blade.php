@@ -223,6 +223,12 @@ transition: all 0.4s ease 0s;
                                         </div>
                                     </div>
                                     @empty
+                                    <div class="col-xs-12">
+                                      <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
+                                    border-color: #d6e9c6;">
+                                        No information Found.
+                                      </div>
+                                    </div>
                                     @endforelse
 
                                     @if($suppliers->count())
@@ -318,6 +324,13 @@ transition: all 0.4s ease 0s;
                                 </div>
                                 <div class="tab-pane {{ request()->action == 'products' ? 'active' : '' }}" id="2">
                                     <div class="tab-checkbox-container">
+                                      <!-- _______Starting of sorter_________  -->
+
+
+                                      @include('components.sorter')
+
+
+                                      <!-- _______Ending of sorter_________  -->
                                         <!-- <div class="input-group">
                                             <input class="form-control styled-checkbox" id="styled-checkbox-Verified" type="checkbox" value="value1">
                                             <label for="styled-checkbox-Verified">Verified Supplier (147)
@@ -344,6 +357,7 @@ transition: all 0.4s ease 0s;
                                   {{ $product->name }}
                                 </a>
                                                     <a class="product__box--sub-title">{{ $product->supplier->user->company}}</a>
+                                                    <div>$ {{ number_format($product->price, 2) }}</div>
                                                     <div class="product__box--location">
                                                         {{$product->supplier->user->city}}, {{$product->supplier->user->country->name}}
                                                         <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
@@ -360,6 +374,12 @@ transition: all 0.4s ease 0s;
 
                                         </div>
                                         @empty
+                                        <div class="col-xs-12">
+                                          <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
+                                        border-color: #d6e9c6;">
+                                            No information Found.
+                                          </div>
+                                        </div>
                                         @endforelse
                                     </div>
 
