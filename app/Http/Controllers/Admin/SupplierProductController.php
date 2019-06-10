@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\SupplierProfile;
 use App\Product;
 use App\SubCategory;
 
@@ -23,7 +24,13 @@ class SupplierProductController extends Controller
      */
     public function index()
     {
-        $array['products'] = Product::paginate(20);
+        if(!auth()->user()->supplier)
+          return redirect(route('admin.sbtype.index'));
+
+        $supplier = SupplierProfile::find(auth()->user()->supplier->id);
+
+        $array['products'] = $supplier->products()->paginate(20);
+        
         return view('admin.supplierproduct.index')->with($array);
     }
 

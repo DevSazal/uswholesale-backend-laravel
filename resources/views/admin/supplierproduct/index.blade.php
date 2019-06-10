@@ -47,7 +47,7 @@
               <th>Updated</th>
               <th>Action</th>
             </tr>
-            @foreach($products as $p)
+            @forelse($products as $p)
             <tr>
               <td>{{ $p->id }}</td>
               <td>{{ $p->name }}</td>
@@ -69,7 +69,11 @@
                     </form>
               </td>
             </tr>
-            @endforeach
+            @empty
+            <tr>
+              <td class="text-center" colspan="8">- No products found. Click <a href="{{ route('admin.product.create') }}">here</a> to create your first product -</td>
+            </tr>
+            @endforelse
 
           </table>
         </div>
