@@ -40,4 +40,9 @@ class HomeController extends Controller
           return view('admin.index');
         }
     }
+
+    public function error()
+    {
+      return view('error.403');
+    }
 }
