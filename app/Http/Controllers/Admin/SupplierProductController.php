@@ -30,7 +30,7 @@ class SupplierProductController extends Controller
         $supplier = SupplierProfile::find(auth()->user()->supplier->id);
 
         $array['products'] = $supplier->products()->paginate(20);
-        
+
         return view('admin.supplierproduct.index')->with($array);
     }
 
@@ -41,6 +41,10 @@ class SupplierProductController extends Controller
      */
     public function create()
     {
+        if(auth()->user()->supplier->products->count() >= auth()->user()->plan->photos){
+          return redirect(route('admin.product.index'));
+        }
+
         $array['subcategories'] = SubCategory::all();
         return view('admin.supplierproduct.create')->with($array);
     }
