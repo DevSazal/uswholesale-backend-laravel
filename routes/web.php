@@ -59,16 +59,17 @@ Route::get('/livesearch','DefaultController@result');
 
 Auth::routes();
 
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
 // Admin Route Start
 Route::group(['middleware' => 'admin'], function(){
-  Route::get('/dashboard', 'HomeController@index')->name('dashboard');
   Route::resource('/dashboard/category', 'Admin\CategoryController', ['as'=>'admin']);
   Route::resource('/dashboard/subcategory', 'Admin\SubCategoryController', ['as'=>'admin']);
   Route::resource('/dashboard/btype', 'Admin\BusinessTypeController', ['as'=>'admin']);
-  Route::resource('/dashboard/sbtype', 'Admin\SupplierBtypeController', ['as'=>'admin']);
 });
 
 Route::group(['middleware' => 'supplier'], function(){
+  Route::resource('/dashboard/sbtype', 'Admin\SupplierBtypeController', ['as'=>'admin']);
   Route::resource('/dashboard/profile', 'Admin\SupplierProfileController', ['as'=>'admin']);
   Route::resource('/dashboard/product', 'Admin\SupplierProductController', ['as'=>'admin']);
 });
