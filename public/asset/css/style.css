@@ -4036,6 +4036,30 @@ header #cssmenu .menu-right .menu-signin {
   color: #55c57a;
 }
 
+/********************/
+/*  PREMIUM SERVICES    */
+/********************/
+.section-premium-member-service {
+  padding: 10rem 0;
+  background-color: #fff;
+}
+
+.section-premium-member-service .card {
+  height: auto;
+  background: white;
+  border-top: 5px solid #ddd;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  padding: 1rem 1rem 3rem;
+}
+
+.section-premium-member-service .card > .card-header{
+  margin-top: 2rem;
+}
+
+.section-premium-member-service .card > .card-header > h3{
+  color: #55c57a
+}
+
 /*# sourceMappingURL=style.css.map */
 
 

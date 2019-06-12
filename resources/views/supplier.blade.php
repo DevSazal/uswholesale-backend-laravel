@@ -192,6 +192,48 @@
   </section>
 
   <!-- testimonials end -->
+
+  <section class="section-premium-member-service">
+    <div class="container">
+      <div class="u-center-text u-margin-bottom-big">
+        <h2 class="heading-secondary">
+          Premium Member Services
+        </h2>
+        <p class="text-center">As a Premium Member you are able to promote your company and your most popular items with<br>Banner Ads, Featured Listings, and Pay-Per-Click Advertising.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <div class="text-center"><img src="{{ asset('asset/img/pm_icon_banner.png') }}"  height="60"/></div>
+              <h3 class="text-center">Banner Ads</h3>
+            </div>
+            <p>Banner Ads allow you to create a visual of a product that will drive additional buyer traffic directly to your website. Banner ads are displayed in high traffic areas across TopTenWholesale.com.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <div class="text-center"><img src="{{ asset('asset/img/pm_icon_featured.png') }}"  height="60"/></div>
+              <h3 class="text-center">Featured Listing</h3>
+            </div>
+            <p>Featured Listings are very popular with suppliers looking to maximize exposure. A featured listing is given the highest level of priority on search result pages and receive the most traffic.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <div class="text-center"><img src="{{ asset('asset/img/pm_icon_ppc.png') }}" height="60"/></div>
+              <h3 class="text-center">Pay-Per-Click</h3>
+            </div>
+            <p>Pay-Per-Click Advertising is a pay-for-performance service, meaning that you only pay for the buyers that click on your listings. Buyer traffic is sent directly to your website.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <section class="section-plan">
       <div class="container">
           <div class="u-center-text u-margin-bottom-big">
