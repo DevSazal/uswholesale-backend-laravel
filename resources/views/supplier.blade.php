@@ -255,7 +255,6 @@
                             <ul>
                                 <li>List 7 products</li>
                                 <li>3 photos per product</li>
-                                <li>1 video per product</li>
                             </ul>
                         </div>
                     </div>
@@ -286,7 +285,6 @@
                               <li class="card__picture--2 text-white font-weight-bold">Highly Recommended</li>
                               <li>List 21 products</li>
                               <li>5 photos per product</li>
-                              <li>2 video per product</li>
                               <li>Product keywords</li>
                           </ul>
                         </div>
@@ -319,7 +317,6 @@
                                   <li class="card__picture--3 text-white font-weight-bold">Highly Competitive</li>
                                   <li>List 40 products</li>
                                   <li>5 photos per product</li>
-                                  <li>3 video per product</li>
                                   <li>Product keywords</li>
                               </ul>
                             </ul>
