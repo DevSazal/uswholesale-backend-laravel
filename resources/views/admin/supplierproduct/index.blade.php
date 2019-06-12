@@ -22,7 +22,7 @@
     @if(session('error'))
       <div class="col-xs-12">
         <div class="alert alert-danger">
-          <i class="fas fa-warning"></i> {{ session('error') }}
+          <i class="fa fa-exclamation-circle"></i> {{ session('error') }}
         </div>
       </div>
     @endif

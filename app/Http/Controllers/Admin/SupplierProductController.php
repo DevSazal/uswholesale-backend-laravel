@@ -41,7 +41,7 @@ class SupplierProductController extends Controller
      */
     public function create()
     {
-        if(auth()->user()->supplier->products->count() >= auth()->user()->plan->photos){
+        if(auth()->user()->supplier->products->count() >= auth()->user()->plan->products){
           return redirect(route('admin.product.index'))->with('error', 'You have reached the maximum number of products that you can store.');
         }
 
@@ -57,9 +57,27 @@ class SupplierProductController extends Controller
      */
      public function store(Request $request, Product $p)
      {
-         if(auth()->user()->supplier->products->count() >= auth()->user()->plan->photos){
+         if(auth()->user()->supplier->products->count() >= auth()->user()->plan->products){
            return redirect(route('admin.product.index'))->with('error', 'You have reached the maximum number of products that you can store.');
          }
+
+         if(count($request->img) >= auth()->user()->plan->photos) {
+           return redirect(route('admin.product.create'))->withInput()->with('error', 'Your current plan prevents you from uploading more than '.auth()->user()->plan->photos.' photos');
+         }
+
+         $validator = \Validator::make($request->all(), [
+           'name' => 'required',
+           'description' => 'required',
+           'purl' => 'required',
+           'scid' => 'required',
+           'price' => 'required|numeric',
+           'img.*' => 'dimensions:ratio=3/1'
+         ]);
+
+         if($validator->fails())
+          return back()->withInput()->withError($validator->errors());
+
+
 
          if($request->img->getClientOriginalName()){
              $ext = $request->img->getClientOriginalExtension();

@@ -18,6 +18,20 @@
   <section class="content">
     <div class="row">
 
+      @if(session('error'))
+
+        @if(session('error') instanceof MessageBag)
+          test
+        @endif
+
+        <div class="col-md-12">
+          <div class="alert alert-danger">
+            <i class="fa fa-exclamation-circle"></i> {{ session('error') }}
+          </div>
+        </div>
+
+      @endif
+
       <!-- right column -->
       <div class="col-md-12">
         <!-- Horizontal Form -->
@@ -34,7 +48,7 @@
                 <label for="inputEmail3" class="col-sm-2 control-label">Product Title</label>
 
                 <div class="col-sm-10">
-                  <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="" required>
+                  <input type="text" name="name" class="form-control" id="inputEmail3"  value="{{ old('name') ?? '' }}" placeholder="" required>
                 </div>
               </div>
               <div class="form-group">
@@ -45,7 +59,7 @@
                     <select name="scid" class="form-control select2" style="width: 100%;" required>
                       <option value="">Select Service Category</option>
                       @foreach($subcategories as $s)
-                      <option value="{{ $s->id }}">{{ $s->name }}</option>
+                      <option value="{{ $s->id }}" {{ old('scid') == $s->id ? 'selected' : ''}}>{{ $s->name }}</option>
                       @endforeach
                       <!-- <option disabled="disabled">California (disabled)</option> -->
                     </select>
@@ -60,7 +74,7 @@
                 <div class="col-sm-10">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
-                        <input type="number" step="any" name="price" class="form-control" placeholder="0.00" >
+                        <input type="number" step="any" name="price" class="form-control" placeholder="0.00" value="{{ old('price') ?? '' }}">
                       </div>
                 </div>
               </div>
@@ -69,7 +83,7 @@
 
                 <div class="col-sm-10">
 
-                      <input type="file" name="img" id="exampleInputFile" multiple required>
+                      <input type="file" name="img[]" id="exampleInputFile" multiple required>
 
                       <p class="help-block">Photo size ratio 3:1 (example: 600*200)</p>
 
@@ -81,7 +95,7 @@
                 <div class="col-sm-10">
                       <div class="input-group">
                         <span class="input-group-addon">http://</span>
-                        <input type="text" name="purl" class="form-control" placeholder="www.example.com" >
+                        <input type="text" name="purl" class="form-control" placeholder="www.example.com" value="{{ old('purl') ?? '' }}">
                       </div>
                 </div>
               </div>
@@ -89,7 +103,7 @@
                 <label for="inputEmail3" class="col-sm-2 control-label">Description</label>
 
                 <div class="col-sm-10">
-                  <textarea name="description" class="form-control" rows="5" id="comment" required></textarea>
+                  <textarea name="description" class="form-control" rows="5" id="comment" required>{{ old('description') ?? '' }}</textarea>
                 </div>
               </div>
 
