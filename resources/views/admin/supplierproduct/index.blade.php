@@ -19,6 +19,13 @@
 <section class="content">
   <!-- /.row -->
   <div class="row">
+    @if(session('error'))
+      <div class="col-xs-12">
+        <div class="alert alert-danger">
+          <i class="fas fa-warning"></i> {{ session('error') }}
+        </div>
+      </div>
+    @endif
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">

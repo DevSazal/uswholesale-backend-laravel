@@ -42,7 +42,7 @@ class SupplierProductController extends Controller
     public function create()
     {
         if(auth()->user()->supplier->products->count() >= auth()->user()->plan->photos){
-          return redirect(route('admin.product.index'));
+          return redirect(route('admin.product.index'))->with('error', 'You have reached the maximum number of products that you can store.');
         }
 
         $array['subcategories'] = SubCategory::all();
@@ -57,6 +57,10 @@ class SupplierProductController extends Controller
      */
      public function store(Request $request, Product $p)
      {
+         if(auth()->user()->supplier->products->count() >= auth()->user()->plan->photos){
+           return redirect(route('admin.product.index'))->with('error', 'You have reached the maximum number of products that you can store.');
+         }
+
          if($request->img->getClientOriginalName()){
              $ext = $request->img->getClientOriginalExtension();
              $file = date('YmdHis').'_'.rand(1,999).'.'.$ext;
