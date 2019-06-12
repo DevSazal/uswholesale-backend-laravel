@@ -69,7 +69,7 @@
 
                 <div class="col-sm-10">
 
-                      <input type="file" name="img" id="exampleInputFile" required>
+                      <input type="file" name="img" id="exampleInputFile" multiple required>
 
                       <p class="help-block">Photo size ratio 3:1 (example: 600*200)</p>
 
