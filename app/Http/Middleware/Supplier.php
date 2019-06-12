@@ -15,7 +15,7 @@ class Supplier
      */
     public function handle($request, Closure $next)
     {
-        if(!$request->user()->supplier)
+        if(!$request->user()->supplier && !$request->user()->payment > 0)
           return redirect(route('error.403'));
 
         return $next($request);

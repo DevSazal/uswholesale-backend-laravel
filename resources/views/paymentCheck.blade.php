@@ -50,34 +50,32 @@
             <div>
               Your selected plan is
               <strong class="text-info">
-              @switch(auth()->user()->payment)
-                @case(1)
-                  Basic
-                  @break
-                @case(2)
-                  Standard
-                  @break
-                @default
-                  Premium
-              @endswitch
+                {{ auth()->user()->plan->name }}
               </strong>
             </div>
 
             <form action="{{ route('charge') }}" method="post" id="payment-form">
               @csrf
-              <div class="form-row">
-                <label for="card-element">
-                  Credit or debit card
-                </label>
-                <div id="card-element">
-                  <!-- A Stripe Element will be inserted here. -->
-                </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label for="card-element">
+                      Credit or debit card
+                    </label>
+                    <div id="card-element">
+                      <!-- A Stripe Element will be inserted here. -->
+                    </div>
 
-                <!-- Used to display form errors. -->
-                <div id="card-errors" role="alert"></div>
+                    <!-- Used to display form errors. -->
+                    <div id="card-errors" role="alert"></div>
+                  </div>
+                </div>
+                <div class="visible-md visible-lg col-md-4 text-center">
+                  <i class="fas fa-credit-card fa-8x"></i>
+                </div>
               </div>
 
-              <button>Submit Payment</button>
+              <button class="btn btn-success">Submit Payment</button>
             </form>
         </div>
     </section>
@@ -118,6 +116,10 @@ var card = elements.create('card', {style: style});
 
 // Add an instance of the card Element into the `card-element` <div>.
 card.mount('#card-element');
+
+// Add Classname on other elements inside form
+CardElement = document.getElementById('card-element');
+console.log(CardElement);
 
 // Handle real-time validation errors from the card Element.
 card.addEventListener('change', function(event) {
