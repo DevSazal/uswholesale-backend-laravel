@@ -370,6 +370,8 @@
             <li><a href="{{ route('dashboard') }}"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
+
+        @if(auth()->user()->admin)
         <li class="
         @if($segment=='category')
         active
@@ -386,6 +388,7 @@
             <li><a href="{{ route('admin.category.index')}}"><i class="fa fa-circle-o"></i> All Category</a></li>
           </ul>
         </li>
+
         <li class="
         @if($segment=='subcategory')
         active
@@ -402,6 +405,9 @@
             <li><a href="{{ route('admin.subcategory.index')}}"><i class="fa fa-circle-o"></i>All SubCategory</a></li>
           </ul>
         </li>
+        @endif
+
+        @if(auth()->user()->supplier)
         <li class="
         @if($segment=='product')
         active
@@ -434,6 +440,9 @@
             <li><a href="{{ route('admin.btype.index')}}"><i class="fa fa-circle-o"></i>All BusinessType</a></li>
           </ul>
         </li>
+        @endif
+
+        @if(auth()->user()->buyer)
         <li class="
         @if($segment=='request')
         active
@@ -450,7 +459,7 @@
             <li><a href="{{ route('admin.request.index')}}"><i class="fa fa-circle-o"></i>All Request</a></li>
           </ul>
         </li>
-
+        @endif
 
 
 
