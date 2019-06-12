@@ -26,6 +26,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
+        if($user->supplier) {
+          if( !($user->subscribed('Basic') ||
+              $user->subscribed('Standard') ||
+              $user->subscribed('Premium'))
+            )
+
+            return redirect(route('payment'));
+        }
+
         $role = Auth::user()->role;
         $id = Auth::user()->id;
         if($role == 1){
