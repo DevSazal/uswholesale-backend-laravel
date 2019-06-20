@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
-        if($user->supplier) {
+        if($user->role == 1 && $user->payment !=0 ) {
           if( !($user->subscribed('Basic') ||
               $user->subscribed('Standard') ||
               $user->subscribed('Premium'))
