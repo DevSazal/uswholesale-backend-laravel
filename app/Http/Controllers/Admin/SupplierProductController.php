@@ -24,13 +24,16 @@ class SupplierProductController extends Controller
      */
     public function index()
     {
-        if(!auth()->user()->supplier)
-          return redirect(route('admin.sbtype.index'));
+        // if(!auth()->user()->supplier)
+        //   return redirect(route('admin.sbtype.index'));
+        //
+        // $supplier = SupplierProfile::find(auth()->user()->supplier->id);
+        //
+        // $array['products'] = $supplier->products()->paginate(20);
+        //
+        // return view('admin.supplierproduct.index')->with($array);
 
-        $supplier = SupplierProfile::find(auth()->user()->supplier->id);
-
-        $array['products'] = $supplier->products()->paginate(20);
-
+        $array['products'] = Product::where('sid', Auth::user()->supplier['id'])->paginate(20);
         return view('admin.supplierproduct.index')->with($array);
     }
 
@@ -41,7 +44,7 @@ class SupplierProductController extends Controller
      */
     public function create()
     {
-        if(auth()->user()->supplier->products->count() >= auth()->user()->plan->products){
+        if($x = \App\Product::where('sid', Auth::user()->supplier['id'])->count() >= Auth::user()->plan['products']){
           return redirect(route('admin.product.index'))->with('error', 'You have reached the maximum number of products that you can store.');
         }
 
@@ -57,13 +60,13 @@ class SupplierProductController extends Controller
      */
      public function store(Request $request, Product $p)
      {
-         if(auth()->user()->supplier->products->count() >= auth()->user()->plan->products){
-           return redirect(route('admin.product.index'))->with('error', 'You have reached the maximum number of products that you can store.');
-         }
+         // if(\App\Product::where('sid', Auth::user()->supplier['id'])->count() >= Auth::user()->plan['products']){
+         //   return redirect(route('admin.product.index'))->with('error', 'You have reached the maximum number of products that you can store.');
+         // }
 
-         if(count($request->img) >= auth()->user()->plan->photos) {
-           return redirect(route('admin.product.create'))->withInput()->with('error', 'Your current plan prevents you from uploading more than '.auth()->user()->plan->photos.' photos');
-         }
+         // if(count($request->img) > auth()->user()->plan['photos']) {
+         //   return redirect(route('admin.product.create'))->withInput()->with('error', 'Your current plan prevents you from uploading more than '.auth()->user()->plan->photos.' photos');
+         // }
 
          $validator = \Validator::make($request->all(), [
            'name' => 'required',
@@ -71,7 +74,7 @@ class SupplierProductController extends Controller
            'purl' => 'required',
            'scid' => 'required',
            'price' => 'required|numeric',
-           'img.*' => 'dimensions:ratio=3/1'
+           // 'img.*' => 'dimensions:ratio=3/1'
          ]);
 
          if($validator->fails())
