@@ -371,7 +371,7 @@
           </ul>
         </li>
 
-        @if(auth()->user()->admin)
+        @if(auth()->user()->role > 1)
         <li class="
         @if($segment=='category')
         active
@@ -405,25 +405,6 @@
             <li><a href="{{ route('admin.subcategory.index')}}"><i class="fa fa-circle-o"></i>All SubCategory</a></li>
           </ul>
         </li>
-        @endif
-
-        @if(auth()->user()->supplier)
-        <li class="
-        @if($segment=='product')
-        active
-        @endif treeview">
-          <a href="#">
-            <i class="fa fa-cubes"></i>
-            <span>Product</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ route('admin.product.create')}}"><i class="fa fa-circle-o"></i> Add New Product</a></li>
-            <li><a href="{{ route('admin.product.index')}}"><i class="fa fa-circle-o"></i>All Products</a></li>
-          </ul>
-        </li>
         <li class="
         @if($segment=='btype')
         active
@@ -442,7 +423,35 @@
         </li>
         @endif
 
-        @if(auth()->user()->buyer)
+        @if(auth()->user()->role ==1 && auth()->user()->payment > 0)
+        <li class="
+        @if($segment=='product')
+        active
+        @endif treeview">
+          <a href="#">
+            <i class="fa fa-cubes"></i>
+            <span>Product</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.product.create')}}"><i class="fa fa-circle-o"></i> Add New Product</a></li>
+            <li><a href="{{ route('admin.product.index')}}"><i class="fa fa-circle-o"></i>All Products</a></li>
+          </ul>
+        </li>
+
+
+
+        <li class="header">LABELS</li>
+
+        <li class="
+        @if($segment=='sbtype' || $segment=='profile')
+        active
+        @endif "><a href="{{ route('admin.sbtype.index')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Profile</span></a></li>
+        @endif
+
+        @if(auth()->user()->role ==1  && auth()->user()->payment == 0)
         <li class="
         @if($segment=='request')
         active
@@ -467,14 +476,13 @@
 
 
 
-        <!-- <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li> -->
-        <li class="header">LABELS</li>
-        <!-- <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li> -->
+
+        <!-- <li class="header">LABELS</li>
+
         <li class="
         @if($segment=='sbtype' || $segment=='profile')
         active
-        @endif "><a href="{{ route('admin.sbtype.index')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Profile</span></a></li>
+        @endif "><a href="{{ route('admin.sbtype.index')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Profile</span></a></li> -->
 
         @endguest
       </ul>

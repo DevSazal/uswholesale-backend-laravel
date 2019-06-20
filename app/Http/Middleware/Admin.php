@@ -15,7 +15,8 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(!$request->user()->admin)
+        // if(!$request->user()->admin)
+        if(!$request->user()->role > 1)
           return redirect(route('error.403'));
 
         return $next($request);

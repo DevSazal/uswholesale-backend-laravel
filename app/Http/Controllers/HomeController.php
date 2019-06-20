@@ -38,7 +38,7 @@ class HomeController extends Controller
 
         $role = Auth::user()->role;
         $id = Auth::user()->id;
-        if($role == 1){
+        if($role == 1 && Auth::user()->payment !=0){
           $ad = DB::table('supplier_profiles')->where('uid', $id)->count();
           $sbt = DB::table('supplier_btypes')->where('uid', $id)->count();
           if($ad > 0 && $sbt > 0){

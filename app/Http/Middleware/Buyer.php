@@ -15,7 +15,8 @@ class Buyer
      */
     public function handle($request, Closure $next)
     {
-      if(!$request->user()->buyer)
+      // if(!$request->user()->buyer)
+      if(!$request->user()->role ==1  && !$request->user()->payment == 0 )
         return redirect(route('error.403'));
 
         return $next($request);

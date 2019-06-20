@@ -45,10 +45,10 @@
   <main>
     <section class="section-auth">
         <div class="container">
-            <h1>Subscription Payment Checkout</h1>
+            <h1 style="font-size: 18px;color: #2db684;text-align: center;">Subscription Payment Checkout</h1>
 
             <div class="alert alert-success">
-              <p class="h1">Thank you for your payment! Your
+              <p class="h1" style="margin: 0;text-align: center;font-size: 18px;">Thank you for your payment! Your
                 <strong class="text-info">
                 @switch(auth()->user()->payment)
                   @case(1)
@@ -64,6 +64,7 @@
                 plan is now activated.
               </p>
             </div>
+            <h1 style="text-align: center;font-size: 18px;">Go back to <a href="google.com" style="color: #2db684;text-decoration: underline;">Dashboard </a> page</h1>
 
         </div>
     </section>

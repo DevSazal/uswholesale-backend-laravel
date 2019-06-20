@@ -41,13 +41,19 @@ class DefaultController extends Controller
       }
 
       if(Auth::check()){
-        $id = Auth::user()->id;
-        $member = DB::table('memberships')->where('uid', $id)->first();
-        if($member){
-          return redirect('/dashboard');
+        if(Auth::user()->role==1 && $role = Auth::user()->payment!=0){
+          //check by sazal
+          $id = Auth::user()->id;
+          $member = DB::table('memberships')->where('uid', $id)->first();
+          if($member){
+            return redirect('/dashboard');
+          }else{
+          return view('paymentCheck');
+          }
         }else{
-        return view('paymentCheck');
+          return redirect('/dashboard');
         }
+
       }else {
         return redirect()->route('package');
       }
@@ -67,13 +73,16 @@ class DefaultController extends Controller
     switch(auth()->user()->payment)
     {
       case 1:
-        $subscription = ['plan' => "Basic", 'price' => 59, 'plan_id' => "plan_FDZ35H0dzULItl"];
+        $subscription = ['plan' => "Basic", 'price' => 59, 'plan_id' => "plan_FHYQzC0CTkKkAL"];
         break;
       case 2:
-        $subscription = ['plan' => "Standard", 'price' => 175, 'plan_id' => "plan_FDZ4UtqL2jhTHo"];
+        $subscription = ['plan' => "Standard", 'price' => 175, 'plan_id' => "plan_FHYZtRIxMDdBuJ"];
         break;
+      // case 3:
+      //     $subscription = ['plan' => "Premium", 'price' => 255, 'plan_id' => "plan_FHYc7y3xptxBeN"];
+      //     break;
       default:
-        $subscription = ['plan' => "Premium", 'price' => 255, 'plan_id' => "plan_FDZ4Rm73vwcD0f"];
+        $subscription = ['plan' => "Premium", 'price' => 255, 'plan_id' => "plan_FHYc7y3xptxBeN"];
     }
 
     $user = $request->user();
@@ -87,7 +96,7 @@ class DefaultController extends Controller
       'uid' => $user->id,
       'package' => $user->payment,
       'start' => $date,
-      'end' => $date->addMonth(),
+      'end' => \Carbon\Carbon::now()->addMonths(2),
       'paytype' => 'credit card',
       'price' => $subscription['price'],
       'created_at' => now(),
