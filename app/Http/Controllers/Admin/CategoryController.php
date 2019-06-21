@@ -20,6 +20,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
+      // if(auth()->user()->role != 2)
+      //   return redirect(route('error.403'));
         $array['categories'] = Category::paginate(20);
         return view('admin.category.index')->with($array);
     }
