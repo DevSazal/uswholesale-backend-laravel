@@ -7,7 +7,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title') - WholesalersFinder | Developed by Eagles Media Enterprises</title>
+  <title>@yield('title')WholesalersFinder | Developed by Eagles Media Enterprises</title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -304,9 +304,9 @@
 
             <footer class="main-footer">
               <div class="pull-right hidden-xs">
-                <b>Version</b> 2.4.0
+                <b>Version</b> 1.0.0
               </div>
-              <strong>Copyright &copy; 2014-2016 <a href="http://www.appsoliclab.com">Appsolic Lab</a>.</strong> All rights
+              <strong>Copyright &copy; 2019 <a href="http://www.appsoliclab.com">Eagles Media Enterprises</a>.</strong> All rights
               reserved.
             </footer>
 

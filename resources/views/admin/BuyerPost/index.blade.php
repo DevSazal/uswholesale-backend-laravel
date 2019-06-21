@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title', 'Buyer Product Request List- ')
 @section('content')
 
 <!-- Content Header (Page header) -->

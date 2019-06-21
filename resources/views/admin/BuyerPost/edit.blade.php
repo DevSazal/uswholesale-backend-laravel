@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Buyer Product Request Edit- ')
 
 @section('content')
   <!-- Content Header (Page header) -->
