@@ -22,7 +22,8 @@ class BuyerPostController extends Controller
      */
     public function index()
     {
-        $array['posts'] = BuyerPost::paginate(20);
+        // $array['posts'] = BuyerPost::paginate(20);
+        $array['posts'] = BuyerPost::where('uid', Auth::user()->id)->paginate(20);
         return view('admin.BuyerPost.index')->with($array);
     }
 
@@ -139,7 +140,7 @@ class BuyerPostController extends Controller
               if(!$p->img)
                   $file = NULL;
               else
-                  $file = $p->img;    
+                  $file = $p->img;
           }
 
           $p->title = $request->name;

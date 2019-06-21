@@ -71,7 +71,7 @@
 
                       <input type="file" name="img" id="exampleInputFile" >
 
-                      <p class="help-block">Photo size ratio 1:1 (example: 600*200)</p>
+                      <p class="help-block">Photo size ratio 1:1 (example: 600*200)(Optional)</p>
 
                 </div>
                 <div class="col-sm-5">

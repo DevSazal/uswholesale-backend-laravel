@@ -49,7 +49,7 @@
               <th>Created</th>
               <th>Action</th>
             </tr>
-            @foreach($posts as $p)
+            @forelse($posts as $p)
             <tr>
               <td>{{ $p->id }}</td>
               <td>{{ $p->title }}</td>
@@ -79,7 +79,11 @@
                     </form>
               </td>
             </tr>
-            @endforeach
+            @empty
+            <tr>
+              <td class="text-center" colspan="8">- No buyer requests found. Click <a href="{{ url('/dashboard/request/create') }}">here</a> to create your first request -</td>
+            </tr>
+            @endforelse
 
           </table>
         </div>
