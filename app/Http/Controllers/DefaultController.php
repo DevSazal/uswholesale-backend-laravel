@@ -19,7 +19,7 @@ use Auth;
 class DefaultController extends Controller
 {
   public function index(){
-    $array['supplier'] = SupplierProfile::orderBy('created_at', 'desc')->limit(15)->get();
+    $array['supplier'] = SupplierProfile::orderByRaw('RAND()')->take(25)->get();
     // $array['supplier'] = SupplierProfile::limit(15)->get();
     $array['ad'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 8');
     $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 2');

@@ -4,7 +4,8 @@
 <style media="screen">
 #description .product-info-supplier {
   padding: 17px 14px;
-  max-height: 496px;
+  max-height: 496px !important;
+  height: unset;
 
 }
 </style>
