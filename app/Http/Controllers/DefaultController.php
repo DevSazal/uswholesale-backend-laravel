@@ -225,18 +225,36 @@ class DefaultController extends Controller
   }
 
   public function company($id){
+    $count = \App\SupplierProfile::where('uid',$id)->count();
+    if($count < 1){
+      return abort(404);
+    }
+    // dd($count);
+
     $array['user'] = User::find($id);
     return view('profile.index')->with($array);
   }
   public function companyProfile($id){
+    $count = \App\SupplierProfile::where('uid',$id)->count();
+    if($count < 1){
+      return abort(404);
+    }
     $array['user'] = User::find($id);
     return view('profile.profile')->with($array);
   }
   public function companyProduct($id){
+    $count = \App\SupplierProfile::where('uid',$id)->count();
+    if($count < 1){
+      return abort(404);
+    }
     $array['user'] = User::find($id);
     return view('profile.product')->with($array);
   }
   public function companyContact($id){
+    $count = \App\SupplierProfile::where('uid',$id)->count();
+    if($count < 1){
+      return abort(404);
+    }
     $array['user'] = User::find($id);
     return view('profile.contact')->with($array);
   }

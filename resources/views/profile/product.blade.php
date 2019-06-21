@@ -1,6 +1,13 @@
 @extends('layouts.master')
 @section('content')
 
+<style media="screen">
+#description .product-info-supplier {
+  padding: 17px 14px;
+  max-height: 496px;
+
+}
+</style>
 
   <div class="container">
     <section id="profile">

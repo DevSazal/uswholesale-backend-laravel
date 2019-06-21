@@ -5,7 +5,7 @@
   <section class="content-header">
     <h1>
       Complete Your Company Profile
-      <small>Preview</small>
+      <small><a href="{{ url('/company/'.auth()->user()->id )}}" class="btn-sm btn-info" style="background-color: #f39c12;">Preview<a></small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
