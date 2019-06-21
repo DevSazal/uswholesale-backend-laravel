@@ -21,8 +21,8 @@ class DefaultController extends Controller
   public function index(){
     $array['supplier'] = SupplierProfile::orderByRaw('RAND()')->take(25)->get();
     // $array['supplier'] = SupplierProfile::limit(15)->get();
-    $array['ad'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 8');
-    $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 2');
+    $array['ad'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY RAND() , promote DESC LIMIT 8');
+    $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY RAND() , promote DESC LIMIT 2');
     $array['categories'] = DB::table('categories')->where('status', 1)->get();
     return view('index')->with($array);
   }
@@ -153,7 +153,7 @@ class DefaultController extends Controller
       $array['requests'] = collect([]);
 
 
-      $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 8');
+      $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY RAND() , promote DESC LIMIT 8');
       return view('category')->with($array);
   }
 
@@ -187,7 +187,7 @@ class DefaultController extends Controller
                           ->orderBy('buyer_posts.id', 'desc')
                           ->paginate(30);
 
-    $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 8');
+    $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY RAND() , promote DESC LIMIT 8');
     return view('category')->with($array);
   }
 
@@ -220,7 +220,7 @@ class DefaultController extends Controller
                           ->orderBy('buyer_posts.id', 'desc')
                           ->paginate(30);
 
-    $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY promote DESC LIMIT 8');
+    $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY RAND() , promote DESC LIMIT 8');
     return view('subcategory')->with($array);
   }
 

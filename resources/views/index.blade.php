@@ -6,6 +6,7 @@
 <?php
 use Illuminate\Support\Facades\DB;
  ?>
+ @if(count($ad) >= 8)
 <section id="header-ads">
     <div class="container">
         <div class="row">
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\DB;
     </div>
     <!-- _______ending of header ads_________  -->
 </section>
+@endif
 
 @include('components.search')
 
