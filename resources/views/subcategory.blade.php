@@ -170,7 +170,7 @@ transition: all 0.4s ease 0s;
                                         </div>
                                         <div class="row">
                                             <div class="col-md-7">
-                                                <h5 class="product__box--sign"><img src="{{ asset('asset/img/icon_spass.png')}}" alt=""> Verified Supplier 5YR</h5>
+                                                <h5 class="product__box--sign"><img src="{{ asset('asset/img/icon_spass.png')}}" alt=""> Verified Supplier</h5>
                                                 <div class="product__list-container">
                                                     <dl class="product__box--list">
                                                         <dt>Business Type:</dt>
@@ -188,7 +188,7 @@ transition: all 0.4s ease 0s;
                                                     <dl class="product__box--list">
                                                         <dt>Location:</dt>
                                                         <dd>{{$supplier->user->city}}, {{$supplier->user->country->name}}
-                                                            <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
+                                                            <!-- <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt=""> -->
                                                         </dd>
                                                     </dl>
                                                 </div>
@@ -196,89 +196,36 @@ transition: all 0.4s ease 0s;
                                             <div class="col-md-5">
                                                 <div class="product__box--imageContainer">
                                                     <div class="row">
+                                                      <?php
+                                                            $pList = \App\Product::where('sid',$supplier->id)->limit(2)->get();
+                                                       ?>
+                                                       @foreach($pList as $pp)
                                                         <div class="col-md-6">
                                                             <div class="product__box__image-box">
-                                                                <img src="{{asset('asset/vendor/images/products/product-2.jpg')}}" class="img-responsive" alt="">
-                                                                <a href="#" class="product__box--link">AGP  Laser Cut 2 in 1 Clutch Bag</a>
+                                                                <img src="{{ asset('storage/ProductImg/'.$pp->img) }}" class="img-responsive" alt="" style="height: 120px;">
+                                                                <a href="{{ $pp->purl }}" class="product__box--link"  target="_blank">{{ $pp->name }} - {{ $pp->subcategory->name }}<br>({{ $pp->price }} USD)</a>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <div class="product__box__image-box">
-                                                                <img src="{{asset('asset/vendor/images/products/product-3.jpg')}}" class="img-responsive" alt="">
-                                                                <a href="#" class="product__box--link">AGP  Laser Cut 2 in 1 Clutch Bag</a>
-                                                            </div>
-                                                        </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="product__box--button-review">
                                             <a href="{{$supplier->website}}" target="_blank" class="btn-text">Contact Supplier</a>
-                                            <!-- <a href="{{$supplier->website}}" target="_blank"><i class="fa fa-info-circle icons" aria-hidden="true"></i></a>
-                                            <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a> -->
+                                            <a href="{{ url('/company/'.$supplier->uid) }}" target="_blank" title="open supplier profile"><i class="fa fa-telegram icons" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
                                     @empty
                                     <div class="col-xs-12">
                                       <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
                                     border-color: #d6e9c6;">
-                                        No information Found.
+                                        No Supplier Found.
                                       </div>
                                     </div>
                                     @endforelse
 
-                                    <!-- <div class="product__box">
-                                        <div class="ribbon ribbon-top-right card-promo__side--ribbon-1"><span>UPDATED DAILY</span></div>
 
-                                        <div class="product__box--info">
-                                            <a class="product__box--sub-title">LAShowroom</a>
-                                            <p class="product__box--paragraph">All apparel categories, trendy & basics, new styles daily, premium quality, product image download, fast shipping, various clothing Made in USA, rewards program, lowest price match guarantee, superior customer service</p>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-7">
-                                                <h5 class="product__box--sign"><img src="{{ asset('asset/img/icon_spass.png')}}" alt=""> Verified Supplier 5YR</h5>
-                                                <div class="product__list-container">
-                                                    <dl class="product__box--list">
-                                                        <dt>Business Type:</dt>
-                                                        <dd>Wholesaler, Business Service</dd>
-                                                    </dl>
-                                                    <dl class="product__box--list">
-                                                        <dt>Main Products:</dt>
-                                                        <dd>Apparel, Designer Inspired Handbags, Fashion Accessories, Ladies Shoes, Luggage, Bags & Cases</dd>
-                                                    </dl>
-                                                    <dl class="product__box--list">
-                                                        <dt>Location:</dt>
-                                                        <dd>Los Angeles, CA, United States
-                                                            <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
-                                                        </dd>
-                                                    </dl>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="product__box--imageContainer">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="product__box__image-box">
-                                                                <img src="{{asset('asset/vendor/images/products/product-2.jpg')}}" class="img-responsive" alt="">
-                                                                <a href="#" class="product__box--link">AGP  Laser Cut 2 in 1 Clutch Bag</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="product__box__image-box">
-                                                                <img src="{{asset('asset/vendor/images/products/product-3.jpg')}}" class="img-responsive" alt="">
-                                                                <a href="#" class="product__box--link">AGP  Laser Cut 2 in 1 Clutch Bag</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product__box--button-review">
-                                            <a href="#" class="btn-text">Contact Supplier</a>
-                                            <a href="#"><i class="fa fa-info-circle icons" aria-hidden="true"></i></a>
-                                            <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div> -->
                                     <nav class="pagination-box" aria-label="Page navigation">
                                       {{ $suppliers->links() }}
 
@@ -313,7 +260,7 @@ transition: all 0.4s ease 0s;
                                 </div>
                                 <div class="tab-pane {{ isset(request()->sortBy) ? 'active' : '' }}" id="2">
                                     <div class="tab-checkbox-container">
-                                        @include('components.sorter')
+                                        <!-- @include('components.sorter') -->
                                         <!-- <div class="input-group">
                                             <input class="form-control styled-checkbox" id="styled-checkbox-Verified" type="checkbox" value="value1">
                                             <label for="styled-checkbox-Verified">Verified Supplier (147)
@@ -343,12 +290,12 @@ transition: all 0.4s ease 0s;
                                                     <a class="product__box--sub-title">{{ $product->supplier->user->company}}</a>
                                                     <div class="product__box--location">
                                                         {{$product->supplier->user->city}}, {{$product->supplier->user->country->name}}
-                                                        <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
+                                                        <!-- <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt=""> -->
                                                     </div>
                                                 </div>
 
                                                 <div class="product__box--button-review">
-                                                    <a href="#" class="verify"><img src="{{ asset('asset/img/icon_spass.png')}}" alt=""> Verified Supplier <sup>5YR</sup></a>
+                                                    <a href="#" class="verify"><img src="{{ asset('asset/img/icon_spass.png')}}" alt=""> Verified Supplier <sup></sup></a>
                                                     <!-- <a href="#"><i class="fa fa-info-circle icons" aria-hidden="true"></i></a>
                                                     <a href="#"> <i class="fa fa-star icons" aria-hidden="true"></i></a> -->
                                                 </div>
@@ -360,7 +307,7 @@ transition: all 0.4s ease 0s;
                                         <div class="col-xs-12">
                                           <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
                                         border-color: #d6e9c6;">
-                                            No information Found.
+                                            No Product Found.
                                           </div>
                                         </div>
                                         @endforelse
@@ -398,12 +345,9 @@ transition: all 0.4s ease 0s;
                                             </label>
                                         </div> -->
                                     </div>
-                                    <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
-                                  border-color: #d6e9c6;">
-                                      No information Found.
-                                    </div>
+
                                     <ul class="buyer-list">
-                                @foreach ($requests as $r)
+                                @forelse ($requests as $r)
                                       <li class="buyer-item">
                                           <div class="buyer-box">
                                               <div class="buyer-box__left-box">
@@ -448,44 +392,14 @@ transition: all 0.4s ease 0s;
                                               </div>
                                           </div>
                                       </li>
-                                @endforeach
+                                @empty
+                                <div class="alert " role="alert" style="color: white;font-size: 17px;font-weight: 900;background: #39c395;
+                              border-color: #d6e9c6;">
+                                  No Buyer Request Found.
+                                </div>
+                                @endforelse
 
-                                      <!-- <li class="buyer-item">
-                                          <div class="buyer-box">
-                                              <div class="buyer-box__left-box">
-                                                  <h3 class="buyer-box__main-title">Slipper Socks</h3>
-                                                  <div class="box-flex">
-
-                                                        <div class="info-box">
-                                                            <div class="buyer-box__location">
-                                                                <img title="United States" border="0" src="https://www.toptenwholesale.com/ttw/images/flags/us.png" width="18" height="18" alt="">
-                                                                <span>United States</span>
-                                                            </div>
-                                                            <div class="buyer-box__quantity">
-                                                                <span class="grey">Quantity Required:</span>
-                                                                <span>10 pair</span>
-                                                            </div>
-                                                            <p class="buyer-box__paragraph">thick slipper socks for men, women and children</p>
-                                                        </div>
-                                                  </div>
-                                              </div>
-                                              <div class="buyer-box__right-box">
-                                                <ul class="list">
-                                                  <li>
-                                                      <span class="grey">Time Left:</span>
-                                                      <span>17D 8H</span>
-                                                  </li>
-                                                  <li>
-                                                      <span class="grey">Date Posted:</span>
-                                                      <span>2018-12-09</span>
-                                                  </li>
-                                                  <li>
-                                                     <a href="#" class="btn-text">Quote now</a>
-                                                  </li>
-                                                </ul>
-                                              </div>
-                                          </div>
-                                      </li> -->
+                                    
                                     </ul>
 
                                     <nav class="pagination-box" aria-label="Page navigation">
@@ -512,15 +426,7 @@ transition: all 0.4s ease 0s;
                             </div>
                             <br>
                             @endforeach
-                            <!-- <div class="add__card custom-card">
-                                <div class="add__card--image-container">
-                                    <img class="img-responsive add__card--image" src="{{asset('asset/vendor/images/add-1.jpg')}}" alt="">
-                                </div>
-                                <h3 class="add__card--heading">Walmart Liquidations | Pallets + Truckloads</h3>
-                                <p class="add__card--paragraph">
-                                    Buy Wholesale Inventory Direct from Walmart 70-90% OFF Retail | All Product Categories
-                                </p>
-                            </div> -->
+
                         </div>
                     </div>
 

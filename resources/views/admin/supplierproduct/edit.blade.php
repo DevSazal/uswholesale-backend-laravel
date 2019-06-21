@@ -60,7 +60,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Price</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Price<sup style="color:#04c"> Per Product</sup></label>
 
                 <div class="col-sm-10">
                       <div class="input-group">
