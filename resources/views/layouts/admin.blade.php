@@ -86,7 +86,7 @@
                 <img src="{{ asset('AdminLTE/dist/img/blank2.png') }}" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ Auth::user()->name }} - Web Developer
+                  {{ Auth::user()->name }}
                   <!-- <small>Member since Nov. 2012</small> -->
                 </p>
               </li>
