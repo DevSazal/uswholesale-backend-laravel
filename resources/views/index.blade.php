@@ -165,7 +165,7 @@ use Illuminate\Support\Facades\DB;
                         <div class="card-promo__detail">
                             <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
                                 dropship items, we have you covered.</p>
-                            <a href="#" class="btn-text">Find Your deal</a>
+                            <a href="#suppliers" class="btn-text">Find Your deal</a>
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@ use Illuminate\Support\Facades\DB;
                         <div class="card-promo__detail">
                             <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
                                 dropship items, we have you covered.</p>
-                            <a href="#" class="btn-text">Get a quote now</a>
+                            <a href="{{ url('/login') }}" class="btn-text">Get a quote now</a>
                         </div>
                     </div>
                 </div>
@@ -200,7 +200,7 @@ use Illuminate\Support\Facades\DB;
                         <div class="card-promo__detail">
                             <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
                                 dropship items, we have you covered.</p>
-                            <a href="#" class="btn-text">Get your supplier pass</a>
+                            <a href="{{ url('/premium-signup') }}" class="btn-text">Get your supplier pass</a>
                         </div>
                     </div>
                 </div>
