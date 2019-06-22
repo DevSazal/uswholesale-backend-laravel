@@ -15,11 +15,16 @@ class SupplierSubscribed
      */
     public function handle($request, Closure $next)
     {
+        // if($request->user() && !(
+        //   auth()->user()->subscribed('Basic') ||
+        //   auth()->user()->subscribed('Standard') ||
+        //   auth()->user()->subscribed('Premium')
+        // ) || date('Y-m-d') > auth()->user()->membership->end)
         if($request->user() && !(
           auth()->user()->subscribed('Basic') ||
           auth()->user()->subscribed('Standard') ||
           auth()->user()->subscribed('Premium')
-        ))
+        ) )
           return redirect(route('payment'));
 
         return $next($request);

@@ -62,7 +62,7 @@
                 plan is now activated.
               </p>
             </div>
-            <h1 style="text-align: center;font-size: 18px;">Go back to <a href="google.com" style="color: #2db684;text-decoration: underline;">Dashboard </a> page</h1>
+            <h1 style="text-align: center;font-size: 18px;">Go back to <a href="{{ url('/dashboard') }}" style="color: #2db684;text-decoration: underline;">Dashboard </a> page</h1>
 
         </div>
     </section>

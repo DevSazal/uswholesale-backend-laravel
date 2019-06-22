@@ -34,9 +34,11 @@ class DefaultController extends Controller
 
   public function payment(){
       if(
-        auth()->user()->subscribed('Basic') ||
-        auth()->user()->subscribed('Standard') ||
-        auth()->user()->subscribed('Premium')
+          (
+            auth()->user()->subscribed('Basic') ||
+            auth()->user()->subscribed('Standard') ||
+            auth()->user()->subscribed('Premium')
+          ) && date('Y-m-d') < auth()->user()->membership['end']
       ) {
         return redirect(route('dashboard'));
       }
@@ -44,13 +46,13 @@ class DefaultController extends Controller
       if(Auth::check()){
         if(Auth::user()->role==1 && $role = Auth::user()->payment!=0){
           //check by sazal
-          $id = Auth::user()->id;
-          $member = DB::table('memberships')->where('uid', $id)->first();
-          if($member){
-            return redirect('/dashboard');
-          }else{
+          // $id = Auth::user()->id;
+          // $member = DB::table('memberships')->where('uid', $id)->first();
+          // if($member){
+          //   return redirect('/dashboard');
+          // }else{
           return view('paymentCheck');
-          }
+          // }
         }else{
           return redirect('/dashboard');
         }
@@ -64,9 +66,11 @@ class DefaultController extends Controller
   public function charge(Request $request)
   {
     if(
-      auth()->user()->subscribed('Basic') ||
-      auth()->user()->subscribed('Standard') ||
-      auth()->user()->subscribed('Premium')
+      (
+        auth()->user()->subscribed('Basic') ||
+        auth()->user()->subscribed('Standard') ||
+        auth()->user()->subscribed('Premium')
+      )  && date('Y-m-d') < auth()->user()->membership['end']
     ) {
       return redirect(route('dashboard'));
     }
@@ -97,7 +101,7 @@ class DefaultController extends Controller
       'uid' => $user->id,
       'package' => $user->payment,
       'start' => $date,
-      'end' => \Carbon\Carbon::now()->addMonths(2),
+      'end' => \Carbon\Carbon::now()->addMonths(1),
       'paytype' => 'credit card',
       'price' => $subscription['price'],
       'created_at' => now(),

@@ -32,6 +32,9 @@ class SupplierProductController extends Controller
         // $array['products'] = $supplier->products()->paginate(20);
         //
         // return view('admin.supplierproduct.index')->with($array);
+        if(date('Y-m-d') > auth()->user()->membership['end']){
+          return redirect(route('dashboard'))->with('errorSupplier', 'Your Supplier functionality is not actived. Please extend your membership by paying.');
+        }
 
         $array['products'] = Product::where('sid', Auth::user()->supplier['id'])->paginate(20);
         return view('admin.supplierproduct.index')->with($array);
@@ -46,6 +49,9 @@ class SupplierProductController extends Controller
     {
         if($x = \App\Product::where('sid', Auth::user()->supplier['id'])->count() >= Auth::user()->plan['products']){
           return redirect(route('admin.product.index'))->with('error', 'You have reached the maximum number of products that you can store.');
+        }
+        if(date('Y-m-d') > auth()->user()->membership->end){
+          return redirect(route('admin.product.index'))->with('error', 'Your membership plan is not actived. Please renew your plan.');
         }
 
         $array['subcategories'] = SubCategory::all();

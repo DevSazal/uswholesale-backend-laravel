@@ -42,7 +42,12 @@
               if($y==NULL){
                 echo 0;
               }else {
-                echo $y;
+                if(date('Y-m-d') > auth()->user()->membership->end){
+                  echo 0;
+                }else {
+                  echo $y;
+                }
+
               } ?><sup style="font-size: 20px"></sup></h3>
 
               <p>Product Limit</p>
@@ -106,19 +111,34 @@
           </div>
           <div class="alert alert-info alert-dismissible" style="background-color: #7c96a2 !important;">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <center><strong>Please!</strong> <a href="#" class="alert-link">click here</a> to visit your buyer request panel.</center>
+            <center><strong>Please!</strong> <a href="{{ url('/dashboard/request') }}" class="alert-link">click here</a> to visit your buyer request panel.</center>
           </div>
           @elseif(auth()->user()->role ==1 && auth()->user()->payment > 0)
-          <div class="alert alert-warning alert-dismissible">
+          <div class="alert alert-warning alert-dismissible" style="background-color: #05c56a !important; border-color: #00c569;">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <center><strong>Success!</strong> you successfully logged as supplier.</center>
           </div>
+            @if(date('Y-m-d') > auth()->user()->membership->end)
+              <div class="alert alert-warning alert-dismissible" >
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center>Your membership plan is not actived. <strong>Please!</strong> renew your plan by <a href="{{ url('/premium-signup/payment/') }}" class="alert-link">Paying here</a>.</center>
+              </div>
+            @endif
           @else
           <div class="alert alert-warning alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <center><strong>Success!</strong> you successfully logged as admin.</center>
           </div>
           @endif
+
+
+          @if(session('errorSupplier'))
+            <div class="alert alert-warning alert-dismissible" >
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <center><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>{{ session('errorSupplier') }}</strong></center>
+            </div>
+          @endif
+
           <!-- /.box -->
 
           <!-- quick email widget -->
