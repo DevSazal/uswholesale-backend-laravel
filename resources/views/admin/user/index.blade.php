@@ -43,7 +43,7 @@
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
-              
+
               <th>Location</th>
               <th>Phone</th>
               <th>Actived Plan</th>
@@ -129,7 +129,7 @@
             </tr>
             @empty
             <tr>
-              <td class="text-center" colspan="8">- No users found. Click <a href="{{ route('admin.product.create') }}">here</a> to create your first product -</td>
+              <td class="text-center" colspan="8">- No users found.</td>
             </tr>
             @endforelse
 

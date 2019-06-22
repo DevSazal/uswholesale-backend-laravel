@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 @section('title', 'Dashboard - ')
-
+<?php
+use Illuminate\Support\Facades\DB;
+ ?>
 @section('content')
 
     <!-- Content Header (Page header) -->
@@ -23,7 +25,15 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>{{ $x = App\Product::where('sid', Auth::user()->supplier->id)->count() }}</h3>
+              <h3>
+                <?php
+                  if(auth()->user()->role ==1 && auth()->user()->payment > 0){
+                    echo $x = App\Product::where('sid', Auth::user()->supplier->id)->count();
+                  }else {
+                    echo 0;
+                  }
+               ?>
+              </h3>
 
               <p>Your Products</p>
             </div>
@@ -142,6 +152,81 @@
           <!-- /.box -->
 
           <!-- quick email widget -->
+          @if(auth()->user()->role ==2)
+          <div class="box box-info">
+            <div class="box-header">
+              <i class="fa fa-money"></i>
+
+              <h3 class="box-title">Financial Board</h3>
+
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
+                        title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+
+            </div>
+            <div class="box-body">
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Today</label>
+
+                  <div class="col-sm-10">
+                    <label class="col-sm-2 control-label">= <?php
+
+                    $date1 = \Carbon\Carbon::today()->toDateString();
+                    $date2 = \Carbon\Carbon::today()->toDateString();
+
+                    $model = \App\Membership::whereBetween('created_at', [$date1, $date2])->sum('price');
+                    echo $model." USD";
+
+                    ?></label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Monthly</label>
+
+                  <div class="col-sm-10">
+                    <label class="col-sm-2 control-label">= <?php
+
+                    $date1 = \Carbon\Carbon::now()->subMonths(1)->toDateString();
+                    $date2 = \Carbon\Carbon::today()->toDateString();
+
+                    $model = \App\Membership::whereBetween('created_at', [$date1, $date2])->sum('price');
+                    echo $model." USD";
+
+                    ?></label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Yearly</label>
+
+                  <div class="col-sm-10">
+                    <label class="col-sm-2 control-label">= <?php
+
+                    $date1 = \Carbon\Carbon::now()->subYears(1)->toDateString();
+                    $date2 = \Carbon\Carbon::today()->toDateString();
+
+                    $model = \App\Membership::whereBetween('created_at', [$date1, $date2])->sum('price');
+                    echo $model." USD";
+
+                    ?></label>
+                  </div>
+                </div>
+
+
+
+            </div>
+            <div class="box-footer clearfix">
+              <span class="pull-right ">Total = <?php
+
+              $model = \App\Membership::sum('price');
+              echo $model." USD";
+
+              ?>
+                <i class="fa fa-arrow-circle-right"></i></button>
+            </div>
+          </div>
           <!-- <div class="box box-info">
             <div class="box-header">
               <i class="fa fa-envelope"></i>
@@ -174,6 +259,7 @@
                 <i class="fa fa-arrow-circle-right"></i></button>
             </div>
           </div> -->
+          @endif
 
         </section>
         <!-- /.Left col -->

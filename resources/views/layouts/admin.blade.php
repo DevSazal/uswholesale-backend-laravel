@@ -47,6 +47,26 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style media="screen">
+  .skin-blue .main-header .logo {
+  background-color: #c47cf3;
+  color: #fff;
+  border-bottom: 0 solid transparent;
+}
+.skin-blue .main-header .navbar {
+    background-color: #06c36a;
+}
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: #b273dc;
+}
+.skin-blue .main-header li.user-header {
+    background-color: #46d491;
+}
+.skin-blue .main-header .logo:hover {
+    background-color: #b273dc;
+}
+
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
