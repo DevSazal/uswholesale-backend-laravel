@@ -1,4 +1,6 @@
 @extends('layouts.master')
+@section('title', ''.$user->company.' - Supplier | ' )
+
 @section('content')
 
 

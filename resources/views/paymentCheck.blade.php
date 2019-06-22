@@ -1,9 +1,6 @@
 
 @extends('layouts.master')
-
-@section('title')
-<title>Auth</title>
-@endsection
+@section('title', 'Pay For Supplier Membership - ')
 
 @section('script')
   <style>

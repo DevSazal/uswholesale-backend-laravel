@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Wholesalers &amp; Manufacturers - WholesalersFinder. Quality Wholesale Suppliers, Exporters, Products &amp; Buyers on The USA's Leading Trade Site.">
+  <meta name="keywords" content="Global Suppliers, Wholesale. world suppliers. Factories. wholesalers. USA wholesalers. Palestine factories. Palestine wholesalers. China factories - china manufacturers. Turkey Factories. Turkey Suppliers. Turkey Wholesalers. Wholesaler India. wholesale Jordan. Jordan Factories. Jordan Wholesale. India Suppliers. India Wholesale India Factories. India factory. Distributors. wholesaler directory. suppliers directory. wholesale products. Suppliers Private Label. Privet Label Wholesale. Led Wholesale. Led Supplier. Led Supplier USA">
+  <meta name="author" content="Sazal Ahamed (se.sazal836@gmail.com)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
@@ -17,7 +20,7 @@
   <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
   <link rel="stylesheet" href="{{asset('asset/css/bootstrap-typeahead.css')}}">
-  @yield('title')
+  <title>@yield('title')WholesalersFinder | Developed by Eagles Media Enterprises</title>
   <!-- development version, includes helpful console warnings -->
   <script src="{{asset('asset/js/vue.js')}}"></script>
   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -27,7 +30,9 @@
 
   <style>
     .dropdown-menu {
-          min-width: 119px;
+          /* min-width: 119px; */
+              min-width: 123px;
+              padding-left: 3px;
     }
     .dropdown-menu a{
           padding: 6px 5px;
@@ -61,13 +66,13 @@
         <div class="button"></div>
         <ul class="css-ul">
           <li class='active'><a href="{{ url('/') }}">HOME</a></li>
-          <li><a href='#'>ABOUT US</a></li>
-          <li><a href='#'>COMMUNITY</a>
+          <li><a href='http://emeforus.com/' target="_blank">Contact</a></li>
+          <!-- <li><a href='#'>COMMUNITY</a>
             <ul>
               <li><a href='#'>NEWS</a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <!-- <li><a href='#'>PRODUCTS</a>
             <ul>
               <li><a href='#'>Product 1</a>
@@ -84,7 +89,7 @@
             </ul>
           </li> -->
           @guest
-          <li><a class="menu-btn" href="{{url('/premium-signup')}}" class="menu-join">Wholesale Registration</a></li>
+          <li><a class="menu-btn" href="{{url('/premium-signup')}}" class="menu-join">Supplier Registration</a></li>
           <li><a class="menu-btn" href="#" class="menu-join">Buyer Registration</a></li>
           <li><a href="{{url('/login')}}" class="menu-signin">Sign In</a></li>
           @else
@@ -130,19 +135,19 @@
         <div class="row">
           <div class="col-lg-3">
             <div class="widget">
-              <h4 class="widget-title">Contact Us</h4>
+              <h4 class="widget-title">About Us</h4>
+              <span>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</span>
+
+            </div><!-- End .widget -->
+          </div><!-- End .col-lg-3 -->
+
+          <div class="col-lg-3">
+            <div class="widget">
+              <h4 class="widget-title">Working Hours</h4>
               <ul class="contact-info">
+
                 <li>
-                  <span class="contact-info-label">Address:</span>123 Street Name, City, England
-                </li>
-                <li>
-                  <span class="contact-info-label">Phone:</span>Toll Free <a href="tel:">(123) 456-7890</a>
-                </li>
-                <li>
-                  <span class="contact-info-label">Email:</span> <a href="mailto:mail@example.com">mail@example.com</a>
-                </li>
-                <li>
-                  <span class="contact-info-label">Working Days/Hours:</span>
+
                   Mon - Sun / 9:00AM - 8:00PM
                 </li>
               </ul>
@@ -154,78 +159,52 @@
             </div><!-- End .widget -->
           </div><!-- End .col-lg-3 -->
 
-          <div class="col-lg-9">
-            <div class="widget widget-newsletter">
-              <h4 class="widget-title">Subscribe newsletter</h4>
-              <div class="row">
-                <div class="col-md-6">
-                  <p>Get all the latest information on Events,Sales and Offers. Sign up for newsletter today</p>
-                </div><!-- End .col-md-6 -->
-
-                <div class="col-md-6">
-                  <form action="#">
-                    <input type="email" class="form-control" placeholder="Email address" required>
-
-                    <input type="submit" class="btn" value="Subscribe">
-                  </form>
-                </div><!-- End .col-md-6 -->
-              </div><!-- End .row -->
+          <div class="col-lg-3">
+            <div class="widget">
+              <h4 class="widget-title">Address</h4>
+              <ul class="contact-info">
+                <li>
+                  123 Street Name, City, England
+                </li>
+              </ul>
+              <!-- <div class="social-icons">
+                <a href="#" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div> -->
             </div><!-- End .widget -->
+          </div><!-- End .col-lg-3 -->
 
-            <div class="row">
-              <div class="col-md-5">
-                <div class="widget">
-                  <h4 class="widget-title">My Account</h4>
+          <div class="col-lg-3">
+            <div class="widget">
+              <h4 class="widget-title">Emergency</h4>
+              <span>We are available for 24 hours. So please inform anytime if you need to contact directly.</span>
+              <ul class="contact-info">
+                <li>
 
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <ul class="links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="my-account.html">My Account</a></li>
-                      </ul>
-                    </div><!-- End .col-sm-6 -->
-                    <div class="col-sm-6 col-md-5">
-                      <ul class="links">
-                        <li><a href="#">Orders History</a></li>
-                        <li><a href="#">Advanced Search</a></li>
-                        <li><a href="#" class="login-link">Login</a></li>
-                      </ul>
-                    </div><!-- End .col-sm-6 -->
-                  </div><!-- End .row -->
-                </div><!-- End .widget -->
-              </div><!-- End .col-md-5 -->
+                </li>
+                <li>
+                  <span class="contact-info-label">Phone:</span>Toll Free <a href="tel:">(123) 456-7890</a>
+                </li>
+                <li>
+                  <span class="contact-info-label">Email:</span> <a href="mailto:mail@example.com">mail@example.com</a>
+                </li>
 
-              <div class="col-md-7">
-                <div class="widget">
-                  <h4 class="widget-title">Main Features</h4>
+              </ul>
 
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <ul class="links">
-                        <li><a href="#">Super Fast Magento Theme</a></li>
-                        <li><a href="#">1st Fully working Ajax Theme</a></li>
-                        <li><a href="#">20 Unique Homepage Layouts</a></li>
-                      </ul>
-                    </div><!-- End .col-sm-6 -->
-                    <div class="col-sm-6">
-                      <ul class="links">
-                        <li><a href="#">Powerful Admin Panel</a></li>
-                        <li><a href="#">Mobile & Retina Optimized</a></li>
-                      </ul>
-                    </div><!-- End .col-sm-6 -->
-                  </div><!-- End .row -->
-                </div><!-- End .widget -->
-              </div><!-- End .col-md-7 -->
-            </div><!-- End .row -->
-          </div><!-- End .col-lg-9 -->
+            </div><!-- End .widget -->
+          </div><!-- End .col-lg-3 -->
+
+
+
+
         </div><!-- End .row -->
       </div><!-- End .container -->
     </div><!-- End .footer-middle -->
 
     <div class="container">
       <div class="footer-bottom">
-        <p class="footer-copyright">US Wholesale &copy; 2018. All Rights Reserved. Developed by <a href="https://appsoliclab.com" style="color:green">Appsolic Lab Canada</a></p>
+        <p class="footer-copyright">WholesalersFinder &copy; 2019. All Rights Reserved. Developed by <a href="http://emeforus.com" style="color:green">Eagles Media Enterprises</a></p>
 
         <img src="{{asset('asset/img/payments.png')}}" alt="payment methods" class="footer-payments">
       </div><!-- End .footer-bottom -->

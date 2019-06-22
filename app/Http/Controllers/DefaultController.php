@@ -23,6 +23,7 @@ class DefaultController extends Controller
     // $array['supplier'] = SupplierProfile::limit(15)->get();
     $array['ad'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY RAND() , promote DESC LIMIT 8');
     $array['ad2'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY RAND() , promote DESC LIMIT 2');
+    $array['ad3'] = DB::select('SELECT * FROM supplier_profiles JOIN users ON supplier_profiles.uid = users.id ORDER BY RAND() , promote DESC LIMIT 4');
     $array['categories'] = DB::table('categories')->where('status', 1)->get();
     return view('index')->with($array);
   }

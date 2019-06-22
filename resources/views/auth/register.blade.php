@@ -1,8 +1,5 @@
 @extends('layouts.master')
-
-@section('title')
-<title>Sign Up</title>
-@endsection
+@section('title', 'Join - ' )
 
 @section('content')
 <?php

@@ -1,8 +1,5 @@
 @extends('layouts.master')
-
-@section('title')
-<title>Category</title>
-@endsection
+@section('title', 'Categories - ')
 
 @section('content')
 <?php
@@ -219,7 +216,7 @@ transition: all 0.4s ease 0s;
                                         <div class="product__box--button-review">
                                             <a href="{{$supplier->website}}" target="_blank" class="btn-text">Contact Supplier</a>
                                             <a href="{{ url('/company/'.$supplier->uid) }}" target="_blank" title="open supplier profile"><i class="fa fa-telegram icons" aria-hidden="true"></i></a>
-                                  
+
                                         </div>
                                     </div>
                                     @empty

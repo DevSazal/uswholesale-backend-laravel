@@ -1,9 +1,7 @@
 
 @extends('layouts.master')
 
-@section('title')
-<title>Auth</title>
-@endsection
+@section('title', 'Card Payment - ')
 
 @section('script')
   <style>

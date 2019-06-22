@@ -1,8 +1,16 @@
-@extends('layouts.master') @section('title')
-<title>
-    Home
-</title>
-@endsection @section('content')
+@extends('layouts.master')
+@section('title', 'Home - ')
+
+@section('content')
+<style media="screen">
+.feature-box__image {
+  transition: all 0.2s;
+  margin: 0 auto;
+  width: 200px;
+  /* width: unset; */
+  height: 154px;
+}
+</style>
 <?php
 use Illuminate\Support\Facades\DB;
  ?>
@@ -27,7 +35,7 @@ use Illuminate\Support\Facades\DB;
 @include('components.search')
 
 <!-- _______Starting of Main Cointainer_________  -->
-<section id="categories-slider">
+<section id="categories-slider" style="padding-bottom: 5rem">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -128,15 +136,7 @@ use Illuminate\Support\Facades\DB;
                       </a>
                     </div>
                   @endforeach
-                    <!-- <div class="add__card">
-                        <div class="add__card--image-container">
-                            <img class="img-responsive add__card--image" src="{{asset('asset/vendor/images/add-1.jpg')}}" alt="">
-                        </div>
-                        <h3 class="add__card--heading">Walmart Liquidations | Pallets + Truckloads</h3>
-                        <p class="add__card--paragraph">
-                            Buy Wholesale Inventory Direct from Walmart 70-90% OFF Retail | All Product Categories
-                        </p>
-                    </div> -->
+
                 </div>
             </div>
         </div>
@@ -144,7 +144,39 @@ use Illuminate\Support\Facades\DB;
     </div>
 </section>
 
-<section id="promo">
+
+@if(count($ad) >= 4)
+<section id="header-d3">
+    <div class="container">
+        <div class="row" id="categories-slider" style="padding: 0rem 0;">
+            <div class="main-add-container">
+              @foreach($ad3 as $banner)
+               <div class="col-md-3">
+                 <div class="add__card">
+                   <a href="{{ url(''.$banner->url)}}" target="_blank">
+                     <div class="add__card--image-container">
+                         <img class="img-responsive add__card--image" src="{{ asset('storage/CoverPhoto/'.$banner->img)}}" alt="">
+                     </div>
+                     <h3 class="add__card--heading">{{$banner->company}} | {{ $banner->supplier_service_title }}</h3>
+                     <p class="add__card--paragraph">
+                         {{ \Illuminate\Support\Str::words($banner->summary, 18,'....') }}
+                     </p>
+                   </a>
+                 </div>
+               </div>
+
+
+              @endforeach
+
+            </div>
+        </div>
+    </div>
+    <!-- _______ending of header ads_________  -->
+</section>
+@endif
+
+
+<section id="promo" style="padding-top: 5rem;">
     <div class="container">
         <div class="row">
             <div class="u-center-text u-margin-bottom-big">
@@ -163,7 +195,7 @@ use Illuminate\Support\Facades\DB;
                             <span class="card-promo__heading--span card-promo__heading--span--1">Wholesale Deals</span>
                         </h4>
                         <div class="card-promo__detail">
-                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
+                            <p>Save on wholesale purchases at WholesalersFinder Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
                                 dropship items, we have you covered.</p>
                             <a href="#suppliers" class="btn-text">Find Your deal</a>
                         </div>
@@ -181,7 +213,7 @@ use Illuminate\Support\Facades\DB;
                             <span class="card-promo__heading--span card-promo__heading--span--2">Product Requests</span>
                         </h4>
                         <div class="card-promo__detail">
-                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
+                            <p>Save on wholesale purchases at WholesalersFinder Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
                                 dropship items, we have you covered.</p>
                             <a href="{{ url('/login') }}" class="btn-text">Get a quote now</a>
                         </div>
@@ -198,7 +230,7 @@ use Illuminate\Support\Facades\DB;
                             <span class="card-promo__heading--span card-promo__heading--span--3">Verified Suppliers</span>
                         </h4>
                         <div class="card-promo__detail">
-                            <p>Save on wholesale purchases at TopTenWholesale Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
+                            <p>Save on wholesale purchases at WholesalersFinder Deals! Now your business can make more profit on wholesale products offered by our verified wholesale suppliers. From apparel to consumer electronics, closeout and
                                 dropship items, we have you covered.</p>
                             <a href="{{ url('/premium-signup') }}" class="btn-text">Get your supplier pass</a>
                         </div>
@@ -226,7 +258,8 @@ use Illuminate\Support\Facades\DB;
                     <img class="img-responsive feature-box__image" src="{{ asset('storage/BannerImg/'.$sp->banner_img)}}" alt="">
                     <h3 class="heading-tertiary u-margin-bottom-small feature-box__title">{{$sp->supplier_service_title}}</h3>
                     </a>
-                    <a href="{{$sp->website}}" class="feature-box__link" target="_blank">{{$sp->user->company}}</a>
+                    <!-- <a href="{{$sp->website}}" class="feature-box__link" target="_blank">{{$sp->user->company}}</a> -->
+                    <a href="{{ url('/company/'.$sp->uid)}}" class="feature-box__link" target="_blank">{{$sp->user->company}}</a>
                 </div>
             </div>
           @endforeach
@@ -292,7 +325,7 @@ use Illuminate\Support\Facades\DB;
     </div>
 </section> -->
 
-<section id="news">
+<!-- <section id="news">
     <div class="container">
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
@@ -347,7 +380,7 @@ use Illuminate\Support\Facades\DB;
         </div>
 
     </div>
-</section>
+</section> -->
 
 <section id="trade-show">
     <div class="container">
@@ -357,7 +390,7 @@ use Illuminate\Support\Facades\DB;
                 Trade Shows
             </h2>
             <p>
-                TopTenWholesale produces the <a href="more-link">Apparel Textile Sourcing</a> international trade shows, the fastest growing trade shows in Canada, U.S.A., and Europe. ATS shows are a Global Industry Destination that provide a
+                WholesalersFinder produces the <a href="more-link">Apparel Textile Sourcing</a> international trade shows, the fastest growing trade shows in Canada, U.S.A., and Europe. ATS shows are a Global Industry Destination that provide a
                 platform for the world's apparel and textile executives to connect, learn and create opportunities to grow their business.
             </p>
         </div>

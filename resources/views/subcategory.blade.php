@@ -1,8 +1,5 @@
 @extends('layouts.master')
-
-@section('title')
-<title>Sub Category</title>
-@endsection
+@section('title', 'Sub Categories - ')
 
 @section('content')
 <?php
@@ -399,7 +396,7 @@ transition: all 0.4s ease 0s;
                                 </div>
                                 @endforelse
 
-                                    
+
                                     </ul>
 
                                     <nav class="pagination-box" aria-label="Page navigation">

@@ -1,9 +1,7 @@
 @extends('layouts.master')
   <!-- _______ending of Navbar_________  -->
 
-@section('title')
-<title>Supplier</title>
-@endsection
+@section('title', 'Supplier Membership Package - ')
 
 @section('content')
   <section class="section-book">
@@ -254,7 +252,7 @@
                         <div class="card__detail">
                             <ul>
                                 <li>List 7 products</li>
-                                <li>3 photos per product</li>
+                                <!-- <li>3 photos per product</li> -->
                             </ul>
                         </div>
                     </div>
@@ -266,7 +264,7 @@
                                 <p class="card__price--only">Anually</p>
                                 <p class="card__price--value">$708</p>
                             </div>
-                            <a href="/register/1" class="btn btn--white">Continue</a>
+                            <a href="{{ url('/register/1') }}" class="btn btn--white">Continue</a>
                         </div>
                     </div>
                 </div>
@@ -284,7 +282,7 @@
                           <ul>
                               <li class="card__picture--2 text-white font-weight-bold">Highly Recommended</li>
                               <li>List 21 products</li>
-                              <li>5 photos per product</li>
+                              <li>High Priority</li>
                               <li>Product keywords</li>
                           </ul>
                         </div>
@@ -297,7 +295,7 @@
                                 <p class="card__price--only">Anually</p>
                                 <p class="card__price--value">$2100</p>
                             </div>
-                            <a href="/register/2" class="btn btn--white">Continue</a>
+                            <a href="{{ url('/register/2') }}" class="btn btn--white">Continue</a>
                         </div>
                     </div>
                 </div>
@@ -316,7 +314,7 @@
                               <ul>
                                   <li class="card__picture--3 text-white font-weight-bold">Highly Competitive</li>
                                   <li>List 40 products</li>
-                                  <li>5 photos per product</li>
+                                  <li>High Priority</li>
                                   <li>Product keywords</li>
                               </ul>
                             </ul>
@@ -330,7 +328,7 @@
                               <p class="card__price--only">Anually</p>
                               <p class="card__price--value">$3060</p>
                             </div>
-                            <a href="/register/3" class="btn btn--white">Continue</a>
+                            <a href="{{ url('/register/3') }}" class="btn btn--white">Continue</a>
                         </div>
                     </div>
                 </div>
