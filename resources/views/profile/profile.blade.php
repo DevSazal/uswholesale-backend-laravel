@@ -67,7 +67,7 @@
                  verified supplier
                </a>
                <p>{{ $user->supplier->est }}</p>
-               <img src="{{ asset('asset/img/supplier-pass.png')}}" alt="Supplier pass">
+               <img src="{{ asset('asset/img/supplier-pass.png')}}" alt="Supplier pass" style="width: 134px;">
              </div>
            </div>
            <div class="d-col2">
@@ -116,7 +116,7 @@
                </div>
               <div class="dl">
                <div class="dt">Country:</div>
-               <div class="dd">{{ $user->supplier->name }}</div>
+               <div class="dd">{{ $user->country->name }}</div>
               </div>
               <div class="dl">
                <div class="dt">Registered Address:</div>

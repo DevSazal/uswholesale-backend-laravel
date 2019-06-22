@@ -79,7 +79,7 @@
                     verified supplier
                   </a>
                   <p>{{ $user->supplier->est }}</p>
-                  <img src="{{ asset('asset/img/supplier-pass.png')}}" alt="Supplier pass">
+                  <img src="{{ asset('asset/img/supplier-pass.png')}}" alt="Supplier pass" style="width: 134px;">
                 </div>
               </div>
             </div>

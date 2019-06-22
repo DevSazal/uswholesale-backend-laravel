@@ -174,7 +174,7 @@
                 <label for="inputEmail3" class="col-sm-2 control-label">All Product Name</label>
 
                 <div class="col-sm-10">
-                  <input type="text" name="all_product_names" class="form-control" id="inputEmail3" placeholder="" value="{{$sp->all_product_names}}"" required>
+                  <input type="text" name="all_product_names" class="form-control" id="inputEmail3" placeholder="" value="{{$sp->all_product_names}}" required>
                 </div>
               </div>
               <div class="form-group">
@@ -202,11 +202,11 @@
 
                 </div>
                 <div class="col-sm-5">
-                  <img src="{{ asset('storage/BannerImg/'.$sp->banner_img)}}" alt="" style="width: 10%;" class="img-responsive">
+                  <img src="{{ asset('storage/BannerImg/'.$sp->banner_img)}}" alt="" style="width: 20%;" class="img-responsive">
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Cover Photo</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Profile Cover Photo</label>
 
                 <div class="col-sm-5">
 

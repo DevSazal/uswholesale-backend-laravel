@@ -29,6 +29,14 @@
   @yield('script')
 
   <style>
+  #profile .profile-header .profile-img {
+    margin-top: unset;
+}
+#profile .profile-header .profile-img img {
+    height: 275px;
+    width: 275px;
+    padding: 22%;
+}
     .dropdown-menu {
           /* min-width: 119px; */
               min-width: 123px;
@@ -164,7 +172,7 @@
               <h4 class="widget-title">Address</h4>
               <ul class="contact-info">
                 <li>
-                  123 Street Name, City, England
+                  7206A W college Dr, Palos Heights, IL
                 </li>
               </ul>
               <!-- <div class="social-icons">
@@ -184,10 +192,10 @@
 
                 </li>
                 <li>
-                  <span class="contact-info-label">Phone:</span>Toll Free <a href="tel:">(123) 456-7890</a>
+                  <span class="contact-info-label">Phone:</span>Toll Free <a href="tel:">(312) 485-3220</a>
                 </li>
                 <li>
-                  <span class="contact-info-label">Email:</span> <a href="mailto:mail@example.com">mail@example.com</a>
+                  <span class="contact-info-label">Email:</span> <a href="mailto:support@wholesalersfinder.com">support@wholesalersfinder.com</a>
                 </li>
 
               </ul>
