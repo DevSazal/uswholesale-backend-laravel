@@ -23,7 +23,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>{{ $x = App\Product::where('sid', Auth::user()->id)->count() }}</h3>
+              <h3>{{ $x = App\Product::where('sid', Auth::user()->supplier->id)->count() }}</h3>
 
               <p>Your Products</p>
             </div>

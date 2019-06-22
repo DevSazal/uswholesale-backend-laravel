@@ -66,6 +66,7 @@ Route::group(['middleware' => 'admin'], function(){
   Route::resource('/dashboard/category', 'Admin\CategoryController', ['as'=>'admin']);
   Route::resource('/dashboard/subcategory', 'Admin\SubCategoryController', ['as'=>'admin']);
   Route::resource('/dashboard/btype', 'Admin\BusinessTypeController', ['as'=>'admin']);
+  Route::get('/dashboard/users', 'Admin\PowerController@users', ['as'=>'admin']);
 });
 
 Route::group(['middleware' => ['supplier', 'supplier.subcribed']], function(){

@@ -214,6 +214,16 @@
             <li><a href="{{ route('admin.btype.index')}}"><i class="fa fa-circle-o"></i>All BusinessType</a></li>
           </ul>
         </li>
+        <li class="
+        @if(!$segment)
+        active
+        @endif">
+          <a href="{{ url('/dashboard/users') }}">
+            <i class="fa fa-user"></i> <span>Users</span>
+
+          </a>
+
+        </li>
         @endif
 
         @if(auth()->user()->role ==1 && auth()->user()->payment > 0)

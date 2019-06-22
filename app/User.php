@@ -39,4 +39,7 @@ class User extends Authenticatable
     public function plan(){
       return $this->belongsTo('App\Plan', 'payment');
     }
+    public function membership(){
+      return $this->belongsTo('App\Membership', 'id', 'uid')->orderBy('id', 'desc');
+    }
 }
